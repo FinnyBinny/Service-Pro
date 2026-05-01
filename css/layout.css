@@ -43,6 +43,13 @@
   align-items: center;
 }
 
+/* Papel picado section divider */
+.papel-picado-wrap {
+  line-height: 0;
+  overflow: hidden;
+  background-color: var(--color-earth-dark);
+}
+
 .ornate-divider {
   display: flex;
   align-items: center;

@@ -3,12 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Guzman Landscaping | Premium Lawn Care</title>
-  <meta name="description" content="Premium landscaping services rooted in Guatemalan heritage. Get an instant satellite-based price quote for mowing, edging, fertilizing, and more.">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Guzman Landscaping | Premium Lawn Care">
-  <meta property="og:description" content="Crafted with pride. Rooted in heritage. Get your instant lawn care quote today.">
+  <title>Guzman Outdoors LLC | Lawn &amp; Landscape — Williamston, MI</title>
+  <meta name="description" content="Premium lawn care and landscaping in Williamston, MI. Get an instant satellite-based price quote. Call (517)-449-8404.">
+  <meta property="og:title" content="Guzman Outdoors LLC | Lawn &amp; Landscape">
+  <meta property="og:description" content="Crafted with pride. Rooted in heritage. Williamston, MI. (517)-449-8404">
   <meta property="og:type" content="website">
 
   <!-- Google Fonts -->
@@ -16,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
 
-  <!-- Favicon -->
+  <!-- Favicon: save logo to assets/images/logo.png -->
   <link rel="icon" href="assets/svg/logo-rooster.svg" type="image/svg+xml">
 
   <!-- CSS -->
@@ -29,52 +27,57 @@
   <link rel="stylesheet" href="css/nav.css">
   <link rel="stylesheet" href="css/hero.css">
   <link rel="stylesheet" href="css/services.css">
+  <link rel="stylesheet" href="css/gallery.css">
   <link rel="stylesheet" href="css/calculator.css">
   <link rel="stylesheet" href="css/about.css">
   <link rel="stylesheet" href="css/contact.css">
 </head>
 <body>
 
-<!-- ═══════════════════════════════════════════════════════════ NAV -->
+<!-- ══════════════════════════════════════════════════════════════ NAV -->
 <header id="navbar">
   <div class="container nav-inner">
     <a href="#hero" class="nav-brand">
-      <img src="assets/svg/logo-rooster.svg" alt="Guzman Landscaping Rooster Logo" class="nav-logo" width="42" height="42">
-      <span class="nav-company-name">Guzman Landscaping</span>
+      <!--
+        Save your logo PNG to: assets/images/logo.png
+        The mix-blend-mode:screen CSS removes the grey background on dark navbars.
+      -->
+      <img src="assets/images/logo.png" alt="Guzman Outdoors LLC" class="nav-logo"
+           width="48" height="48" onerror="this.src='assets/svg/logo-rooster.svg'">
+      <div class="nav-brand-text">
+        <span class="nav-company-name">Guzman Outdoors</span>
+        <span class="nav-company-sub">Lawn &amp; Landscape</span>
+      </div>
     </a>
-    <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false">
+    <button class="hamburger" id="hamburger" aria-label="Open navigation" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
     <nav aria-label="Main navigation">
       <ul class="nav-links" id="nav-links">
         <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#gallery"  class="nav-link">Our Work</a></li>
         <li><a href="#calculator" class="nav-link">Get a Quote</a></li>
-        <li><a href="#about" class="nav-link">Our Story</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
-        <li><a href="#calculator" class="btn btn--primary btn--sm">Free Quote</a></li>
+        <li><a href="#about"   class="nav-link">Our Story</a></li>
+        <li><a href="#contact" class="btn btn--primary btn--sm">Book Now</a></li>
       </ul>
     </nav>
   </div>
 </header>
 
-<!-- ═══════════════════════════════════════════════════════════ HERO -->
+<!-- ══════════════════════════════════════════════════════════════ HERO -->
 <section id="hero" class="hero" aria-label="Hero">
 
-  <!-- Large watermark rooster in background -->
+  <!-- Watermark rooster -->
   <div class="hero-watermark" aria-hidden="true">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
       <ellipse cx="74" cy="38" rx="7" ry="16" fill="#D4A017" transform="rotate(-30 74 38)"/>
       <ellipse cx="79" cy="48" rx="6" ry="15" fill="#D4A017" transform="rotate(-10 79 48)"/>
       <ellipse cx="78" cy="58" rx="5.5" ry="14" fill="#D4A017" transform="rotate(12 78 58)"/>
-      <ellipse cx="72" cy="65" rx="5" ry="12" fill="#D4A017" transform="rotate(28 72 65)"/>
       <ellipse cx="50" cy="62" rx="19" ry="22" fill="#D4A017"/>
-      <ellipse cx="50" cy="60" rx="14" ry="16" fill="#C49012"/>
       <ellipse cx="48" cy="57" rx="9" ry="11" fill="#D4A017"/>
       <path d="M38 50 Q40 42 42 36" stroke="#D4A017" stroke-width="10" stroke-linecap="round" fill="none"/>
       <circle cx="40" cy="33" r="12" fill="#D4A017"/>
-      <path d="M35 24 L37.5 14 L40 24" fill="#C0392B"/>
-      <path d="M38.5 23 L41 13 L43.5 23" fill="#C0392B"/>
-      <path d="M42 24 L44.5 15 L47 24" fill="#C0392B"/>
+      <path d="M34 24 Q40 21 47 24" fill="#C0392B"/>
       <path d="M30 33 L24 36 L30 39 Z" fill="#C49012"/>
       <ellipse cx="30" cy="42" rx="3.5" ry="5" fill="#C0392B"/>
       <circle cx="36" cy="30" r="3" fill="#1a0d05"/>
@@ -84,20 +87,41 @@
 
   <div class="container hero-content">
     <div class="hero-frame">
-      <p class="hero-preheading">Premium Landscaping Services</p>
+      <!-- Folk art color stripe at top -->
+      <div class="hero-stripe" aria-hidden="true"></div>
 
-      <h1 class="hero-heading">Guzman<br>Landscaping</h1>
+      <!-- Corner ornaments -->
+      <svg class="hero-frame-corner hero-frame-corner--tl" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" aria-hidden="true">
+        <polygon points="14,2 18,10 26,10 20,16 22,24 14,20 6,24 8,16 2,10 10,10" fill="#D4A017" opacity="0.8"/>
+      </svg>
+      <svg class="hero-frame-corner hero-frame-corner--tr" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" aria-hidden="true">
+        <polygon points="14,2 18,10 26,10 20,16 22,24 14,20 6,24 8,16 2,10 10,10" fill="#C0392B" opacity="0.8"/>
+      </svg>
+      <svg class="hero-frame-corner hero-frame-corner--bl" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" aria-hidden="true">
+        <polygon points="14,2 18,10 26,10 20,16 22,24 14,20 6,24 8,16 2,10 10,10" fill="#1A3A8F" opacity="0.8"/>
+      </svg>
+      <svg class="hero-frame-corner hero-frame-corner--br" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" aria-hidden="true">
+        <polygon points="14,2 18,10 26,10 20,16 22,24 14,20 6,24 8,16 2,10 10,10" fill="#9B1060" opacity="0.8"/>
+      </svg>
 
-      <!-- Ornate divider -->
+      <div class="hero-preheading-wrap">
+        <div class="hero-preheading-line" aria-hidden="true"></div>
+        <p class="hero-preheading">Williamston, Michigan</p>
+        <div class="hero-preheading-line hero-preheading-line--right" aria-hidden="true"></div>
+      </div>
+
+      <h1 class="hero-heading">Guzman<br>Outdoors</h1>
+      <p class="hero-sub-name">LLC &nbsp;·&nbsp; Lawn &amp; Landscape</p>
+
       <div class="ornate-divider hero-divider" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 24">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 24" style="width:280px">
           <line x1="0" y1="12" x2="108" y2="12" stroke="#D4A017" stroke-width="0.8" opacity="0.6"/>
           <path d="M108,12 C114,7 120,7 122,12 C120,17 114,17 108,12" fill="#D4A017" opacity="0.75"/>
-          <circle cx="128" cy="12" r="2.2" fill="#D4A017" opacity="0.8"/>
+          <circle cx="128" cy="12" r="2.2" fill="#D4A017"/>
           <polygon points="150,3 160,12 150,21 140,12" fill="#D4A017"/>
           <polygon points="150,7 157,12 150,17 143,12" fill="#2C1A0E"/>
-          <circle cx="172" cy="12" r="2.2" fill="#D4A017" opacity="0.8"/>
-          <path d="M192,12 C186,7 180,7 178,12 C180,17 186,17 192,12" fill="#D4A017" opacity="0.75"/>
+          <circle cx="172" cy="12" r="2.2" fill="#D4A017"/>
+          <path d="M178,12 C180,7 186,7 192,12 C186,17 180,17 178,12" fill="#D4A017" opacity="0.75"/>
           <line x1="192" y1="12" x2="300" y2="12" stroke="#D4A017" stroke-width="0.8" opacity="0.6"/>
         </svg>
       </div>
@@ -106,40 +130,44 @@
 
       <div class="hero-ctas">
         <a href="#calculator" class="btn btn--primary">Get Your Free Quote</a>
-        <a href="#services" class="btn btn--ghost">Our Services</a>
+        <a href="#contact"    class="btn btn--ghost">Book Now</a>
       </div>
     </div>
   </div>
 
-  <!-- Scroll cue -->
   <div class="hero-scroll-cue" aria-hidden="true">
     <div class="scroll-arrow"></div>
-    <span>Scroll</span>
+    <span>Explore</span>
   </div>
 
 </section>
 
-<!-- ═══════════════════════════════════════════════════════ SERVICES -->
+<!-- ══════════════════════════════════════════════════ PAPEL PICADO -->
+<div class="papel-picado-wrap" aria-hidden="true">
+  <img src="assets/svg/papel-picado.svg" alt="" style="width:100%;display:block;height:72px;object-fit:cover">
+</div>
+
+<!-- ══════════════════════════════════════════════════════════ SERVICES -->
 <section id="services" class="section services" aria-label="Our services">
   <div class="container">
 
     <div class="section-header section-header--center reveal">
-      <span class="section-preheading">What We Offer</span>
-      <h2 class="section-heading text-cream">What We Do</h2>
+      <span class="section-preheading">What We Do</span>
+      <h2 class="section-heading text-cream">Our Services</h2>
       <div class="ornate-divider" aria-hidden="true">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 24">
           <line x1="0" y1="12" x2="108" y2="12" stroke="#D4A017" stroke-width="0.8" opacity="0.5"/>
           <path d="M108,12 C114,7 120,7 122,12 C120,17 114,17 108,12" fill="#D4A017" opacity="0.65"/>
           <circle cx="128" cy="12" r="2.2" fill="#D4A017" opacity="0.7"/>
           <polygon points="150,3 160,12 150,21 140,12" fill="#D4A017"/>
-          <polygon points="150,7 157,12 150,17 143,12" fill="#5C3D1E"/>
+          <polygon points="150,7 157,12 150,17 143,12" fill="#0d1e52"/>
           <circle cx="172" cy="12" r="2.2" fill="#D4A017" opacity="0.7"/>
-          <path d="M192,12 C186,7 180,7 178,12 C180,17 186,17 192,12" fill="#D4A017" opacity="0.65"/>
+          <path d="M178,12 C180,7 186,7 192,12 C186,17 180,17 178,12" fill="#D4A017" opacity="0.65"/>
           <line x1="192" y1="12" x2="300" y2="12" stroke="#D4A017" stroke-width="0.8" opacity="0.5"/>
         </svg>
       </div>
       <p class="section-subheading text-cream" style="text-align:center">
-        From precise weekly cuts to full seasonal transformations — every job done with the same care we'd give our own home.
+        Every job done with the same care we'd give our own property — no matter the size.
       </p>
     </div>
 
@@ -150,7 +178,7 @@
           <img src="assets/svg/icon-mowing.svg" alt="" aria-hidden="true" width="28" height="28">
         </div>
         <h3 class="service-card-title">Lawn Mowing &amp; Edging</h3>
-        <p class="service-card-desc">Crisp, clean cuts every visit. We mow, edge, blow, and leave your property looking sharp — not just trimmed.</p>
+        <p class="service-card-desc">Crisp, clean cuts every visit. We mow, edge, blow, and leave your property sharp — not just trimmed.</p>
       </div>
 
       <div class="service-card reveal reveal-delay-2">
@@ -158,7 +186,7 @@
           <img src="assets/svg/icon-fertilizing.svg" alt="" aria-hidden="true" width="28" height="28">
         </div>
         <h3 class="service-card-title">Fertilizing &amp; Weed Control</h3>
-        <p class="service-card-desc">Healthy lawns start below the surface. Custom treatment plans keep your turf thick, rich, and weed-free all season.</p>
+        <p class="service-card-desc">Custom treatment plans keep your turf thick, rich, and weed-free all season long.</p>
       </div>
 
       <div class="service-card reveal reveal-delay-3">
@@ -166,7 +194,7 @@
           <img src="assets/svg/icon-cleanup.svg" alt="" aria-hidden="true" width="28" height="28">
         </div>
         <h3 class="service-card-title">Seasonal Cleanup</h3>
-        <p class="service-card-desc">Spring start-ups and fall wind-downs done right. We prep your yard for the season so it hits the ground running.</p>
+        <p class="service-card-desc">Spring start-ups and fall wind-downs done right. We prep your yard so it hits the ground running.</p>
       </div>
 
       <div class="service-card reveal reveal-delay-1">
@@ -174,7 +202,7 @@
           <img src="assets/svg/icon-mulching.svg" alt="" aria-hidden="true" width="28" height="28">
         </div>
         <h3 class="service-card-title">Mulching &amp; Bed Care</h3>
-        <p class="service-card-desc">Fresh mulch, clean bed lines, and manicured borders that make your landscaping look intentional and cared for.</p>
+        <p class="service-card-desc">Fresh mulch, clean bed lines, and manicured borders that make your landscaping look intentional.</p>
       </div>
 
       <div class="service-card reveal reveal-delay-2">
@@ -182,7 +210,7 @@
           <img src="assets/svg/icon-edging.svg" alt="" aria-hidden="true" width="28" height="28">
         </div>
         <h3 class="service-card-title">Shrub &amp; Hedge Trimming</h3>
-        <p class="service-card-desc">Precision shaping for hedges, shrubs, and ornamentals. We keep your plantings structured and your property polished.</p>
+        <p class="service-card-desc">Precision shaping for hedges, shrubs, and ornamentals — structured and polished every time.</p>
       </div>
 
       <div class="service-card reveal reveal-delay-3">
@@ -190,14 +218,104 @@
           <img src="assets/svg/icon-leafremoval.svg" alt="" aria-hidden="true" width="28" height="28">
         </div>
         <h3 class="service-card-title">Leaf Removal</h3>
-        <p class="service-card-desc">Complete leaf clearing — beds, lawn, and hard surfaces. We haul everything away and leave nothing behind but clean turf.</p>
+        <p class="service-card-desc">Complete leaf clearing — beds, lawn, and hard surfaces. We haul everything away and leave clean turf.</p>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════ PRICE CALCULATOR -->
+<!-- ══════════════════════════════════════════════════ PAPEL PICADO -->
+<div class="papel-picado-wrap" aria-hidden="true">
+  <img src="assets/svg/papel-picado.svg" alt="" style="width:100%;display:block;height:72px;object-fit:cover">
+</div>
+
+<!-- ══════════════════════════════════════════════════════════ GALLERY -->
+<section id="gallery" class="section gallery" aria-label="Our work">
+  <div class="container">
+
+    <div class="section-header section-header--center reveal">
+      <span class="section-preheading">Results That Speak</span>
+      <h2 class="section-heading text-cream">Our Work</h2>
+      <div class="ornate-divider" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 24">
+          <line x1="0" y1="12" x2="108" y2="12" stroke="#D4A017" stroke-width="0.8" opacity="0.5"/>
+          <path d="M108,12 C114,7 120,7 122,12 C120,17 114,17 108,12" fill="#D4A017" opacity="0.65"/>
+          <circle cx="128" cy="12" r="2.2" fill="#D4A017" opacity="0.7"/>
+          <polygon points="150,3 160,12 150,21 140,12" fill="#D4A017"/>
+          <polygon points="150,7 157,12 150,17 143,12" fill="#0d1e52"/>
+          <circle cx="172" cy="12" r="2.2" fill="#D4A017" opacity="0.7"/>
+          <path d="M178,12 C180,7 186,7 192,12 C186,17 180,17 178,12" fill="#D4A017" opacity="0.65"/>
+          <line x1="192" y1="12" x2="300" y2="12" stroke="#D4A017" stroke-width="0.8" opacity="0.5"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="gallery-grid">
+      <!--
+        TO ADD YOUR WORK PHOTOS:
+        Save the images to assets/images/ as work-1.jpg, work-2.jpg, work-3.jpg, work-4.jpg
+        Then replace the gallery-placeholder divs below with:
+        <img src="assets/images/work-1.jpg" alt="Landscaping work by Guzman Outdoors" loading="lazy">
+      -->
+      <div class="gallery-item reveal reveal-delay-1">
+        <div class="gallery-placeholder">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <rect x="4" y="8" width="40" height="32" rx="3" stroke="#D4A017" stroke-width="1.5"/>
+            <circle cx="16" cy="19" r="4" stroke="#D4A017" stroke-width="1.5"/>
+            <path d="M4 32 L14 22 L22 30 L30 22 L44 34" stroke="#D4A017" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+          </svg>
+          <span>Save work-1.jpg to assets/images/</span>
+        </div>
+      </div>
+      <div class="gallery-item reveal reveal-delay-2">
+        <div class="gallery-placeholder">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <rect x="4" y="8" width="40" height="32" rx="3" stroke="#D4A017" stroke-width="1.5"/>
+            <circle cx="16" cy="19" r="4" stroke="#D4A017" stroke-width="1.5"/>
+            <path d="M4 32 L14 22 L22 30 L30 22 L44 34" stroke="#D4A017" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+          </svg>
+          <span>Save work-2.jpg to assets/images/</span>
+        </div>
+      </div>
+      <div class="gallery-item reveal reveal-delay-3">
+        <div class="gallery-placeholder">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <rect x="4" y="8" width="40" height="32" rx="3" stroke="#D4A017" stroke-width="1.5"/>
+            <circle cx="16" cy="19" r="4" stroke="#D4A017" stroke-width="1.5"/>
+            <path d="M4 32 L14 22 L22 30 L30 22 L44 34" stroke="#D4A017" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+          </svg>
+          <span>Save work-3.jpg to assets/images/</span>
+        </div>
+      </div>
+      <div class="gallery-item reveal reveal-delay-1">
+        <div class="gallery-placeholder">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <rect x="4" y="8" width="40" height="32" rx="3" stroke="#D4A017" stroke-width="1.5"/>
+            <circle cx="16" cy="19" r="4" stroke="#D4A017" stroke-width="1.5"/>
+            <path d="M4 32 L14 22 L22 30 L30 22 L44 34" stroke="#D4A017" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+          </svg>
+          <span>Save work-4.jpg to assets/images/</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="gallery-caption">More photos coming soon — call us at <a href="tel:+15174498404" style="color:var(--color-gold)">(517)-449-8404</a> to discuss your project.</p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════ QUICK BOOK STRIP -->
+<div class="quick-book" aria-label="Quick booking">
+  <div class="container quick-book-inner">
+    <div class="quick-book-text">
+      <p class="quick-book-heading">Don't need an instant quote?</p>
+      <p class="quick-book-sub">Just send us a message and we'll reach out within one business day.</p>
+    </div>
+    <a href="#contact" class="btn btn--ghost" style="border-color:rgba(245,236,215,0.6);flex-shrink:0">Book Directly</a>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ CALCULATOR -->
 <section id="calculator" class="section calculator" aria-label="Price calculator">
   <div class="container">
 
@@ -212,12 +330,12 @@
           <polygon points="150,3 160,12 150,21 140,12" fill="#D4A017"/>
           <polygon points="150,7 157,12 150,17 143,12" fill="#2C1A0E"/>
           <circle cx="172" cy="12" r="2.2" fill="#D4A017" opacity="0.7"/>
-          <path d="M192,12 C186,7 180,7 178,12 C180,17 186,17 192,12" fill="#D4A017" opacity="0.65"/>
+          <path d="M178,12 C180,7 186,7 192,12 C186,17 180,17 178,12" fill="#D4A017" opacity="0.65"/>
           <line x1="192" y1="12" x2="300" y2="12" stroke="#D4A017" stroke-width="0.8" opacity="0.5"/>
         </svg>
       </div>
       <p class="section-subheading text-cream" style="text-align:center">
-        Enter your address, draw your lawn on the satellite map, choose your services — and get a real price in seconds.
+        Enter your address, draw each section of your lawn on the satellite map, pick your services — instant estimate.
       </p>
     </div>
 
@@ -228,14 +346,9 @@
         <p class="calc-section-label">Step 1 — Find Your Property</p>
 
         <div class="calc-address-row">
-          <input
-            id="address-input"
-            type="text"
-            class="form-input"
+          <input id="address-input" type="text" class="form-input"
             placeholder="Enter your full address…"
-            autocomplete="street-address"
-            aria-label="Your property address"
-          >
+            autocomplete="street-address" aria-label="Your property address">
           <button id="btn-find-property" class="btn btn--gold">Find Property</button>
         </div>
 
@@ -249,24 +362,28 @@
               <path d="M20 44 L28 44" stroke="#D4A017" stroke-width="2" stroke-linecap="round"/>
               <circle cx="24" cy="22" r="4" fill="#D4A017" opacity="0.6"/>
             </svg>
-            <span>Enter your address above to load the satellite view of your property</span>
+            <span>Enter your address above to load your property in satellite view</span>
           </div>
         </div>
 
-        <p class="calc-section-label" style="margin-top:var(--sp-3)">Step 2 — Draw Your Lawn Area</p>
+        <p class="calc-section-label" style="margin-top:var(--sp-3)">Step 2 — Draw Your Lawn Areas</p>
 
         <div class="calc-map-controls">
           <button id="btn-draw" class="btn btn--outline-gold">Draw My Lawn Area</button>
-          <button id="btn-clear" class="btn btn--ghost btn--sm">Clear &amp; Redraw</button>
+          <button id="btn-clear" class="btn btn--ghost btn--sm">Clear All</button>
         </div>
 
-        <div id="acreage-display" class="acreage-display hidden" aria-live="polite">
-          <span class="acreage-number" id="acreage-number">0.000</span>
-          <span class="acreage-unit">acres drawn</span>
+        <!-- Multi-polygon area list -->
+        <div id="area-list-wrap" class="area-list-wrap" aria-live="polite">
+          <div class="area-list-header">
+            <span class="area-list-title">Drawn Areas</span>
+            <span class="area-total">Total: <span id="area-total-value">0.000</span> acres</span>
+          </div>
+          <div class="area-list" id="area-list"></div>
         </div>
 
         <p class="calc-instructions">
-          <strong>How to use:</strong> Click "Draw My Lawn Area" then click around the outline of your lawn on the map. Double-click to close the shape. Drag any vertex to adjust.
+          <strong>Tip:</strong> Draw each section separately — front yard, back yard, side strips. Click "Add Another Area" after finishing each one. Drag any vertex to adjust the shape.
         </p>
       </div>
 
@@ -290,7 +407,7 @@
           <label class="difficulty-card">
             <input type="radio" name="difficulty" value="complex">
             <span class="difficulty-icon">&#9968;&#65039;</span>
-            <span class="difficulty-label">Complex / Hilly</span>
+            <span class="difficulty-label">Complex</span>
             <span class="difficulty-multiplier">+65%</span>
           </label>
         </div>
@@ -301,42 +418,35 @@
           <label class="service-check-item">
             <input type="checkbox" value="mowing" checked>
             <span class="service-check-name">Lawn Mowing</span>
-            <span class="service-check-rate">$65/acre</span>
           </label>
           <label class="service-check-item">
             <input type="checkbox" value="edging">
             <span class="service-check-name">Edging</span>
-            <span class="service-check-rate">$15/acre</span>
           </label>
           <label class="service-check-item">
             <input type="checkbox" value="fertilizing">
             <span class="service-check-name">Fertilizing &amp; Weed Control</span>
-            <span class="service-check-rate">$55/acre</span>
           </label>
           <label class="service-check-item">
             <input type="checkbox" value="cleanup">
             <span class="service-check-name">Seasonal Cleanup</span>
-            <span class="service-check-rate">$80/acre</span>
           </label>
           <label class="service-check-item">
             <input type="checkbox" value="mulching">
             <span class="service-check-name">Mulching &amp; Bed Care</span>
-            <span class="service-check-rate">$120/acre</span>
           </label>
           <label class="service-check-item">
             <input type="checkbox" value="hedges">
             <span class="service-check-name">Shrub &amp; Hedge Trimming</span>
-            <span class="service-check-rate">$45 flat</span>
           </label>
           <label class="service-check-item">
             <input type="checkbox" value="leaves">
             <span class="service-check-name">Leaf Removal</span>
-            <span class="service-check-rate">$70/acre</span>
           </label>
         </div>
 
         <div id="quote-empty-state" class="quote-empty-state">
-          Draw your lawn area on the map and select at least one service to see your instant quote.
+          Draw at least one lawn area on the map and select a service to see your estimate.
         </div>
 
         <div id="quote-output" class="quote-output" style="display:none">
@@ -346,30 +456,34 @@
             <span class="quote-total-label">Estimated Total</span>
             <span class="quote-total-value" id="quote-total-value">$0.00</span>
           </div>
-          <p class="quote-disclaimer">* Quote valid for 30 days. Final pricing confirmed on-site. Minimum charge $45.</p>
+          <p class="quote-disclaimer">* Estimate valid 30 days. Final pricing confirmed on-site visit. $45 minimum.</p>
         </div>
 
         <div id="quote-cta" class="quote-cta" style="display:none">
           <a href="#contact" class="btn btn--primary btn--full" style="margin-top:var(--sp-2)">Book This Service</a>
         </div>
-
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════ ABOUT -->
+<!-- ══════════════════════════════════════════════════ PAPEL PICADO -->
+<div class="papel-picado-wrap" aria-hidden="true">
+  <img src="assets/svg/papel-picado.svg" alt="" style="width:100%;display:block;height:72px;object-fit:cover">
+</div>
+
+<!-- ══════════════════════════════════════════════════════════ ABOUT -->
 <section id="about" class="section about section--light" aria-label="Our story">
   <div class="container">
     <div class="two-col">
 
-      <!-- Photo column -->
       <div class="about-photo-col reveal">
         <div class="photo-frame">
           <div class="photo-frame-inner">
             <div class="photo-placeholder-text">
               Owner photo coming soon.<br><br>
-              <em>Replace this placeholder by adding an img tag here.</em>
+              <em>Save to assets/images/owner.jpg</em>
             </div>
           </div>
           <img src="assets/svg/border-corner.svg" alt="" aria-hidden="true" class="frame-corner frame-corner--tl" width="24" height="24">
@@ -379,7 +493,6 @@
         </div>
       </div>
 
-      <!-- Text column -->
       <div class="about-text-col">
         <div class="reveal">
           <span class="section-preheading">Our Story</span>
@@ -395,13 +508,13 @@
 
         <div class="reveal reveal-delay-1">
           <p class="about-body">
-            Guzman Landscaping was founded on one simple belief: a well-kept property is a point of pride — and every customer deserves the same care we'd give our own home. What started as a one-truck operation has grown into a trusted name across the region, built entirely on word of mouth and results you can see from the street.
+            Guzman Outdoors was built on one belief: a well-kept property is a point of pride — and every customer deserves the same care we'd give our own home. What started as a one-truck operation in Williamston has grown into a trusted name across mid-Michigan, built entirely on results you can see from the street.
           </p>
         </div>
 
         <div class="reveal reveal-delay-2">
           <p class="about-body" style="margin-top:var(--sp-3)">
-            Our roots run deep in Guatemalan heritage — a culture that values hard work, beautiful craftsmanship, and showing up with everything you've got. Those values aren't just words to us. They're in every clean edge, every precise trim, and every lawn we leave better than we found it.
+            Our roots run deep in Guatemalan heritage — a culture that values hard work, beautiful craftsmanship, and showing up with everything you've got. Those values show in every clean edge, every precise cut, and every lawn we leave better than we found it.
           </p>
         </div>
 
@@ -432,8 +545,8 @@
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════ CONTACT -->
-<section id="contact" class="section contact" aria-label="Contact us">
+<!-- ══════════════════════════════════════════════════════════ CONTACT -->
+<section id="contact" class="section contact" aria-label="Book your service">
   <div class="container">
 
     <div class="section-header section-header--center reveal">
@@ -445,9 +558,9 @@
           <path d="M108,12 C114,7 120,7 122,12 C120,17 114,17 108,12" fill="#D4A017" opacity="0.65"/>
           <circle cx="128" cy="12" r="2.2" fill="#D4A017" opacity="0.7"/>
           <polygon points="150,3 160,12 150,21 140,12" fill="#D4A017"/>
-          <polygon points="150,7 157,12 150,17 143,12" fill="#2C1A0E"/>
+          <polygon points="150,7 157,12 150,17 143,12" fill="#2a0818"/>
           <circle cx="172" cy="12" r="2.2" fill="#D4A017" opacity="0.7"/>
-          <path d="M192,12 C186,7 180,7 178,12 C180,17 186,17 192,12" fill="#D4A017" opacity="0.65"/>
+          <path d="M178,12 C180,7 186,7 192,12 C186,17 180,17 178,12" fill="#D4A017" opacity="0.65"/>
           <line x1="192" y1="12" x2="300" y2="12" stroke="#D4A017" stroke-width="0.8" opacity="0.5"/>
         </svg>
       </div>
@@ -455,11 +568,10 @@
 
     <div class="two-col">
 
-      <!-- Contact Info -->
       <div class="contact-info-col reveal">
         <h3 class="contact-heading">Ready to Transform Your Lawn?</h3>
         <p class="contact-subtext">
-          Reach out by phone, email, or fill out the form and we'll get back to you within one business day. We're proud to serve homeowners and businesses across the area with the same level of care — no matter the size of the job.
+          Call, email, or fill out the form — we respond within one business day. Serving Williamston and a 50-mile radius across mid-Michigan.
         </p>
 
         <div class="contact-detail-list">
@@ -471,7 +583,7 @@
             </div>
             <div class="contact-detail-body">
               <span class="contact-detail-label">Phone</span>
-              <span class="contact-detail-value"><a href="tel:+15551234567">(555) 123-4567</a></span>
+              <span class="contact-detail-value"><a href="tel:+15174498404">(517)-449-8404</a></span>
             </div>
           </div>
 
@@ -484,7 +596,7 @@
             </div>
             <div class="contact-detail-body">
               <span class="contact-detail-label">Email</span>
-              <span class="contact-detail-value"><a href="mailto:info@guzmanlandscaping.com">info@guzmanlandscaping.com</a></span>
+              <span class="contact-detail-value"><a href="mailto:info@guzmanoutdoors.com">info@guzmanoutdoors.com</a></span>
             </div>
           </div>
 
@@ -497,15 +609,14 @@
             </div>
             <div class="contact-detail-body">
               <span class="contact-detail-label">Service Area</span>
-              <span class="contact-detail-value">Your City &amp; Surrounding Communities</span>
+              <span class="contact-detail-value">Williamston, MI &amp; Surrounding Communities</span>
             </div>
           </div>
         </div>
 
-        <span class="service-area-badge">&#128205; Serving a 50-mile radius</span>
+        <span class="service-area-badge">&#128205; 50-mile service radius</span>
       </div>
 
-      <!-- Contact Form -->
       <div class="contact-form-col reveal reveal-delay-2">
         <form id="contact-form" class="contact-form" novalidate>
           <div class="contact-form-row">
@@ -529,7 +640,7 @@
 
           <div class="form-group">
             <label class="form-label" for="field-address">Property Address</label>
-            <input class="form-input" id="field-address" name="address" type="text" placeholder="123 Main St, Your City, ST" autocomplete="street-address">
+            <input class="form-input" id="field-address" name="address" type="text" placeholder="123 Main St, Williamston, MI" autocomplete="street-address">
             <span class="form-error"></span>
           </div>
 
@@ -549,7 +660,8 @@
 
           <div class="form-group">
             <label class="form-label" for="field-message">Message</label>
-            <textarea class="form-textarea" id="field-message" name="message" placeholder="Tell us about your property, preferred schedule, or any questions&hellip;" rows="4"></textarea>
+            <textarea class="form-textarea" id="field-message" name="message"
+              placeholder="Tell us about your property, preferred schedule, or any questions&hellip;" rows="4"></textarea>
           </div>
 
           <button type="submit" class="btn btn--primary btn--full">Send Message</button>
@@ -561,7 +673,7 @@
             <polyline points="9 12 11 14 15 10"/>
           </svg>
           <h3 class="form-success-title">Message Sent!</h3>
-          <p class="form-success-text">Thank you for reaching out. We'll be in touch within one business day to confirm your quote and schedule your service.</p>
+          <p class="form-success-text">Thank you! We'll be in touch within one business day to confirm your service and schedule.</p>
         </div>
       </div>
 
@@ -569,22 +681,23 @@
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════ FOOTER -->
+<!-- ══════════════════════════════════════════════════════════ FOOTER -->
 <footer class="footer">
   <div class="container footer-inner">
     <div class="footer-brand">
-      <img src="assets/svg/logo-rooster.svg" alt="Guzman Landscaping" class="footer-logo" width="32" height="32">
-      <span class="footer-name">Guzman Landscaping</span>
+      <img src="assets/images/logo.png" alt="" aria-hidden="true" class="footer-logo" width="32" height="32"
+           onerror="this.src='assets/svg/logo-rooster.svg'">
+      <span class="footer-name">Guzman Outdoors LLC</span>
     </div>
-    <p class="footer-copy">&copy; 2026 Guzman Landscaping. All rights reserved.</p>
+    <p class="footer-copy">&copy; 2026 Guzman Outdoors LLC &mdash; Lawn &amp; Landscape. Williamston, MI. All rights reserved.</p>
   </div>
 </footer>
 
-<!-- JS: main and form load deferred; calculator must be synchronous (Google Maps callback) -->
+<!-- JS -->
 <script src="js/main.js" defer></script>
 <script src="js/form.js" defer></script>
 <script src="js/calculator.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDtPoaCT_NKwCW5H4M4LABfd_s04lJyMc&libraries=drawing,geometry&callback=initMap" async></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&libraries=drawing,geometry&callback=initMap" async></script>
 
 </body>
 </html>

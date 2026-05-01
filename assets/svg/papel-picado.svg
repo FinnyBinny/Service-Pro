@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 72" preserveAspectRatio="none">
+  <!-- String line -->
+  <line x1="0" y1="6" x2="1440" y2="6" stroke="#D4A017" stroke-width="2"/>
+
+  <!-- 18 pennants × 80px each — alternating folk art colors -->
+  <!-- Red pennant -->
+  <polygon points="0,6 40,68 80,6" fill="#C0392B"/>
+  <polygon points="40,22 47,34 40,46 33,34" fill="rgba(0,0,0,0.25)"/>
+  <circle cx="40" cy="56" r="4" fill="rgba(0,0,0,0.2)"/>
+
+  <!-- Cobalt pennant -->
+  <polygon points="80,6 120,68 160,6" fill="#1A3A8F"/>
+  <polygon points="120,22 127,34 120,46 113,34" fill="rgba(255,255,255,0.15)"/>
+  <circle cx="120" cy="56" r="4" fill="rgba(255,255,255,0.12)"/>
+
+  <!-- Gold pennant -->
+  <polygon points="160,6 200,68 240,6" fill="#D4A017"/>
+  <polygon points="200,22 207,34 200,46 193,34" fill="rgba(0,0,0,0.2)"/>
+  <circle cx="200" cy="56" r="4" fill="rgba(0,0,0,0.18)"/>
+
+  <!-- Magenta pennant -->
+  <polygon points="240,6 280,68 320,6" fill="#9B1060"/>
+  <polygon points="280,22 287,34 280,46 273,34" fill="rgba(255,255,255,0.15)"/>
+  <circle cx="280" cy="56" r="4" fill="rgba(255,255,255,0.12)"/>
+
+  <!-- Red pennant -->
+  <polygon points="320,6 360,68 400,6" fill="#C0392B"/>
+  <polygon points="360,22 367,34 360,46 353,34" fill="rgba(0,0,0,0.25)"/>
+  <circle cx="360" cy="56" r="4" fill="rgba(0,0,0,0.2)"/>
+
+  <!-- Cobalt pennant -->
+  <polygon points="400,6 440,68 480,6" fill="#1A3A8F"/>
+  <polygon points="440,22 447,34 440,46 433,34" fill="rgba(255,255,255,0.15)"/>
+  <circle cx="440" cy="56" r="4" fill="rgba(255,255,255,0.12)"/>
+
+  <!-- Gold pennant -->
+  <polygon points="480,6 520,68 560,6" fill="#D4A017"/>
+  <polygon points="520,22 527,34 520,46 513,34" fill="rgba(0,0,0,0.2)"/>
+  <circle cx="520" cy="56" r="4" fill="rgba(0,0,0,0.18)"/>
+
+  <!-- Magenta pennant -->
+  <polygon points="560,6 600,68 640,6" fill="#9B1060"/>
+  <polygon points="600,22 607,34 600,46 593,34" fill="rgba(255,255,255,0.15)"/>
+  <circle cx="600" cy="56" r="4" fill="rgba(255,255,255,0.12)"/>
+
+  <!-- Red pennant -->
+  <polygon points="640,6 680,68 720,6" fill="#C0392B"/>
+  <polygon points="680,22 687,34 680,46 673,34" fill="rgba(0,0,0,0.25)"/>
+  <circle cx="680" cy="56" r="4" fill="rgba(0,0,0,0.2)"/>
+
+  <!-- Cobalt pennant -->
+  <polygon points="720,6 760,68 800,6" fill="#1A3A8F"/>
+  <polygon points="760,22 767,34 760,46 753,34" fill="rgba(255,255,255,0.15)"/>
+  <circle cx="760" cy="56" r="4" fill="rgba(255,255,255,0.12)"/>
+
+  <!-- Gold pennant -->
+  <polygon points="800,6 840,68 880,6" fill="#D4A017"/>
+  <polygon points="840,22 847,34 840,46 833,34" fill="rgba(0,0,0,0.2)"/>
+  <circle cx="840" cy="56" r="4" fill="rgba(0,0,0,0.18)"/>
+
+  <!-- Magenta pennant -->
+  <polygon points="880,6 920,68 960,6" fill="#9B1060"/>
+  <polygon points="920,22 927,34 920,46 913,34" fill="rgba(255,255,255,0.15)"/>
+  <circle cx="920" cy="56" r="4" fill="rgba(255,255,255,0.12)"/>
+
+  <!-- Red pennant -->
+  <polygon points="960,6 1000,68 1040,6" fill="#C0392B"/>
+  <polygon points="1000,22 1007,34 1000,46 993,34" fill="rgba(0,0,0,0.25)"/>
+  <circle cx="1000" cy="56" r="4" fill="rgba(0,0,0,0.2)"/>
+
+  <!-- Cobalt pennant -->
+  <polygon points="1040,6 1080,68 1120,6" fill="#1A3A8F"/>
+  <polygon points="1080,22 1087,34 1080,46 1073,34" fill="rgba(255,255,255,0.15)"/>
+  <circle cx="1080" cy="56" r="4" fill="rgba(255,255,255,0.12)"/>
+
+  <!-- Gold pennant -->
+  <polygon points="1120,6 1160,68 1200,6" fill="#D4A017"/>
+  <polygon points="1160,22 1167,34 1160,46 1153,34" fill="rgba(0,0,0,0.2)"/>
+  <circle cx="1160" cy="56" r="4" fill="rgba(0,0,0,0.18)"/>
+
+  <!-- Magenta pennant -->
+  <polygon points="1200,6 1240,68 1280,6" fill="#9B1060"/>
+  <polygon points="1240,22 1247,34 1240,46 1233,34" fill="rgba(255,255,255,0.15)"/>
+  <circle cx="1240" cy="56" r="4" fill="rgba(255,255,255,0.12)"/>
+
+  <!-- Red pennant -->
+  <polygon points="1280,6 1320,68 1360,6" fill="#C0392B"/>
+  <polygon points="1320,22 1327,34 1320,46 1313,34" fill="rgba(0,0,0,0.25)"/>
+  <circle cx="1320" cy="56" r="4" fill="rgba(0,0,0,0.2)"/>
+
+  <!-- Cobalt pennant -->
+  <polygon points="1360,6 1400,68 1440,6" fill="#1A3A8F"/>
+  <polygon points="1400,22 1407,34 1400,46 1393,34" fill="rgba(255,255,255,0.15)"/>
+  <circle cx="1400" cy="56" r="4" fill="rgba(255,255,255,0.12)"/>
+
+  <!-- String continuation dots between pennants -->
+  <circle cx="40" cy="6" r="3" fill="#D4A017"/>
+  <circle cx="120" cy="6" r="3" fill="#D4A017"/>
+  <circle cx="200" cy="6" r="3" fill="#D4A017"/>
+  <circle cx="280" cy="6" r="3" fill="#D4A017"/>
+  <circle cx="360" cy="6" r="3" fill="#D4A017"/>
+  <circle cx="440" cy="6" r="3" fill="#D4A017"/>
+  <circle cx="520" cy="6" r="3" fill="#D4A017"/>
+  <circle cx="600" cy="6" r="3" fill="#D4A017"/>
+  <circle cx="680" cy="6" r="3" fill="#D4A017"/>
+  <circle cx="760" cy="6" r="3" fill="#D4A017"/>
+  <circle cx="840" cy="6" r="3" fill="#D4A017"/>
+  <circle cx="920" cy="6" r="3" fill="#D4A017"/>
+  <circle cx="1000" cy="6" r="3" fill="#D4A017"/>
+  <circle cx="1080" cy="6" r="3" fill="#D4A017"/>
+  <circle cx="1160" cy="6" r="3" fill="#D4A017"/>
+  <circle cx="1240" cy="6" r="3" fill="#D4A017"/>
+  <circle cx="1320" cy="6" r="3" fill="#D4A017"/>
+  <circle cx="1400" cy="6" r="3" fill="#D4A017"/>
+</svg>

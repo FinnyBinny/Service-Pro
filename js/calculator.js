@@ -4,7 +4,7 @@ const CONFIG = {
   MIN_CHARGE: 45,
   LABOR_RATE: 0.15,
   SERVICES: {
-    mowing:      { label: 'Lawn Mowing',         rate: 65,  perAcre: true  },
+    mowing:      { label: 'Lawn Mowing',         rate: 50,  perAcre: true  },
     edging:      { label: 'Edging',              rate: 15,  perAcre: true  },
     fertilizing: { label: 'Fertilizing',         rate: 55,  perAcre: true  },
     cleanup:     { label: 'Seasonal Cleanup',    rate: 80,  perAcre: true  },
@@ -13,27 +13,23 @@ const CONFIG = {
     leaves:      { label: 'Leaf Removal',        rate: 70,  perAcre: true  },
   },
   DIFFICULTY: {
-    flat:     { label: 'Flat / Open',          multiplier: 1.0  },
-    moderate: { label: 'Moderate Obstacles',   multiplier: 1.3  },
-    complex:  { label: 'Complex / Hilly',      multiplier: 1.65 },
+    flat:     { label: 'Flat / Open',         multiplier: 1.0  },
+    moderate: { label: 'Moderate Obstacles',  multiplier: 1.3  },
+    complex:  { label: 'Complex / Hilly',     multiplier: 1.65 },
   },
-  DISTANCE_TIERS: [
-    { upTo: 10, rate: 0,    base: 0  },
-    { upTo: 25, rate: 0.50, base: 0  },
-    { upTo: 50, rate: 0.75, base: 7.5  },
-    { upTo: Infinity, rate: 1.25, base: 26.25, flatSurcharge: 25 },
-  ],
+  POLYGON_COLORS: ['#D4A017','#1A3A8F','#C0392B','#9B1060','#D4520A','#2B57D4'],
+  AREA_LABELS: ['Front Yard','Back Yard','Side Yard','Driveway Strip','Other Area','Area 6'],
 };
 
 // ── State ────────────────────────────────────────────────────────────────────
 let map, drawingManager, geocoder, distanceService;
-let currentPolygon = null;
-let currentAcres   = 0;
-let currentMiles   = 0;
+let polygons    = [];   // { id, polygon, acres, label, color }
+let polyCounter = 0;
+let currentMiles    = 0;
 let geocodedAddress = null;
 let mapReady = false;
 
-// ── Maps Callback (called by Google Maps API) ─────────────────────────────────
+// ── Maps Callback ─────────────────────────────────────────────────────────────
 window.initMap = function () {
   mapReady = true;
   geocoder        = new google.maps.Geocoder();
@@ -41,45 +37,34 @@ window.initMap = function () {
 
   map = new google.maps.Map(document.getElementById('map-container'), {
     center: { lat: 42.6845, lng: -84.3985 }, // Williamston, MI
-    zoom: 11,
+    zoom: 12,
     mapTypeId: google.maps.MapTypeId.HYBRID,
-    disableDefaultUI: false,
     zoomControl: true,
     mapTypeControl: false,
     streetViewControl: false,
     fullscreenControl: true,
     styles: [
-      { featureType: 'water',  elementType: 'geometry', stylers: [{ color: '#1a2a4a' }] },
-      { featureType: 'road',   elementType: 'geometry', stylers: [{ color: '#3d2a15' }] },
+      { featureType: 'water', elementType: 'geometry', stylers: [{ color: '#1a2a4a' }] },
     ],
   });
 
   drawingManager = new google.maps.drawing.DrawingManager({
     drawingMode: null,
     drawingControl: false,
-    polygonOptions: {
-      fillColor: '#D4A017',
-      fillOpacity: 0.28,
-      strokeColor: '#D4A017',
-      strokeWeight: 2.5,
-      editable: true,
-      draggable: false,
-      clickable: true,
-    },
   });
   drawingManager.setMap(map);
 
   google.maps.event.addListener(drawingManager, 'polygoncomplete', onPolygonComplete);
 
-  // Wire up buttons
+  // Wire up controls
   document.getElementById('btn-find-property').addEventListener('click', geocodeAddress);
-  document.getElementById('address-input').addEventListener('keydown', (e) => {
+  document.getElementById('address-input').addEventListener('keydown', e => {
     if (e.key === 'Enter') geocodeAddress();
   });
   document.getElementById('btn-draw').addEventListener('click', startDrawing);
-  document.getElementById('btn-clear').addEventListener('click', clearPolygon);
+  document.getElementById('btn-clear').addEventListener('click', clearAllPolygons);
 
-  // Wire up difficulty and services
+  // Difficulty cards
   document.querySelectorAll('.difficulty-card').forEach(card => {
     card.addEventListener('click', () => {
       document.querySelectorAll('.difficulty-card').forEach(c => c.classList.remove('selected'));
@@ -89,41 +74,44 @@ window.initMap = function () {
     });
   });
 
+  // Service checkboxes
   document.querySelectorAll('.service-check-item input[type="checkbox"]').forEach(cb => {
     cb.addEventListener('change', updateQuote);
   });
 
-  // Hide map placeholder
   document.querySelector('.map-placeholder')?.classList.add('hidden');
 };
 
-// ── Geocode ──────────────────────────────────────────────────────────────────
+// ── Geocode ───────────────────────────────────────────────────────────────────
 function geocodeAddress() {
   const input = document.getElementById('address-input').value.trim();
-  if (!input) { showCalcError('Please enter an address first.'); return; }
-  if (!mapReady) { showCalcError('Map is still loading. Please try again.'); return; }
+  if (!input)    { showCalcError('Please enter an address first.'); return; }
+  if (!mapReady) { showCalcError('Map is still loading, please wait.'); return; }
   hideCalcError();
 
-  document.getElementById('btn-find-property').textContent = 'Searching…';
+  const btn = document.getElementById('btn-find-property');
+  btn.textContent = 'Searching…';
+  btn.disabled = true;
 
   geocoder.geocode({ address: input }, (results, status) => {
-    document.getElementById('btn-find-property').textContent = 'Find Property';
+    btn.textContent = 'Find Property';
+    btn.disabled = false;
 
     if (status !== 'OK' || !results[0]) {
-      showCalcError('Address not found. Please try a more specific address.');
+      showCalcError('Address not found. Try a more specific address.');
       return;
     }
 
     geocodedAddress = results[0].formatted_address;
-    const location  = results[0].geometry.location;
+    const loc = results[0].geometry.location;
 
-    map.setCenter(location);
+    map.setCenter(loc);
     map.setZoom(19);
     map.setMapTypeId(google.maps.MapTypeId.HYBRID);
 
-    if (window._addressMarker) window._addressMarker.setMap(null);
-    window._addressMarker = new google.maps.Marker({
-      position: location,
+    if (window._addrMarker) window._addrMarker.setMap(null);
+    window._addrMarker = new google.maps.Marker({
+      position: loc,
       map,
       title: geocodedAddress,
       icon: {
@@ -137,25 +125,23 @@ function geocodeAddress() {
     });
 
     document.querySelector('.map-placeholder')?.classList.add('hidden');
-    getDistanceFromHQ(geocodedAddress);
+    getDistance(geocodedAddress);
   });
 }
 
 // ── Distance Matrix ───────────────────────────────────────────────────────────
-function getDistanceFromHQ(destination) {
+function getDistance(dest) {
   distanceService.getDistanceMatrix(
     {
       origins: [CONFIG.HQ_ADDRESS],
-      destinations: [destination],
+      destinations: [dest],
       travelMode: google.maps.TravelMode.DRIVING,
       unitSystem: google.maps.UnitSystem.IMPERIAL,
     },
-    (response, status) => {
+    (resp, status) => {
       if (status === 'OK') {
-        const element = response.rows[0]?.elements[0];
-        if (element && element.status === 'OK') {
-          currentMiles = element.distance.value / 1609.34;
-        }
+        const el = resp.rows[0]?.elements[0];
+        if (el && el.status === 'OK') currentMiles = el.distance.value / 1609.34;
       }
       updateQuote();
     }
@@ -164,118 +150,160 @@ function getDistanceFromHQ(destination) {
 
 // ── Drawing ───────────────────────────────────────────────────────────────────
 function startDrawing() {
-  clearPolygon();
-  drawingManager.setDrawingMode(google.maps.drawing.OverlayType.POLYGON);
-  document.getElementById('btn-draw').textContent = 'Drawing… (click to place points, double-click to finish)';
-  document.getElementById('btn-draw').disabled = true;
+  const colorIdx = polygons.length % CONFIG.POLYGON_COLORS.length;
+  const color    = CONFIG.POLYGON_COLORS[colorIdx];
+
+  drawingManager.setOptions({
+    drawingMode: google.maps.drawing.OverlayType.POLYGON,
+    polygonOptions: {
+      fillColor: color,
+      fillOpacity: 0.25,
+      strokeColor: color,
+      strokeWeight: 2.5,
+      editable: true,
+      draggable: false,
+    },
+  });
+
+  const btn = document.getElementById('btn-draw');
+  btn.textContent = 'Click to place points — double-click to finish';
+  btn.disabled = true;
 }
 
 function onPolygonComplete(polygon) {
-  currentPolygon = polygon;
-  drawingManager.setDrawingMode(null);
-  document.getElementById('btn-draw').textContent = 'Redraw Area';
-  document.getElementById('btn-draw').disabled = false;
+  polyCounter++;
+  const colorIdx = (polygons.length) % CONFIG.POLYGON_COLORS.length;
+  const color    = CONFIG.POLYGON_COLORS[colorIdx];
+  const label    = CONFIG.AREA_LABELS[polygons.length] || `Area ${polygons.length + 1}`;
+  const id       = polyCounter;
+  const acres    = computeAcres(polygon);
 
-  computeArea();
+  polygons.push({ id, polygon, acres, label, color });
+
+  drawingManager.setOptions({ drawingMode: null });
+  updateDrawBtn();
 
   // Listen for vertex edits
-  ['set_at', 'insert_at', 'remove_at'].forEach(event => {
-    google.maps.event.addListener(polygon.getPath(), event, computeArea);
+  ['set_at', 'insert_at', 'remove_at'].forEach(evt => {
+    google.maps.event.addListener(polygon.getPath(), evt, () => {
+      const p = polygons.find(p => p.id === id);
+      if (p) { p.acres = computeAcres(polygon); renderAreaList(); updateQuote(); }
+    });
   });
 
-  // Click polygon to re-enable editing
-  polygon.addListener('click', () => { polygon.setEditable(true); });
+  renderAreaList();
+  updateQuote();
 }
 
-function clearPolygon() {
-  if (currentPolygon) {
-    currentPolygon.setMap(null);
-    currentPolygon = null;
+function computeAcres(polygon) {
+  return google.maps.geometry.spherical.computeArea(polygon.getPath()) / 4046.86;
+}
+
+function updateDrawBtn() {
+  const btn = document.getElementById('btn-draw');
+  btn.textContent = polygons.length ? 'Add Another Area' : 'Draw My Lawn Area';
+  btn.disabled = false;
+}
+
+// ── Area List UI ──────────────────────────────────────────────────────────────
+function renderAreaList() {
+  const wrap   = document.getElementById('area-list-wrap');
+  const list   = document.getElementById('area-list');
+  const total  = polygons.reduce((s, p) => s + p.acres, 0);
+
+  if (!polygons.length) { wrap.classList.remove('visible'); updateQuote(); return; }
+
+  wrap.classList.add('visible');
+  document.getElementById('area-total-value').textContent = total.toFixed(3);
+
+  list.innerHTML = polygons.map(p => `
+    <div class="area-item">
+      <span class="area-color-dot" style="background-color:${p.color}"></span>
+      <span class="area-label">${p.label}</span>
+      <span class="area-acres">${p.acres.toFixed(3)} ac</span>
+      <button class="area-delete" onclick="deletePolygon(${p.id})" aria-label="Remove ${p.label}">×</button>
+    </div>
+  `).join('');
+}
+
+window.deletePolygon = function (id) {
+  const idx = polygons.findIndex(p => p.id === id);
+  if (idx !== -1) {
+    polygons[idx].polygon.setMap(null);
+    polygons.splice(idx, 1);
+    renderAreaList();
+    updateDrawBtn();
+    updateQuote();
   }
-  currentAcres = 0;
-  document.getElementById('acreage-display').classList.add('hidden');
-  document.getElementById('btn-draw').textContent = 'Draw My Lawn Area';
-  document.getElementById('btn-draw').disabled = false;
+};
+
+function clearAllPolygons() {
+  polygons.forEach(p => p.polygon.setMap(null));
+  polygons = [];
+  currentMiles = 0;
+  renderAreaList();
+  updateDrawBtn();
   updateQuote();
 }
 
-function computeArea() {
-  if (!currentPolygon) return;
-  const areaSqMeters = google.maps.geometry.spherical.computeArea(currentPolygon.getPath());
-  currentAcres = areaSqMeters / 4046.86;
-
-  const display = document.getElementById('acreage-display');
-  display.classList.remove('hidden');
-  document.getElementById('acreage-number').textContent = currentAcres.toFixed(3);
-  updateQuote();
-}
-
-// ── Pricing Engine ────────────────────────────────────────────────────────────
+// ── Pricing ───────────────────────────────────────────────────────────────────
 function calcDistanceSurcharge(miles) {
   if (miles <= 10) return 0;
   if (miles <= 25) return (miles - 10) * 0.50;
   if (miles <= 50) return 7.50 + (miles - 25) * 0.75;
-  return 26.25 + (miles - 50) * 1.25 + 25; // flat surcharge for 50+ mi
+  return 26.25 + (miles - 50) * 1.25 + 25;
 }
 
 function updateQuote() {
-  const quoteOutput  = document.getElementById('quote-output');
+  const totalAcres   = polygons.reduce((s, p) => s + p.acres, 0);
+  const quoteOut     = document.getElementById('quote-output');
   const quoteLines   = document.getElementById('quote-service-lines');
   const emptyState   = document.getElementById('quote-empty-state');
-  const totalDisplay = document.getElementById('quote-total-value');
   const quoteCta     = document.getElementById('quote-cta');
+  const totalDisplay = document.getElementById('quote-total-value');
 
-  // Get difficulty
-  const difficultyEl = document.querySelector('input[name="difficulty"]:checked');
-  const difficulty   = difficultyEl ? difficultyEl.value : 'flat';
+  const diffEl       = document.querySelector('input[name="difficulty"]:checked');
+  const difficulty   = diffEl?.value || 'flat';
   const multiplier   = CONFIG.DIFFICULTY[difficulty]?.multiplier || 1.0;
 
-  // Get selected services
   const selected = [...document.querySelectorAll('.service-check-item input:checked')]
     .map(cb => cb.value);
 
-  if (!currentAcres || !selected.length) {
-    quoteLines.innerHTML = '';
+  if (!totalAcres || !selected.length) {
     emptyState.style.display = 'block';
-    quoteOutput.style.display = 'none';
-    quoteCta.style.display = 'none';
+    quoteOut.style.display   = 'none';
+    quoteCta.style.display   = 'none';
     return;
   }
 
   emptyState.style.display = 'none';
-  quoteOutput.style.display = 'block';
-  quoteCta.style.display = 'block';
+  quoteOut.style.display   = 'block';
+  quoteCta.style.display   = 'block';
 
-  // Build service lines
   let serviceSubtotal = 0;
   let linesHTML = '';
 
   selected.forEach(key => {
-    const svc = CONFIG.SERVICES[key];
+    const svc  = CONFIG.SERVICES[key];
     if (!svc) return;
-    const cost = svc.perAcre ? svc.rate * currentAcres : svc.rate;
+    const cost = svc.perAcre ? svc.rate * totalAcres : svc.rate;
     serviceSubtotal += cost;
-    const desc = svc.perAcre
-      ? `${currentAcres.toFixed(2)} ac @ $${svc.rate}/ac`
-      : 'flat rate';
     linesHTML += `
       <div class="quote-line">
-        <span class="quote-line-label">${svc.label} <small style="opacity:0.6">(${desc})</small></span>
+        <span class="quote-line-label">${svc.label}</span>
         <span class="quote-line-value">$${cost.toFixed(2)}</span>
       </div>`;
   });
 
-  const diffAdj      = serviceSubtotal * multiplier;
-  const diffExtra    = diffAdj - serviceSubtotal;
+  const diffAdj       = serviceSubtotal * multiplier;
+  const diffExtra     = diffAdj - serviceSubtotal;
   const distSurcharge = calcDistanceSurcharge(currentMiles);
-  const laborBase    = diffAdj + distSurcharge;
-  const labor        = laborBase * CONFIG.LABOR_RATE;
-  const total        = Math.max(diffAdj + distSurcharge + labor, CONFIG.MIN_CHARGE);
+  const labor         = (diffAdj + distSurcharge) * CONFIG.LABOR_RATE;
+  const total         = Math.max(diffAdj + distSurcharge + labor, CONFIG.MIN_CHARGE);
 
-  // Build summary lines
   if (selected.length > 1) {
     linesHTML += `
-      <div class="quote-line" style="font-weight:600;border-top:1px solid rgba(212,160,23,0.25);margin-top:4px;padding-top:8px">
+      <div class="quote-line" style="font-weight:700;padding-top:8px;margin-top:4px;border-top:1px solid rgba(212,160,23,0.2)">
         <span class="quote-line-label">Services Subtotal</span>
         <span class="quote-line-value">$${serviceSubtotal.toFixed(2)}</span>
       </div>`;
@@ -284,7 +312,7 @@ function updateQuote() {
   if (multiplier !== 1.0) {
     linesHTML += `
       <div class="quote-line">
-        <span class="quote-line-label">Difficulty Adjustment (${CONFIG.DIFFICULTY[difficulty].label}, ×${multiplier})</span>
+        <span class="quote-line-label">Difficulty (${CONFIG.DIFFICULTY[difficulty].label})</span>
         <span class="quote-line-value">+$${diffExtra.toFixed(2)}</span>
       </div>`;
   }
@@ -292,14 +320,14 @@ function updateQuote() {
   if (distSurcharge > 0) {
     linesHTML += `
       <div class="quote-line">
-        <span class="quote-line-label">Distance Surcharge (${currentMiles.toFixed(1)} mi driving)</span>
+        <span class="quote-line-label">Distance (${currentMiles.toFixed(1)} mi)</span>
         <span class="quote-line-value">+$${distSurcharge.toFixed(2)}</span>
       </div>`;
   }
 
   linesHTML += `
     <div class="quote-line">
-      <span class="quote-line-label">Labor & Equipment (${Math.round(CONFIG.LABOR_RATE * 100)}%)</span>
+      <span class="quote-line-label">Labor & Equipment</span>
       <span class="quote-line-value">+$${labor.toFixed(2)}</span>
     </div>`;
 
@@ -310,12 +338,12 @@ function updateQuote() {
 function animateValue(el, value) {
   el.textContent = `$${value.toFixed(2)}`;
   el.classList.remove('updated');
-  void el.offsetWidth; // force reflow
+  void el.offsetWidth;
   el.classList.add('updated');
   setTimeout(() => el.classList.remove('updated'), 600);
 }
 
-// ── Error UI ──────────────────────────────────────────────────────────────────
+// ── Error ─────────────────────────────────────────────────────────────────────
 function showCalcError(msg) {
   const el = document.getElementById('calc-error');
   if (el) { el.textContent = msg; el.classList.add('visible'); }

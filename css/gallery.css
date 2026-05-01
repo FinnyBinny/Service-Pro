@@ -1,0 +1,96 @@
+.gallery {
+  background-color: var(--color-navy);
+  position: relative;
+}
+
+.gallery .section-preheading { color: var(--color-gold); }
+.gallery .section-heading     { color: var(--color-cream); }
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--sp-3);
+  margin-top: var(--sp-6);
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(212, 160, 23, 0.2);
+  aspect-ratio: 4 / 3;
+  background-color: var(--color-navy-mid);
+  transition: transform var(--t-base), box-shadow var(--t-base), border-color var(--t-base);
+}
+
+.gallery-item:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: var(--shadow-lifted);
+  border-color: rgba(212, 160, 23, 0.55);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--t-slow);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.06);
+}
+
+/* Gold corner accents on hover */
+.gallery-item::before,
+.gallery-item::after {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-color: var(--color-gold);
+  border-style: solid;
+  opacity: 0;
+  transition: opacity var(--t-base);
+  z-index: 1;
+}
+.gallery-item::before { top: 6px; left: 6px;  border-width: 2px 0 0 2px; }
+.gallery-item::after  { bottom: 6px; right: 6px; border-width: 0 2px 2px 0; }
+.gallery-item:hover::before,
+.gallery-item:hover::after { opacity: 1; }
+
+/* Placeholder state (no image yet) */
+.gallery-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  color: rgba(212, 160, 23, 0.35);
+  font-family: var(--font-ui);
+  font-size: var(--text-sm);
+  text-align: center;
+  padding: var(--sp-3);
+}
+
+.gallery-placeholder svg {
+  width: 40px;
+  height: 40px;
+  opacity: 0.4;
+}
+
+.gallery-caption {
+  text-align: center;
+  margin-top: var(--sp-4);
+  font-family: var(--font-ui);
+  font-size: var(--text-sm);
+  color: rgba(245, 236, 215, 0.45);
+}
+
+@media (max-width: 640px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}

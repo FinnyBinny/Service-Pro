@@ -7,24 +7,33 @@
   --color-parchment:     #E8D5B0;
   --color-parchment-mid: #D4BC8E;
 
-  /* ── Accent Palette (use sparingly) ── */
+  /* ── Folk Art Section Backgrounds ── */
+  --color-navy:          #0d1e52;   /* deep indigo-navy — services */
+  --color-navy-mid:      #162470;   /* slightly lighter navy */
+  --color-burgundy:      #2a0818;   /* deep wine — contact */
+
+  /* ── Accent Palette ── */
   --color-red:           #C0392B;
   --color-red-hover:     #A93226;
   --color-cobalt:        #1A3A8F;
   --color-cobalt-light:  #2B57D4;
   --color-gold:          #D4A017;
   --color-gold-light:    #F0C040;
-  --color-gold-dim:      rgba(212, 160, 23, 0.25);
+  --color-gold-dim:      rgba(212, 160, 23, 0.22);
+  --color-folk-magenta:  #9B1060;   /* folk art hot pink */
+  --color-folk-orange:   #D4520A;   /* folk art burnt orange */
 
   /* ── Text ── */
   --color-text-on-dark:  #F5ECD7;
+  --color-text-on-navy:  #E8D5B0;
   --color-text-on-light: #2C1A0E;
   --color-text-muted:    rgba(245, 236, 215, 0.6);
 
   /* ── Shadows ── */
-  --shadow-card:    0 4px 28px rgba(44, 26, 14, 0.55);
-  --shadow-lifted:  0 12px 44px rgba(44, 26, 14, 0.70);
+  --shadow-card:    0 4px 28px rgba(0, 0, 0, 0.5);
+  --shadow-lifted:  0 12px 44px rgba(0, 0, 0, 0.65);
   --shadow-gold:    0 0 0 2px var(--color-gold);
+  --shadow-navy:    0 8px 32px rgba(13, 30, 82, 0.6);
 
   /* ── Typography ── */
   --font-display:  'Cinzel Decorative', serif;
@@ -41,9 +50,9 @@
   --text-xl:   1.75rem;
   --text-2xl:  2.25rem;
   --text-3xl:  3rem;
-  --text-hero: clamp(2.4rem, 6.5vw, 5.5rem);
+  --text-hero: clamp(2.2rem, 6vw, 5rem);
 
-  /* ── Spacing (8px base) ── */
+  /* ── Spacing ── */
   --sp-1:  0.5rem;
   --sp-2:  1rem;
   --sp-3:  1.5rem;
@@ -57,13 +66,13 @@
   --section-py: clamp(4rem, 8vw, 7rem);
 
   /* ── Layout ── */
-  --container-max:     1180px;
-  --container-px:      clamp(1.25rem, 5vw, 3rem);
+  --container-max:  1180px;
+  --container-px:   clamp(1.25rem, 5vw, 3rem);
 
   /* ── Borders ── */
   --radius-sm: 3px;
   --radius-md: 6px;
-  --border-gold: 1px solid var(--color-gold);
+  --border-gold:   1px solid var(--color-gold);
   --border-gold-2: 2px solid var(--color-gold);
 
   /* ── Transitions ── */
@@ -72,6 +81,6 @@
   --t-slow: 500ms ease;
 
   /* ── Nav ── */
-  --nav-height: 72px;
-  --nav-height-scrolled: 58px;
+  --nav-height:         72px;
+  --nav-height-scrolled: 56px;
 }
