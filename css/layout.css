@@ -14,12 +14,12 @@ body {
 }
 
 .section--light {
-  background-color: var(--color-parchment);
-  color: var(--color-text-on-light);
+  background-color: var(--color-paper);
+  color: var(--color-ink-dark);
 }
 
 .section--dark {
-  background-color: var(--color-dark-warm);
+  background-color: var(--color-surface);
 }
 
 .two-col {
@@ -44,7 +44,7 @@ body {
   align-items: center;
 }
 
-/* ── Ornate section rule (replaces papel picado) ── */
+/* ── Ornate section rule ── */
 .ornate-rule {
   display: flex;
   align-items: center;
@@ -75,9 +75,9 @@ body {
   height: auto;
 }
 
-/* ── Trust bar ── */
+/* ── Trust bar: red background, ink text ── */
 .trust-bar {
-  background-color: var(--color-amber);
+  background-color: var(--color-red);
   padding: 0.8rem 0;
 }
 
@@ -93,14 +93,14 @@ body {
   font-family: var(--font-ui);
   font-size: var(--text-sm);
   font-weight: 700;
-  color: var(--color-bg);
+  color: var(--color-ink);
   letter-spacing: 0.05em;
   padding: 0.2rem var(--sp-3);
   white-space: nowrap;
 }
 
 .trust-bar-sep {
-  color: rgba(22, 8, 5, 0.35);
+  color: rgba(237, 232, 219, 0.3);
   font-size: var(--text-lg);
   flex-shrink: 0;
 }

@@ -1,29 +1,24 @@
 :root {
-  /* ── Espolón-inspired Palette ── */
-  --color-bg:          #160805;   /* near-black warm red — body */
-  --color-crimson:     #5C1008;   /* deep crimson — primary sections */
-  --color-crimson-mid: #7A140E;   /* mid crimson */
-  --color-crimson-light:#A01A12;  /* lighter crimson for accents */
-  --color-amber:       #C8901A;   /* warm amber gold — primary accent */
-  --color-amber-light: #E8AE30;   /* bright amber — hover */
-  --color-amber-dim:   rgba(200, 144, 26, 0.2);
-  --color-cream:       #F5E8CC;   /* warm cream — primary text */
-  --color-ivory:       #FFF8EE;   /* near-white — headings */
-  --color-parchment:   #E8D5A8;   /* slightly darker cream */
-  --color-dark-warm:   #1E0C06;   /* very dark warm — card bg */
-
-  /* ── Utility ── */
-  --color-text-on-dark:  #F5E8CC;
-  --color-text-on-light: #1E0C06;
-  --color-text-muted:    rgba(245, 232, 204, 0.55);
-  --color-border-amber:  rgba(200, 144, 26, 0.35);
-  --color-border-amber-solid: rgba(200, 144, 26, 0.8);
+  /* ── Espolón-inspired Palette: black / white / one red ── */
+  --color-bg:        #0A0A0A;   /* near black — primary dark bg */
+  --color-surface:   #141414;   /* cards, elevated surfaces */
+  --color-surface2:  #1C1C1C;   /* extra level */
+  --color-paper:     #EDE8DB;   /* warm white — light sections (like label paper) */
+  --color-paper-mid: #D5CCBA;   /* slightly darker paper for borders on light */
+  --color-ink:       #EDE8DB;   /* text/art on dark */
+  --color-ink-dim:   rgba(237,232,219,0.55);
+  --color-ink-dark:  #0F0C08;   /* text on light/paper */
+  --color-red:       #C0321A;   /* single bold accent — like the pink on Espolón */
+  --color-red-light: #D94020;   /* hover red */
+  --color-red-dim:   rgba(192,50,26,0.12);
+  --color-border:    rgba(237,232,219,0.1);
+  --color-border-red: rgba(192,50,26,0.35);
 
   /* ── Shadows ── */
   --shadow-card:   0 4px 32px rgba(0, 0, 0, 0.6);
   --shadow-lifted: 0 14px 50px rgba(0, 0, 0, 0.75);
-  --shadow-amber:  0 0 0 2px var(--color-amber);
-  --shadow-glow:   0 0 40px rgba(200, 144, 26, 0.15);
+  --shadow-red:    0 0 0 2px var(--color-red);
+  --shadow-glow:   0 0 40px rgba(192, 50, 26, 0.15);
 
   /* ── Typography ── */
   --font-display: 'Cinzel Decorative', serif;
@@ -61,7 +56,7 @@
   /* ── Borders ── */
   --radius-sm: 3px;
   --radius-md: 6px;
-  --border-amber: 1px solid var(--color-amber);
+  --border-ink: 1px solid rgba(237,232,219,0.15);
 
   /* ── Transitions ── */
   --t-fast: 150ms ease;

@@ -22,37 +22,40 @@
 .btn:hover  { transform: translateY(-2px); }
 .btn:active { transform: translateY(0); }
 
-/* Primary: amber on dark */
+/* Primary: red bg, ink text */
 .btn--primary {
-  background-color: var(--color-amber);
-  color: var(--color-bg);
-  border: 2px solid var(--color-amber);
+  background-color: var(--color-red);
+  color: var(--color-ink);
+  border: 2px solid var(--color-red);
 }
 .btn--primary:hover {
-  background-color: var(--color-amber-light);
-  border-color: var(--color-amber-light);
-  box-shadow: 0 6px 24px rgba(200, 144, 26, 0.4);
+  background-color: var(--color-red-light);
+  border-color: var(--color-red-light);
+  box-shadow: 0 6px 24px rgba(192, 50, 26, 0.4);
 }
 
-/* Ghost: outline cream */
+/* Ghost: transparent, ink outline */
 .btn--ghost {
   background-color: transparent;
-  color: var(--color-cream);
-  border: 2px solid rgba(245, 232, 204, 0.45);
+  color: var(--color-ink);
+  border: 2px solid rgba(237, 232, 219, 0.45);
 }
 .btn--ghost:hover {
-  border-color: var(--color-amber);
-  color: var(--color-amber);
+  border-color: var(--color-ink);
+  color: var(--color-ink);
+  background-color: rgba(237, 232, 219, 0.06);
 }
 
-/* Ghost amber: for use on light sections */
-.btn--outline-amber {
+/* Outline red: for use on dark sections (draw button, etc.) */
+.btn--outline-red {
   background-color: transparent;
-  color: var(--color-amber);
-  border: 2px solid var(--color-amber);
+  color: var(--color-red);
+  border: 2px solid var(--color-red);
 }
-.btn--outline-amber:hover {
-  background-color: var(--color-amber-dim);
+.btn--outline-red:hover {
+  background-color: var(--color-red);
+  color: var(--color-ink);
+  border-color: var(--color-red);
 }
 
 .btn--sm   { font-size: var(--text-xs); padding: 0.55em 1.4em; }
@@ -71,16 +74,16 @@
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-amber);
+  color: var(--color-red);
 }
 
 .form-input,
 .form-select,
 .form-textarea {
-  background-color: rgba(200, 144, 26, 0.05);
-  border: 1px solid rgba(200, 144, 26, 0.25);
+  background-color: rgba(237, 232, 219, 0.04);
+  border: 1px solid rgba(237, 232, 219, 0.18);
   border-radius: var(--radius-sm);
-  color: var(--color-cream);
+  color: var(--color-ink);
   font-family: var(--font-ui);
   font-size: var(--text-base);
   padding: 0.75em 1em;
@@ -90,16 +93,16 @@
 }
 
 .form-input::placeholder,
-.form-textarea::placeholder { color: rgba(245, 232, 204, 0.3); }
+.form-textarea::placeholder { color: rgba(237, 232, 219, 0.3); }
 
 .form-input:focus,
 .form-select:focus,
 .form-textarea:focus {
-  border-color: var(--color-amber);
-  box-shadow: 0 0 0 3px rgba(200, 144, 26, 0.15);
+  border-color: var(--color-red);
+  box-shadow: 0 0 0 3px rgba(192, 50, 26, 0.15);
 }
 
-.form-select option { background-color: var(--color-crimson); color: var(--color-cream); }
+.form-select option { background-color: var(--color-surface); color: var(--color-ink); }
 
 .form-textarea { resize: vertical; min-height: 120px; }
 
@@ -121,9 +124,9 @@
 
 /* ── Cards (generic) ── */
 .card {
-  background-color: var(--color-dark-warm);
-  border: 1px solid var(--color-border-amber);
-  border-top: 3px solid var(--color-amber);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border-red);
+  border-top: 3px solid var(--color-red);
   border-radius: var(--radius-md);
   padding: var(--sp-4);
   transition: transform var(--t-base), box-shadow var(--t-base);
@@ -150,7 +153,7 @@
 .stat-number {
   font-family: var(--font-display);
   font-size: var(--text-2xl);
-  color: var(--color-crimson);
+  color: var(--color-red);
   line-height: 1;
 }
 
@@ -159,6 +162,6 @@
   font-size: var(--text-xs);
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--color-crimson-light);
+  color: var(--color-ink-dim);
   font-weight: 700;
 }
