@@ -1,6 +1,6 @@
 // ── Config ──────────────────────────────────────────────────────────────────
 const CONFIG = {
-  HQ_ADDRESS: '1234 Guzman Way, Your City, TX 00000', // Owner: update this
+  HQ_ADDRESS: 'Williamston, MI 48895',
   MIN_CHARGE: 45,
   LABOR_RATE: 0.15,
   SERVICES: {
@@ -40,7 +40,7 @@ window.initMap = function () {
   distanceService = new google.maps.DistanceMatrixService();
 
   map = new google.maps.Map(document.getElementById('map-container'), {
-    center: { lat: 30.2672, lng: -97.7431 }, // Default: Austin TX — owner can change
+    center: { lat: 42.6845, lng: -84.3985 }, // Williamston, MI
     zoom: 11,
     mapTypeId: google.maps.MapTypeId.HYBRID,
     disableDefaultUI: false,
