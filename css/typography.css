@@ -22,7 +22,7 @@ h1, h2, h3, h4 {
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--color-gold);
+  color: var(--color-red);
   display: block;
   margin-bottom: var(--sp-2);
 }
@@ -43,10 +43,9 @@ h1, h2, h3, h4 {
   opacity: 0.85;
 }
 
-.text-gold    { color: var(--color-gold); }
 .text-red     { color: var(--color-red); }
-.text-cobalt  { color: var(--color-cobalt-light); }
-.text-cream   { color: var(--color-cream); }
-.text-dark    { color: var(--color-text-on-light); }
+.text-ink     { color: var(--color-ink); }
+.text-ink-dim { color: var(--color-ink-dim); }
+.text-dark    { color: var(--color-ink-dark); }
 .text-center  { text-align: center; }
 .text-italic  { font-style: italic; }

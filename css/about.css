@@ -1,12 +1,13 @@
+/* ── About: warm paper background, ink-dark text ── */
 .about {
-  background-color: var(--color-parchment);
-  color: var(--color-text-on-light);
+  background-color: var(--color-paper);
+  color: var(--color-ink-dark);
   position: relative;
 }
 
-.about .section-preheading { color: var(--color-amber); }
+.about .section-preheading { color: var(--color-red); }
 
-.about .section-heading { color: var(--color-text-on-light); }
+.about .section-heading { color: var(--color-ink-dark); }
 
 .about-photo-col {
   display: flex;
@@ -24,13 +25,13 @@
 .photo-frame-inner {
   width: 100%;
   aspect-ratio: 3 / 4;
-  background: linear-gradient(135deg, var(--color-crimson) 0%, var(--color-crimson-mid) 50%, var(--color-crimson) 100%);
+  background: linear-gradient(135deg, #141414 0%, #1C1C1C 50%, #141414 100%);
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  border: 3px solid var(--color-crimson);
+  border: 3px solid var(--color-red);
 }
 
 .photo-frame-inner img {
@@ -42,7 +43,7 @@
 .photo-placeholder-text {
   font-family: var(--font-ui);
   font-size: var(--text-sm);
-  color: rgba(245, 232, 204, 0.5);
+  color: rgba(237, 232, 219, 0.45);
   text-align: center;
   padding: var(--sp-4);
   line-height: 1.7;
@@ -53,13 +54,13 @@
 .photo-frame::after {
   content: '';
   position: absolute;
-  border: 2px solid var(--color-amber);
+  border: 2px solid var(--color-red);
   border-radius: var(--radius-md);
 }
 
 .photo-frame::before {
   inset: -8px;
-  opacity: 0.4;
+  opacity: 0.35;
 }
 
 .photo-frame::after {
@@ -85,7 +86,7 @@
 .about-body {
   font-family: var(--font-body);
   font-size: var(--text-md);
-  color: var(--color-crimson);
+  color: rgba(15, 12, 8, 0.8);
   line-height: 1.8;
   margin-bottom: var(--sp-4);
 }
@@ -94,8 +95,8 @@
 .pull-quote {
   position: relative;
   padding: var(--sp-3) var(--sp-4);
-  border-left: 3px solid var(--color-amber);
-  background-color: rgba(200, 144, 26, 0.07);
+  border-left: 3px solid var(--color-red);
+  background-color: rgba(192, 50, 26, 0.05);
   border-radius: 0 var(--radius-md) var(--radius-md) 0;
   margin-block: var(--sp-4);
 }
@@ -104,7 +105,7 @@
   font-family: var(--font-heading);
   font-style: italic;
   font-size: var(--text-lg);
-  color: var(--color-text-on-light);
+  color: var(--color-ink-dark);
   line-height: 1.5;
 }
 
@@ -112,7 +113,7 @@
   font-family: var(--font-ui);
   font-size: var(--text-sm);
   font-weight: 600;
-  color: var(--color-amber);
+  color: var(--color-red);
   margin-top: var(--sp-1);
   letter-spacing: 0.06em;
 }
@@ -122,6 +123,9 @@
   margin-top: var(--sp-4);
   gap: var(--sp-6);
 }
+
+.about .stat-number { color: var(--color-red); }
+.about .stat-label  { color: rgba(15, 12, 8, 0.55); }
 
 @media (max-width: 900px) {
   .about-photo-col {

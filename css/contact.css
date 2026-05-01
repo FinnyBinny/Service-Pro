@@ -1,19 +1,7 @@
+/* ── Contact: near-black background ── */
 .contact {
   background-color: var(--color-bg);
   position: relative;
-}
-
-/* Subtle diamond pattern */
-.contact::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(45deg, rgba(200,144,26,0.04) 25%, transparent 25%, transparent 75%, rgba(200,144,26,0.04) 75%),
-    linear-gradient(45deg, rgba(200,144,26,0.04) 25%, transparent 25%, transparent 75%, rgba(200,144,26,0.04) 75%);
-  background-size: 40px 40px;
-  background-position: 0 0, 20px 20px;
-  pointer-events: none;
 }
 
 .contact-info-col {}
@@ -22,13 +10,13 @@
   font-family: var(--font-heading);
   font-size: var(--text-2xl);
   font-weight: 700;
-  color: var(--color-ivory);
+  color: var(--color-ink);
   margin-bottom: var(--sp-2);
 }
 
 .contact-subtext {
   font-family: var(--font-body);
-  color: rgba(245, 232, 204, 0.75);
+  color: var(--color-ink-dim);
   line-height: 1.8;
   margin-bottom: var(--sp-4);
 }
@@ -49,8 +37,8 @@
 .contact-detail-icon {
   width: 38px;
   height: 38px;
-  background-color: rgba(200, 144, 26, 0.1);
-  border: 1px solid rgba(200, 144, 26, 0.35);
+  background-color: rgba(237, 232, 219, 0.05);
+  border: 1px solid rgba(237, 232, 219, 0.15);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -66,7 +54,7 @@
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--color-amber);
+  color: var(--color-red);
   display: block;
   margin-bottom: 2px;
 }
@@ -74,29 +62,29 @@
 .contact-detail-value {
   font-family: var(--font-ui);
   font-size: var(--text-base);
-  color: var(--color-cream);
+  color: var(--color-ink);
 }
 
 .contact-detail-value a {
-  color: var(--color-cream);
+  color: var(--color-ink);
   transition: color var(--t-fast);
 }
 
-.contact-detail-value a:hover { color: var(--color-amber); }
+.contact-detail-value a:hover { color: var(--color-red); }
 
 /* Service area badge */
 .service-area-badge {
   display: inline-flex;
   align-items: center;
   gap: var(--sp-1);
-  background-color: rgba(200, 144, 26, 0.1);
-  border: 1px solid rgba(200, 144, 26, 0.35);
+  background-color: rgba(192, 50, 26, 0.08);
+  border: 1px solid var(--color-border-red);
   border-radius: 100px;
   padding: 0.4em 1.1em;
   font-family: var(--font-ui);
   font-size: var(--text-xs);
   font-weight: 600;
-  color: var(--color-amber);
+  color: var(--color-red);
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
@@ -122,7 +110,7 @@
   display: none;
   text-align: center;
   padding: var(--sp-6);
-  border: var(--border-amber);
+  border: 1px solid rgba(237, 232, 219, 0.15);
   border-radius: var(--radius-md);
 }
 
@@ -132,40 +120,28 @@
   width: 52px;
   height: 52px;
   margin: 0 auto var(--sp-3);
-  color: var(--color-amber);
+  color: var(--color-red);
 }
 
 .form-success-title {
   font-family: var(--font-heading);
   font-size: var(--text-xl);
-  color: var(--color-ivory);
+  color: var(--color-ink);
   margin-bottom: var(--sp-1);
 }
 
 .form-success-text {
   font-family: var(--font-ui);
-  color: rgba(245, 232, 204, 0.7);
+  color: var(--color-ink-dim);
   line-height: 1.7;
 }
 
 /* Quick booking strip */
 .quick-book {
-  background-color: var(--color-crimson);
+  background-color: var(--color-red);
   padding: var(--sp-4) 0;
   position: relative;
   overflow: hidden;
-}
-
-.quick-book::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: repeating-linear-gradient(
-    45deg,
-    rgba(200,144,26,0.06) 0px, rgba(200,144,26,0.06) 1px,
-    transparent 1px, transparent 20px
-  );
-  pointer-events: none;
 }
 
 .quick-book-inner {
@@ -184,14 +160,14 @@
   font-family: var(--font-heading);
   font-size: var(--text-xl);
   font-weight: 700;
-  color: var(--color-ivory);
+  color: var(--color-ink);
   margin-bottom: 4px;
 }
 
 .quick-book-sub {
   font-family: var(--font-ui);
   font-size: var(--text-base);
-  color: rgba(245, 232, 204, 0.8);
+  color: rgba(237, 232, 219, 0.8);
 }
 
 @media (max-width: 640px) {
@@ -200,8 +176,8 @@
 
 /* Footer */
 .footer {
-  background-color: #100806;
-  border-top: 1px solid rgba(200, 144, 26, 0.12);
+  background-color: #080808;
+  border-top: 1px solid rgba(237, 232, 219, 0.08);
   padding-block: var(--sp-4);
 }
 
@@ -228,14 +204,14 @@
 .footer-name {
   font-family: var(--font-display);
   font-size: var(--text-sm);
-  color: rgba(245, 232, 204, 0.4);
+  color: rgba(237, 232, 219, 0.4);
   letter-spacing: 0.04em;
 }
 
 .footer-copy {
   font-family: var(--font-ui);
   font-size: var(--text-xs);
-  color: rgba(245, 232, 204, 0.3);
+  color: rgba(237, 232, 219, 0.3);
 }
 
 @media (max-width: 640px) {

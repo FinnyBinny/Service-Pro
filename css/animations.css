@@ -48,16 +48,16 @@
 }
 
 .quote-value.updated {
-  color: var(--color-gold-light);
+  color: var(--color-red-light);
 }
 
 /* ── Loading Skeleton ── */
 .skeleton {
   background: linear-gradient(
     90deg,
-    rgba(92, 61, 30, 0.4) 25%,
-    rgba(160, 114, 74, 0.4) 50%,
-    rgba(92, 61, 30, 0.4) 75%
+    rgba(237, 232, 219, 0.05) 25%,
+    rgba(237, 232, 219, 0.12) 50%,
+    rgba(237, 232, 219, 0.05) 75%
   );
   background-size: 800px 100%;
   animation: shimmer 1.5s infinite;

@@ -70,82 +70,116 @@
 <section id="hero" class="hero" aria-label="Hero">
 
   <div class="hero-content">
-    <div class="hero-label">
 
-      <!-- 4-color stripe at very top of label -->
-      <div class="hero-label-stripe" aria-hidden="true"></div>
+    <!-- Folk art rooster illustration — Espolón style -->
+    <svg class="hero-illustration" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 300" role="img" aria-label="Guzman Outdoors rooster emblem">
+      <defs>
+        <pattern id="hatch-body" x="0" y="0" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(-45 0 0)">
+          <line x1="0" y1="3.5" x2="7" y2="3.5" stroke="#EDE8DB" stroke-width="0.7" opacity="0.28"/>
+        </pattern>
+        <pattern id="hatch-wing" x="0" y="0" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(-30 0 0)">
+          <line x1="0" y1="2.5" x2="5" y2="2.5" stroke="#EDE8DB" stroke-width="0.6" opacity="0.45"/>
+        </pattern>
+        <clipPath id="clip-body">
+          <path d="M 82,170 C 84,128 108,108 148,106 C 182,104 215,122 228,152 C 238,175 232,202 215,216 C 196,232 170,238 142,234 C 112,230 90,214 83,193 C 80,183 80,175 82,170 Z"/>
+        </clipPath>
+        <clipPath id="clip-wing">
+          <path d="M 152,122 C 188,116 218,136 222,168 C 226,196 208,222 178,228 C 156,232 138,220 136,202 C 132,180 140,160 152,122 Z"/>
+        </clipPath>
+      </defs>
 
-      <!-- Corner ornaments — 8-pointed amber stars -->
-      <svg class="hero-corner hero-corner--tl" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true">
-        <path d="M16 2 L18.5 11.5 L28 9 L21.5 16 L28 23 L18.5 20.5 L16 30 L13.5 20.5 L4 23 L10.5 16 L4 9 L13.5 11.5 Z" fill="#C8901A" opacity="0.85"/>
-      </svg>
-      <svg class="hero-corner hero-corner--tr" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true">
-        <path d="M16 2 L18.5 11.5 L28 9 L21.5 16 L28 23 L18.5 20.5 L16 30 L13.5 20.5 L4 23 L10.5 16 L4 9 L13.5 11.5 Z" fill="#C8901A" opacity="0.85"/>
-      </svg>
-      <svg class="hero-corner hero-corner--bl" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true">
-        <path d="M16 2 L18.5 11.5 L28 9 L21.5 16 L28 23 L18.5 20.5 L16 30 L13.5 20.5 L4 23 L10.5 16 L4 9 L13.5 11.5 Z" fill="#C8901A" opacity="0.85"/>
-      </svg>
-      <svg class="hero-corner hero-corner--br" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true">
-        <path d="M16 2 L18.5 11.5 L28 9 L21.5 16 L28 23 L18.5 20.5 L16 30 L13.5 20.5 L4 23 L10.5 16 L4 9 L13.5 11.5 Z" fill="#C8901A" opacity="0.85"/>
-      </svg>
+      <!-- TAIL FEATHERS — sweeping arcs to the right, behind body -->
+      <path d="M 220,140 C 246,118 272,82 264,44 C 260,24 246,18 236,30 C 228,40 234,64 222,88 C 216,100 216,118 220,138" fill="none" stroke="#EDE8DB" stroke-width="2.2" stroke-linecap="round"/>
+      <path d="M 236,32 C 244,54 248,76 238,98" fill="none" stroke="#EDE8DB" stroke-width="0.8" opacity="0.4"/>
 
-      <!-- Established badge -->
-      <div class="hero-est">
-        <span class="hero-est-line" aria-hidden="true"></span>
-        Est. 2014 &nbsp;·&nbsp; Williamston, MI
-        <span class="hero-est-line hero-est-line--r" aria-hidden="true"></span>
-      </div>
+      <path d="M 226,158 C 260,144 280,112 272,72 C 268,52 254,46 242,58 C 234,68 238,90 226,114 C 220,126 220,142 224,156" fill="none" stroke="#EDE8DB" stroke-width="2.2" stroke-linecap="round"/>
+      <path d="M 244,60 C 252,80 254,102 242,122" fill="none" stroke="#EDE8DB" stroke-width="0.8" opacity="0.4"/>
 
-      <!-- Logo -->
-      <div class="hero-logo-wrap">
-        <img src="assets/images/logo.png" alt="Guzman Outdoors LLC" class="hero-logo"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-        <!-- Fallback rooster SVG -->
-        <svg class="hero-logo-fallback" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" style="display:none" aria-hidden="true">
-          <ellipse cx="74" cy="38" rx="7" ry="16" fill="#C8901A" transform="rotate(-30 74 38)"/>
-          <ellipse cx="79" cy="48" rx="6" ry="15" fill="#C8901A" transform="rotate(-10 79 48)"/>
-          <ellipse cx="78" cy="58" rx="5.5" ry="14" fill="#C8901A" transform="rotate(12 78 58)"/>
-          <ellipse cx="50" cy="62" rx="19" ry="22" fill="#C8901A"/>
-          <ellipse cx="48" cy="57" rx="9" ry="11" fill="#C8901A"/>
-          <path d="M38 50 Q40 42 42 36" stroke="#C8901A" stroke-width="10" stroke-linecap="round" fill="none"/>
-          <circle cx="40" cy="33" r="12" fill="#C8901A"/>
-          <path d="M34 24 Q40 21 47 24" fill="#5C1008"/>
-          <path d="M30 33 L24 36 L30 39 Z" fill="#A07010"/>
-          <ellipse cx="30" cy="42" rx="3.5" ry="5" fill="#5C1008"/>
-          <circle cx="36" cy="30" r="3" fill="#160805"/>
-          <circle cx="36" cy="30" r="1.2" fill="#C8901A"/>
-        </svg>
-      </div>
+      <path d="M 228,175 C 268,172 288,150 282,118 C 278,98 262,92 250,104 C 242,114 244,136 232,154 C 228,162 226,170 228,175" fill="none" stroke="#EDE8DB" stroke-width="2.2" stroke-linecap="round"/>
 
-      <!-- Brand name -->
-      <h1 class="hero-brand-name">Guzman Outdoors</h1>
-      <p class="hero-brand-sub">LLC &nbsp;·&nbsp; Lawn &amp; Landscape</p>
+      <path d="M 224,196 C 262,206 282,226 272,262 C 266,282 250,286 238,274 C 230,264 232,244 222,222 C 220,212 220,200 224,196" fill="none" stroke="#EDE8DB" stroke-width="2.2" stroke-linecap="round"/>
+      <path d="M 238,276 C 246,258 246,238 234,218" fill="none" stroke="#EDE8DB" stroke-width="0.8" opacity="0.4"/>
 
-      <!-- Ornate rule -->
-      <div class="hero-rule" aria-hidden="true">
-        <span class="hero-rule-line"></span>
-        <span class="hero-rule-diamond"></span>
-        <span class="hero-rule-line hero-rule-line--r"></span>
-      </div>
+      <path d="M 216,210 C 244,238 254,270 238,296 C 232,308 218,310 210,296 C 204,284 210,264 204,242 C 202,230 206,216 216,210" fill="none" stroke="#EDE8DB" stroke-width="2.2" stroke-linecap="round"/>
 
-      <!-- Tagline -->
-      <p class="hero-tagline">Crafted with pride. Rooted in heritage.</p>
+      <!-- BODY -->
+      <path d="M 82,170 C 84,128 108,108 148,106 C 182,104 215,122 228,152 C 238,175 232,202 215,216 C 196,232 170,238 142,234 C 112,230 90,214 83,193 C 80,183 80,175 82,170 Z" fill="url(#hatch-body)" stroke="#EDE8DB" stroke-width="2.2"/>
 
-      <!-- Phone — primary conversion element -->
-      <a href="tel:+15174498404" class="hero-phone" aria-label="Call us at (517) 449-8404">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" aria-hidden="true">
-          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.64 12a19.79 19.79 0 0 1-3.07-8.67 2 2 0 0 1 2-2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
-        </svg>
-        (517) 449-8404
-      </a>
+      <!-- WING overlaying body -->
+      <path d="M 152,122 C 188,116 218,136 222,168 C 226,196 208,222 178,228 C 156,232 138,220 136,202 C 132,180 140,160 152,122 Z" fill="url(#hatch-wing)" stroke="#EDE8DB" stroke-width="1.8"/>
+      <!-- Wing feather lines -->
+      <path d="M 150,148 C 178,142 210,150 218,166" fill="none" stroke="#EDE8DB" stroke-width="0.9" opacity="0.55"/>
+      <path d="M 146,165 C 172,160 206,168 215,184" fill="none" stroke="#EDE8DB" stroke-width="0.9" opacity="0.55"/>
+      <path d="M 144,182 C 166,178 198,186 210,202" fill="none" stroke="#EDE8DB" stroke-width="0.9" opacity="0.55"/>
+      <path d="M 146,198 C 162,196 186,204 196,220" fill="none" stroke="#EDE8DB" stroke-width="0.9" opacity="0.55"/>
 
-      <!-- CTAs -->
-      <div class="hero-ctas">
-        <a href="#calculator" class="btn btn--primary">Get Your Free Quote</a>
-        <a href="#contact"    class="btn btn--ghost">Book Now</a>
-      </div>
+      <!-- NECK -->
+      <path d="M 100,118 C 96,106 92,95 88,84 C 84,74 78,70 74,74" fill="none" stroke="#EDE8DB" stroke-width="12" stroke-linecap="round"/>
+      <path d="M 100,118 C 96,106 92,95 88,84 C 84,74 78,70 74,74" fill="none" stroke="#0A0A0A" stroke-width="8" stroke-linecap="round"/>
+      <path d="M 100,118 C 96,106 92,95 88,84 C 84,74 78,70 74,74" fill="none" stroke="#EDE8DB" stroke-width="1.8" stroke-linecap="round"/>
+      <!-- Neck feather lines -->
+      <path d="M 98,105 C 92,98 88,90 86,82" fill="none" stroke="#EDE8DB" stroke-width="0.8" opacity="0.45"/>
+      <path d="M 104,110 C 98,103 94,95 92,88" fill="none" stroke="#EDE8DB" stroke-width="0.8" opacity="0.45"/>
 
+      <!-- HEAD -->
+      <ellipse cx="72" cy="80" rx="26" ry="22" fill="#0A0A0A" stroke="#EDE8DB" stroke-width="2.2"/>
+
+      <!-- COMB — red accent (the single color moment) -->
+      <path d="M 64,64 C 60,48 67,37 74,50 C 72,34 80,24 84,40 C 82,24 92,16 93,34 C 94,44 88,58 82,66 C 78,70 72,72 64,64 Z" fill="#C0321A" stroke="#C0321A" stroke-width="0.8"/>
+
+      <!-- WATTLE — red -->
+      <path d="M 54,88 C 48,96 48,108 55,114 C 61,119 68,114 67,106 C 66,98 60,92 54,88 Z" fill="#C0321A" stroke="#C0321A" stroke-width="0.8"/>
+
+      <!-- EYE -->
+      <circle cx="62" cy="76" r="5.5" fill="#EDE8DB"/>
+      <circle cx="62" cy="76" r="3" fill="#0A0A0A"/>
+      <circle cx="60.5" cy="74.5" r="1.2" fill="#EDE8DB" opacity="0.9"/>
+
+      <!-- BEAK -->
+      <path d="M 48,80 L 30,86 L 48,92 Z" fill="#EDE8DB" stroke="#EDE8DB" stroke-width="0.5" stroke-linejoin="round"/>
+
+      <!-- LEGS -->
+      <line x1="128" y1="232" x2="118" y2="278" stroke="#EDE8DB" stroke-width="3.5" stroke-linecap="round"/>
+      <line x1="155" y1="234" x2="145" y2="278" stroke="#EDE8DB" stroke-width="3.5" stroke-linecap="round"/>
+
+      <!-- Spurs -->
+      <path d="M 125,258 L 114,250" stroke="#EDE8DB" stroke-width="2" stroke-linecap="round"/>
+      <path d="M 152,260 L 141,252" stroke="#EDE8DB" stroke-width="2" stroke-linecap="round"/>
+
+      <!-- CLAWS — left foot -->
+      <path d="M 118,278 L 100,285 M 118,278 L 108,292 M 118,278 L 118,294 M 118,278 L 128,288" stroke="#EDE8DB" stroke-width="2" stroke-linecap="round"/>
+      <!-- CLAWS — right foot -->
+      <path d="M 145,278 L 127,285 M 145,278 L 135,292 M 145,278 L 145,294 M 145,278 L 155,288" stroke="#EDE8DB" stroke-width="2" stroke-linecap="round"/>
+
+      <!-- Ground line -->
+      <line x1="80" y1="294" x2="200" y2="294" stroke="#EDE8DB" stroke-width="0.8" opacity="0.25"/>
+    </svg>
+
+    <h1 class="hero-brand-name">
+      Guzman<br>Outdoors <span class="hero-brand-accent">LLC</span>
+    </h1>
+    <p class="hero-brand-sub">Lawn &amp; Landscape &nbsp;·&nbsp; Williamston, MI</p>
+
+    <div class="hero-rule" aria-hidden="true">
+      <span class="hero-rule-line"></span>
+      <span class="hero-rule-diamond"></span>
+      <span class="hero-rule-line hero-rule-line--r"></span>
     </div>
+
+    <p class="hero-tagline">Crafted with pride. Rooted in heritage.</p>
+
+    <a href="tel:+15174498404" class="hero-phone" aria-label="Call (517) 449-8404">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" aria-hidden="true">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.64 12a19.79 19.79 0 0 1-3.07-8.67 2 2 0 0 1 2-2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+      </svg>
+      (517) 449-8404
+    </a>
+
+    <div class="hero-ctas">
+      <a href="#calculator" class="btn btn--primary">Get Your Free Quote</a>
+      <a href="#contact"    class="btn btn--ghost">Book Now</a>
+    </div>
+
   </div>
 
   <div class="hero-scroll-cue" aria-hidden="true">
@@ -177,17 +211,17 @@
       <h2 class="section-heading">Our Services</h2>
       <div class="ornate-divider" aria-hidden="true">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 24">
-          <line x1="0" y1="12" x2="108" y2="12" stroke="#C8901A" stroke-width="0.8" opacity="0.5"/>
-          <path d="M108,12 C114,7 120,7 122,12 C120,17 114,17 108,12" fill="#C8901A" opacity="0.65"/>
-          <circle cx="128" cy="12" r="2.2" fill="#C8901A" opacity="0.7"/>
-          <polygon points="150,3 160,12 150,21 140,12" fill="#C8901A"/>
+          <line x1="0" y1="12" x2="108" y2="12" stroke="#EDE8DB" stroke-width="0.8" opacity="0.5"/>
+          <path d="M108,12 C114,7 120,7 122,12 C120,17 114,17 108,12" fill="#EDE8DB" opacity="0.65"/>
+          <circle cx="128" cy="12" r="2.2" fill="#EDE8DB" opacity="0.7"/>
+          <polygon points="150,3 160,12 150,21 140,12" fill="#EDE8DB"/>
           <polygon points="150,7 157,12 150,17 143,12" fill="#5C1008"/>
-          <circle cx="172" cy="12" r="2.2" fill="#C8901A" opacity="0.7"/>
-          <path d="M178,12 C180,7 186,7 192,12 C186,17 180,17 178,12" fill="#C8901A" opacity="0.65"/>
-          <line x1="192" y1="12" x2="300" y2="12" stroke="#C8901A" stroke-width="0.8" opacity="0.5"/>
+          <circle cx="172" cy="12" r="2.2" fill="#EDE8DB" opacity="0.7"/>
+          <path d="M178,12 C180,7 186,7 192,12 C186,17 180,17 178,12" fill="#EDE8DB" opacity="0.65"/>
+          <line x1="192" y1="12" x2="300" y2="12" stroke="#EDE8DB" stroke-width="0.8" opacity="0.5"/>
         </svg>
       </div>
-      <p class="section-subheading" style="text-align:center;color:rgba(245,232,204,0.75)">
+      <p class="section-subheading" style="text-align:center;color:var(--color-ink-dim)">
         Every job done with the same care we'd give our own property — no matter the size.
       </p>
     </div>
@@ -255,14 +289,14 @@
 <!-- ══════════════════════════════════════════════════════════ GALLERY -->
 <div class="ornate-rule" aria-hidden="true">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 24">
-    <line x1="0" y1="12" x2="340" y2="12" stroke="#C8901A" stroke-width="0.5" opacity="0.25"/>
-    <path d="M340,12 C346,7 352,7 354,12 C352,17 346,17 340,12" fill="#C8901A" opacity="0.45"/>
-    <circle cx="364" cy="12" r="2" fill="#C8901A" opacity="0.55"/>
-    <polygon points="400,3 410,12 400,21 390,12" fill="#C8901A" opacity="0.65"/>
-    <polygon points="400,7 406,12 400,17 394,12" fill="#160805"/>
-    <circle cx="436" cy="12" r="2" fill="#C8901A" opacity="0.55"/>
-    <path d="M446,12 C448,7 454,7 460,12 C454,17 448,17 446,12" fill="#C8901A" opacity="0.45"/>
-    <line x1="460" y1="12" x2="800" y2="12" stroke="#C8901A" stroke-width="0.5" opacity="0.25"/>
+    <line x1="0" y1="12" x2="340" y2="12" stroke="#EDE8DB" stroke-width="0.5" opacity="0.25"/>
+    <path d="M340,12 C346,7 352,7 354,12 C352,17 346,17 340,12" fill="#EDE8DB" opacity="0.45"/>
+    <circle cx="364" cy="12" r="2" fill="#EDE8DB" opacity="0.55"/>
+    <polygon points="400,3 410,12 400,21 390,12" fill="#EDE8DB" opacity="0.65"/>
+    <polygon points="400,7 406,12 400,17 394,12" fill="#EDE8DB"/>
+    <circle cx="436" cy="12" r="2" fill="#EDE8DB" opacity="0.55"/>
+    <path d="M446,12 C448,7 454,7 460,12 C454,17 448,17 446,12" fill="#EDE8DB" opacity="0.45"/>
+    <line x1="460" y1="12" x2="800" y2="12" stroke="#EDE8DB" stroke-width="0.5" opacity="0.25"/>
   </svg>
 </div>
 
@@ -274,14 +308,14 @@
       <h2 class="section-heading">Our Work</h2>
       <div class="ornate-divider" aria-hidden="true">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 24">
-          <line x1="0" y1="12" x2="108" y2="12" stroke="#C8901A" stroke-width="0.8" opacity="0.5"/>
-          <path d="M108,12 C114,7 120,7 122,12 C120,17 114,17 108,12" fill="#C8901A" opacity="0.65"/>
-          <circle cx="128" cy="12" r="2.2" fill="#C8901A" opacity="0.7"/>
-          <polygon points="150,3 160,12 150,21 140,12" fill="#C8901A"/>
-          <polygon points="150,7 157,12 150,17 143,12" fill="#1E0C06"/>
-          <circle cx="172" cy="12" r="2.2" fill="#C8901A" opacity="0.7"/>
-          <path d="M178,12 C180,7 186,7 192,12 C186,17 180,17 178,12" fill="#C8901A" opacity="0.65"/>
-          <line x1="192" y1="12" x2="300" y2="12" stroke="#C8901A" stroke-width="0.8" opacity="0.5"/>
+          <line x1="0" y1="12" x2="108" y2="12" stroke="#EDE8DB" stroke-width="0.8" opacity="0.5"/>
+          <path d="M108,12 C114,7 120,7 122,12 C120,17 114,17 108,12" fill="#EDE8DB" opacity="0.65"/>
+          <circle cx="128" cy="12" r="2.2" fill="#EDE8DB" opacity="0.7"/>
+          <polygon points="150,3 160,12 150,21 140,12" fill="#EDE8DB"/>
+          <polygon points="150,7 157,12 150,17 143,12" fill="#EDE8DB"/>
+          <circle cx="172" cy="12" r="2.2" fill="#EDE8DB" opacity="0.7"/>
+          <path d="M178,12 C180,7 186,7 192,12 C186,17 180,17 178,12" fill="#EDE8DB" opacity="0.65"/>
+          <line x1="192" y1="12" x2="300" y2="12" stroke="#EDE8DB" stroke-width="0.8" opacity="0.5"/>
         </svg>
       </div>
     </div>
@@ -296,9 +330,9 @@
       <div class="gallery-item reveal reveal-delay-1">
         <div class="gallery-placeholder">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-            <rect x="4" y="8" width="40" height="32" rx="3" stroke="#C8901A" stroke-width="1.5"/>
-            <circle cx="16" cy="19" r="4" stroke="#C8901A" stroke-width="1.5"/>
-            <path d="M4 32 L14 22 L22 30 L30 22 L44 34" stroke="#C8901A" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            <rect x="4" y="8" width="40" height="32" rx="3" stroke="#EDE8DB" stroke-width="1.5"/>
+            <circle cx="16" cy="19" r="4" stroke="#EDE8DB" stroke-width="1.5"/>
+            <path d="M4 32 L14 22 L22 30 L30 22 L44 34" stroke="#EDE8DB" stroke-width="1.5" stroke-linecap="round" fill="none"/>
           </svg>
           <span>Save work-1.jpg to assets/images/</span>
         </div>
@@ -306,9 +340,9 @@
       <div class="gallery-item reveal reveal-delay-2">
         <div class="gallery-placeholder">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-            <rect x="4" y="8" width="40" height="32" rx="3" stroke="#C8901A" stroke-width="1.5"/>
-            <circle cx="16" cy="19" r="4" stroke="#C8901A" stroke-width="1.5"/>
-            <path d="M4 32 L14 22 L22 30 L30 22 L44 34" stroke="#C8901A" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            <rect x="4" y="8" width="40" height="32" rx="3" stroke="#EDE8DB" stroke-width="1.5"/>
+            <circle cx="16" cy="19" r="4" stroke="#EDE8DB" stroke-width="1.5"/>
+            <path d="M4 32 L14 22 L22 30 L30 22 L44 34" stroke="#EDE8DB" stroke-width="1.5" stroke-linecap="round" fill="none"/>
           </svg>
           <span>Save work-2.jpg to assets/images/</span>
         </div>
@@ -316,9 +350,9 @@
       <div class="gallery-item reveal reveal-delay-3">
         <div class="gallery-placeholder">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-            <rect x="4" y="8" width="40" height="32" rx="3" stroke="#C8901A" stroke-width="1.5"/>
-            <circle cx="16" cy="19" r="4" stroke="#C8901A" stroke-width="1.5"/>
-            <path d="M4 32 L14 22 L22 30 L30 22 L44 34" stroke="#C8901A" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            <rect x="4" y="8" width="40" height="32" rx="3" stroke="#EDE8DB" stroke-width="1.5"/>
+            <circle cx="16" cy="19" r="4" stroke="#EDE8DB" stroke-width="1.5"/>
+            <path d="M4 32 L14 22 L22 30 L30 22 L44 34" stroke="#EDE8DB" stroke-width="1.5" stroke-linecap="round" fill="none"/>
           </svg>
           <span>Save work-3.jpg to assets/images/</span>
         </div>
@@ -326,16 +360,16 @@
       <div class="gallery-item reveal reveal-delay-1">
         <div class="gallery-placeholder">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-            <rect x="4" y="8" width="40" height="32" rx="3" stroke="#C8901A" stroke-width="1.5"/>
-            <circle cx="16" cy="19" r="4" stroke="#C8901A" stroke-width="1.5"/>
-            <path d="M4 32 L14 22 L22 30 L30 22 L44 34" stroke="#C8901A" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            <rect x="4" y="8" width="40" height="32" rx="3" stroke="#EDE8DB" stroke-width="1.5"/>
+            <circle cx="16" cy="19" r="4" stroke="#EDE8DB" stroke-width="1.5"/>
+            <path d="M4 32 L14 22 L22 30 L30 22 L44 34" stroke="#EDE8DB" stroke-width="1.5" stroke-linecap="round" fill="none"/>
           </svg>
           <span>Save work-4.jpg to assets/images/</span>
         </div>
       </div>
     </div>
 
-    <p class="gallery-caption">More photos coming soon — call us at <a href="tel:+15174498404" style="color:var(--color-amber)">(517) 449-8404</a> to discuss your project.</p>
+    <p class="gallery-caption">More photos coming soon — call us at <a href="tel:+15174498404" style="color:var(--color-red)">(517) 449-8404</a> to discuss your project.</p>
   </div>
 </section>
 
@@ -346,21 +380,21 @@
       <p class="quick-book-heading">Don't need an instant quote?</p>
       <p class="quick-book-sub">Just send us a message and we'll reach out within one business day.</p>
     </div>
-    <a href="#contact" class="btn btn--ghost" style="border-color:rgba(245,232,204,0.6);flex-shrink:0">Book Directly</a>
+    <a href="#contact" class="btn btn--ghost" style="border-color:rgba(237,232,219,0.6);flex-shrink:0">Book Directly</a>
   </div>
 </div>
 
 <!-- ══════════════════════════════════════════════════════════ CALCULATOR -->
 <div class="ornate-rule" aria-hidden="true">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 24">
-    <line x1="0" y1="12" x2="340" y2="12" stroke="#C8901A" stroke-width="0.5" opacity="0.25"/>
-    <path d="M340,12 C346,7 352,7 354,12 C352,17 346,17 340,12" fill="#C8901A" opacity="0.45"/>
-    <circle cx="364" cy="12" r="2" fill="#C8901A" opacity="0.55"/>
-    <polygon points="400,3 410,12 400,21 390,12" fill="#C8901A" opacity="0.65"/>
-    <polygon points="400,7 406,12 400,17 394,12" fill="#160805"/>
-    <circle cx="436" cy="12" r="2" fill="#C8901A" opacity="0.55"/>
-    <path d="M446,12 C448,7 454,7 460,12 C454,17 448,17 446,12" fill="#C8901A" opacity="0.45"/>
-    <line x1="460" y1="12" x2="800" y2="12" stroke="#C8901A" stroke-width="0.5" opacity="0.25"/>
+    <line x1="0" y1="12" x2="340" y2="12" stroke="#EDE8DB" stroke-width="0.5" opacity="0.25"/>
+    <path d="M340,12 C346,7 352,7 354,12 C352,17 346,17 340,12" fill="#EDE8DB" opacity="0.45"/>
+    <circle cx="364" cy="12" r="2" fill="#EDE8DB" opacity="0.55"/>
+    <polygon points="400,3 410,12 400,21 390,12" fill="#EDE8DB" opacity="0.65"/>
+    <polygon points="400,7 406,12 400,17 394,12" fill="#EDE8DB"/>
+    <circle cx="436" cy="12" r="2" fill="#EDE8DB" opacity="0.55"/>
+    <path d="M446,12 C448,7 454,7 460,12 C454,17 448,17 446,12" fill="#EDE8DB" opacity="0.45"/>
+    <line x1="460" y1="12" x2="800" y2="12" stroke="#EDE8DB" stroke-width="0.5" opacity="0.25"/>
   </svg>
 </div>
 
@@ -372,17 +406,17 @@
       <h2 class="section-heading">Get Your Instant Quote</h2>
       <div class="ornate-divider" aria-hidden="true">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 24">
-          <line x1="0" y1="12" x2="108" y2="12" stroke="#C8901A" stroke-width="0.8" opacity="0.5"/>
-          <path d="M108,12 C114,7 120,7 122,12 C120,17 114,17 108,12" fill="#C8901A" opacity="0.65"/>
-          <circle cx="128" cy="12" r="2.2" fill="#C8901A" opacity="0.7"/>
-          <polygon points="150,3 160,12 150,21 140,12" fill="#C8901A"/>
-          <polygon points="150,7 157,12 150,17 143,12" fill="#160805"/>
-          <circle cx="172" cy="12" r="2.2" fill="#C8901A" opacity="0.7"/>
-          <path d="M178,12 C180,7 186,7 192,12 C186,17 180,17 178,12" fill="#C8901A" opacity="0.65"/>
-          <line x1="192" y1="12" x2="300" y2="12" stroke="#C8901A" stroke-width="0.8" opacity="0.5"/>
+          <line x1="0" y1="12" x2="108" y2="12" stroke="#EDE8DB" stroke-width="0.8" opacity="0.5"/>
+          <path d="M108,12 C114,7 120,7 122,12 C120,17 114,17 108,12" fill="#EDE8DB" opacity="0.65"/>
+          <circle cx="128" cy="12" r="2.2" fill="#EDE8DB" opacity="0.7"/>
+          <polygon points="150,3 160,12 150,21 140,12" fill="#EDE8DB"/>
+          <polygon points="150,7 157,12 150,17 143,12" fill="#EDE8DB"/>
+          <circle cx="172" cy="12" r="2.2" fill="#EDE8DB" opacity="0.7"/>
+          <path d="M178,12 C180,7 186,7 192,12 C186,17 180,17 178,12" fill="#EDE8DB" opacity="0.65"/>
+          <line x1="192" y1="12" x2="300" y2="12" stroke="#EDE8DB" stroke-width="0.8" opacity="0.5"/>
         </svg>
       </div>
-      <p class="section-subheading" style="text-align:center;color:rgba(245,232,204,0.75)">
+      <p class="section-subheading" style="text-align:center;color:var(--color-ink-dim)">
         Enter your address, draw each section of your lawn on the satellite map, pick your services — instant estimate.
       </p>
     </div>
@@ -405,10 +439,10 @@
         <div id="map-container" aria-label="Satellite map of your property">
           <div class="map-placeholder">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-              <circle cx="24" cy="22" r="12" stroke="#C8901A" stroke-width="2"/>
-              <path d="M24 34 L24 44" stroke="#C8901A" stroke-width="2" stroke-linecap="round"/>
-              <path d="M20 44 L28 44" stroke="#C8901A" stroke-width="2" stroke-linecap="round"/>
-              <circle cx="24" cy="22" r="4" fill="#C8901A" opacity="0.6"/>
+              <circle cx="24" cy="22" r="12" stroke="#EDE8DB" stroke-width="2"/>
+              <path d="M24 34 L24 44" stroke="#EDE8DB" stroke-width="2" stroke-linecap="round"/>
+              <path d="M20 44 L28 44" stroke="#EDE8DB" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="24" cy="22" r="4" fill="#EDE8DB" opacity="0.6"/>
             </svg>
             <span>Enter your address above to load your property in satellite view</span>
           </div>
@@ -417,7 +451,7 @@
         <p class="calc-section-label" style="margin-top:var(--sp-3)">Step 2 — Draw Your Lawn Areas</p>
 
         <div class="calc-map-controls">
-          <button id="btn-draw" class="btn btn--outline-amber btn--sm">&#9998; Draw My Lawn Area</button>
+          <button id="btn-draw" class="btn btn--outline-red btn--sm">&#9998; Draw My Lawn Area</button>
           <button id="btn-clear" class="btn btn--ghost btn--sm">Clear All</button>
         </div>
 
@@ -519,14 +553,14 @@
 <!-- ══════════════════════════════════════════════════════════ ABOUT -->
 <div class="ornate-rule" aria-hidden="true">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 24">
-    <line x1="0" y1="12" x2="340" y2="12" stroke="#C8901A" stroke-width="0.5" opacity="0.25"/>
-    <path d="M340,12 C346,7 352,7 354,12 C352,17 346,17 340,12" fill="#C8901A" opacity="0.45"/>
-    <circle cx="364" cy="12" r="2" fill="#C8901A" opacity="0.55"/>
-    <polygon points="400,3 410,12 400,21 390,12" fill="#C8901A" opacity="0.65"/>
-    <polygon points="400,7 406,12 400,17 394,12" fill="#E8D5A8"/>
-    <circle cx="436" cy="12" r="2" fill="#C8901A" opacity="0.55"/>
-    <path d="M446,12 C448,7 454,7 460,12 C454,17 448,17 446,12" fill="#C8901A" opacity="0.45"/>
-    <line x1="460" y1="12" x2="800" y2="12" stroke="#C8901A" stroke-width="0.5" opacity="0.25"/>
+    <line x1="0" y1="12" x2="340" y2="12" stroke="#EDE8DB" stroke-width="0.5" opacity="0.25"/>
+    <path d="M340,12 C346,7 352,7 354,12 C352,17 346,17 340,12" fill="#EDE8DB" opacity="0.45"/>
+    <circle cx="364" cy="12" r="2" fill="#EDE8DB" opacity="0.55"/>
+    <polygon points="400,3 410,12 400,21 390,12" fill="#EDE8DB" opacity="0.65"/>
+    <polygon points="400,7 406,12 400,17 394,12" fill="#EDE8DB"/>
+    <circle cx="436" cy="12" r="2" fill="#EDE8DB" opacity="0.55"/>
+    <path d="M446,12 C448,7 454,7 460,12 C454,17 448,17 446,12" fill="#EDE8DB" opacity="0.45"/>
+    <line x1="460" y1="12" x2="800" y2="12" stroke="#EDE8DB" stroke-width="0.5" opacity="0.25"/>
   </svg>
 </div>
 
@@ -561,12 +595,12 @@
       <div class="about-text-col">
         <div class="reveal">
           <span class="section-preheading">Our Story</span>
-          <h2 class="section-heading" style="color:var(--color-text-on-light)">Rooted in<br>Guatemalan Pride</h2>
+          <h2 class="section-heading" style="color:var(--color-ink-dark)">Rooted in<br>Guatemalan Pride</h2>
           <div class="ornate-divider" style="justify-content:flex-start" aria-hidden="true">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 20" style="width:200px">
-              <line x1="0" y1="10" x2="72" y2="10" stroke="#C8901A" stroke-width="0.8" opacity="0.5"/>
-              <polygon points="100,2 108,10 100,18 92,10" fill="#C8901A"/>
-              <line x1="128" y1="10" x2="200" y2="10" stroke="#C8901A" stroke-width="0.8" opacity="0.5"/>
+              <line x1="0" y1="10" x2="72" y2="10" stroke="#EDE8DB" stroke-width="0.8" opacity="0.5"/>
+              <polygon points="100,2 108,10 100,18 92,10" fill="#EDE8DB"/>
+              <line x1="128" y1="10" x2="200" y2="10" stroke="#EDE8DB" stroke-width="0.8" opacity="0.5"/>
             </svg>
           </div>
         </div>
@@ -619,14 +653,14 @@
       <h2 class="section-heading">Book Your Service</h2>
       <div class="ornate-divider" aria-hidden="true">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 24">
-          <line x1="0" y1="12" x2="108" y2="12" stroke="#C8901A" stroke-width="0.8" opacity="0.5"/>
-          <path d="M108,12 C114,7 120,7 122,12 C120,17 114,17 108,12" fill="#C8901A" opacity="0.65"/>
-          <circle cx="128" cy="12" r="2.2" fill="#C8901A" opacity="0.7"/>
-          <polygon points="150,3 160,12 150,21 140,12" fill="#C8901A"/>
-          <polygon points="150,7 157,12 150,17 143,12" fill="#160805"/>
-          <circle cx="172" cy="12" r="2.2" fill="#C8901A" opacity="0.7"/>
-          <path d="M178,12 C180,7 186,7 192,12 C186,17 180,17 178,12" fill="#C8901A" opacity="0.65"/>
-          <line x1="192" y1="12" x2="300" y2="12" stroke="#C8901A" stroke-width="0.8" opacity="0.5"/>
+          <line x1="0" y1="12" x2="108" y2="12" stroke="#EDE8DB" stroke-width="0.8" opacity="0.5"/>
+          <path d="M108,12 C114,7 120,7 122,12 C120,17 114,17 108,12" fill="#EDE8DB" opacity="0.65"/>
+          <circle cx="128" cy="12" r="2.2" fill="#EDE8DB" opacity="0.7"/>
+          <polygon points="150,3 160,12 150,21 140,12" fill="#EDE8DB"/>
+          <polygon points="150,7 157,12 150,17 143,12" fill="#EDE8DB"/>
+          <circle cx="172" cy="12" r="2.2" fill="#EDE8DB" opacity="0.7"/>
+          <path d="M178,12 C180,7 186,7 192,12 C186,17 180,17 178,12" fill="#EDE8DB" opacity="0.65"/>
+          <line x1="192" y1="12" x2="300" y2="12" stroke="#EDE8DB" stroke-width="0.8" opacity="0.5"/>
         </svg>
       </div>
     </div>
@@ -642,7 +676,7 @@
         <div class="contact-detail-list">
           <div class="contact-detail">
             <div class="contact-detail-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#C8901A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#EDE8DB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.64 12a19.79 19.79 0 0 1-3.07-8.67 2 2 0 0 1 2-2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
               </svg>
             </div>
@@ -654,7 +688,7 @@
 
           <div class="contact-detail">
             <div class="contact-detail-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#C8901A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#EDE8DB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
                 <polyline points="22,6 12,13 2,6"/>
               </svg>
@@ -667,7 +701,7 @@
 
           <div class="contact-detail">
             <div class="contact-detail-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#C8901A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#EDE8DB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <circle cx="12" cy="10" r="3"/>
                 <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
               </svg>
