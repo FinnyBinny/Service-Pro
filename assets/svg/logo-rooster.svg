@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Guzman Landscaping Rooster Logo">
+  <!-- Background circle -->
+  <circle cx="50" cy="50" r="48" fill="#2C1A0E"/>
+  <!-- Gold ring border -->
+  <circle cx="50" cy="50" r="46" fill="none" stroke="#D4A017" stroke-width="1.2"/>
+
+  <!-- Tail fan feathers -->
+  <ellipse cx="74" cy="38" rx="7" ry="16" fill="#D4A017" transform="rotate(-30 74 38)"/>
+  <ellipse cx="79" cy="48" rx="6" ry="15" fill="#C49012" transform="rotate(-10 79 48)"/>
+  <ellipse cx="78" cy="58" rx="5.5" ry="14" fill="#D4A017" transform="rotate(12 78 58)"/>
+  <ellipse cx="72" cy="65" rx="5" ry="12" fill="#C49012" transform="rotate(28 72 65)"/>
+
+  <!-- Body -->
+  <ellipse cx="50" cy="62" rx="19" ry="22" fill="#D4A017"/>
+
+  <!-- Wing highlight -->
+  <ellipse cx="50" cy="60" rx="14" ry="16" fill="#C49012"/>
+  <ellipse cx="48" cy="57" rx="9" ry="11" fill="#D4A017"/>
+
+  <!-- Neck -->
+  <path d="M38 50 Q40 42 42 36" stroke="#D4A017" stroke-width="10" stroke-linecap="round" fill="none"/>
+
+  <!-- Head -->
+  <circle cx="40" cy="33" r="12" fill="#D4A017"/>
+
+  <!-- Comb (3 peaks) in red -->
+  <path d="M35 24 L37.5 14 L40 24" fill="#C0392B"/>
+  <path d="M38.5 23 L41 13 L43.5 23" fill="#C0392B"/>
+  <path d="M42 24 L44.5 15 L47 24" fill="#C0392B"/>
+  <path d="M34 24 Q40.5 21 47 24" fill="#C0392B"/>
+
+  <!-- Beak -->
+  <path d="M30 33 L24 36 L30 39 Z" fill="#C49012"/>
+
+  <!-- Wattle (red) -->
+  <ellipse cx="30" cy="42" rx="3.5" ry="5" fill="#C0392B"/>
+
+  <!-- Eye -->
+  <circle cx="36" cy="30" r="3" fill="#1a0d05"/>
+  <circle cx="36" cy="30" r="1.2" fill="#D4A017"/>
+  <circle cx="36.8" cy="29.2" r="0.7" fill="#F5ECD7"/>
+
+  <!-- Wing feather detail lines -->
+  <path d="M40 58 Q52 54 62 60" fill="none" stroke="#1a0d05" stroke-width="1.2" opacity="0.5"/>
+  <path d="M40 64 Q52 60 62 66" fill="none" stroke="#1a0d05" stroke-width="1" opacity="0.4"/>
+
+  <!-- Legs -->
+  <line x1="46" y1="82" x2="40" y2="92" stroke="#D4A017" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="54" y1="82" x2="58" y2="92" stroke="#D4A017" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Feet -->
+  <line x1="37" y1="92" x2="44" y2="92" stroke="#D4A017" stroke-width="2" stroke-linecap="round"/>
+  <line x1="40" y1="92" x2="38" y2="96" stroke="#D4A017" stroke-width="1.8" stroke-linecap="round"/>
+  <line x1="40" y1="92" x2="42" y2="96" stroke="#D4A017" stroke-width="1.8" stroke-linecap="round"/>
+  <line x1="55" y1="92" x2="62" y2="92" stroke="#D4A017" stroke-width="2" stroke-linecap="round"/>
+  <line x1="58" y1="92" x2="56" y2="96" stroke="#D4A017" stroke-width="1.8" stroke-linecap="round"/>
+  <line x1="58" y1="92" x2="60" y2="96" stroke="#D4A017" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- Chest feather detail -->
+  <path d="M36 58 Q44 50 54 56" fill="none" stroke="#C49012" stroke-width="1" opacity="0.6"/>
+</svg>

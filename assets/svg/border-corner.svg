@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-label="Decorative corner">
+  <path d="M2 22 L2 6 Q2 2 6 2 L22 2" fill="none" stroke="#D4A017" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="2" cy="22" r="2.5" fill="#D4A017"/>
+  <circle cx="22" cy="2" r="2.5" fill="#D4A017"/>
+  <circle cx="2" cy="2" r="2" fill="#D4A017" opacity="0.4"/>
+</svg>

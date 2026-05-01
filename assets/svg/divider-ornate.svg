@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 28" role="img" aria-label="Decorative divider">
+  <!-- Left line -->
+  <line x1="0" y1="14" x2="148" y2="14" stroke="#D4A017" stroke-width="0.8" opacity="0.6"/>
+  <!-- Left flourish -->
+  <path d="M148,14 C155,8 162,8 165,14 C162,20 155,20 148,14" fill="#D4A017" opacity="0.7"/>
+  <!-- Left small dot -->
+  <circle cx="172" cy="14" r="2.5" fill="#D4A017" opacity="0.8"/>
+  <!-- Center diamond -->
+  <polygon points="200,4 212,14 200,24 188,14" fill="#D4A017"/>
+  <!-- Small inner diamond -->
+  <polygon points="200,8 207,14 200,20 193,14" fill="#2C1A0E"/>
+  <polygon points="200,10 204,14 200,18 196,14" fill="#D4A017" opacity="0.5"/>
+  <!-- Right small dot -->
+  <circle cx="228" cy="14" r="2.5" fill="#D4A017" opacity="0.8"/>
+  <!-- Right flourish -->
+  <path d="M252,14 C245,8 238,8 235,14 C238,20 245,20 252,14" fill="#D4A017" opacity="0.7"/>
+  <!-- Right line -->
+  <line x1="252" y1="14" x2="400" y2="14" stroke="#D4A017" stroke-width="0.8" opacity="0.6"/>
+</svg>

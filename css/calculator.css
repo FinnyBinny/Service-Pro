@@ -1,0 +1,380 @@
+.calculator {
+  background-color: var(--color-earth-dark);
+  position: relative;
+}
+
+.calculator-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-6);
+  align-items: start;
+  margin-top: var(--sp-6);
+}
+
+/* ── Left Column: Map ── */
+.calc-map-col {}
+
+.calc-address-row {
+  display: flex;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-3);
+}
+
+.calc-address-row .form-input {
+  flex: 1;
+}
+
+#map-container {
+  width: 100%;
+  height: 440px;
+  border: var(--border-gold);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background-color: var(--color-earth-mid);
+  position: relative;
+}
+
+.map-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  color: rgba(245, 236, 215, 0.4);
+  font-family: var(--font-ui);
+  font-size: var(--text-sm);
+  text-align: center;
+  padding: var(--sp-4);
+  pointer-events: none;
+  transition: opacity var(--t-base);
+}
+
+.map-placeholder.hidden {
+  opacity: 0;
+}
+
+.map-placeholder svg {
+  width: 48px;
+  height: 48px;
+  opacity: 0.4;
+}
+
+.calc-map-controls {
+  display: flex;
+  gap: var(--sp-2);
+  margin-top: var(--sp-2);
+  flex-wrap: wrap;
+}
+
+.acreage-display {
+  margin-top: var(--sp-3);
+  padding: var(--sp-2) var(--sp-3);
+  border: var(--border-gold);
+  border-radius: var(--radius-sm);
+  background-color: rgba(212, 160, 23, 0.06);
+  display: flex;
+  align-items: baseline;
+  gap: var(--sp-1);
+  min-height: 60px;
+}
+
+.acreage-display.hidden { display: none; }
+
+.acreage-number {
+  font-family: var(--font-ui);
+  font-size: var(--text-2xl);
+  font-weight: 300;
+  color: var(--color-gold);
+  line-height: 1;
+}
+
+.acreage-unit {
+  font-family: var(--font-ui);
+  font-size: var(--text-sm);
+  color: rgba(245, 236, 215, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.calc-instructions {
+  font-family: var(--font-ui);
+  font-size: var(--text-sm);
+  color: rgba(245, 236, 215, 0.55);
+  margin-top: var(--sp-2);
+  line-height: 1.6;
+}
+
+.calc-instructions strong { color: var(--color-gold); font-weight: 600; }
+
+/* ── Right Column: Quote Builder ── */
+.calc-quote-col {}
+
+.calc-section-label {
+  font-family: var(--font-ui);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: var(--sp-2);
+  padding-bottom: var(--sp-1);
+  border-bottom: 1px solid rgba(212, 160, 23, 0.2);
+}
+
+/* Difficulty cards */
+.difficulty-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-4);
+}
+
+.difficulty-card {
+  cursor: pointer;
+  border: 2px solid rgba(212, 160, 23, 0.2);
+  border-radius: var(--radius-md);
+  padding: var(--sp-2) var(--sp-1);
+  text-align: center;
+  background-color: rgba(92, 61, 30, 0.2);
+  transition: border-color var(--t-base), background-color var(--t-base);
+  user-select: none;
+}
+
+.difficulty-card input[type="radio"] {
+  display: none;
+}
+
+.difficulty-card:hover {
+  border-color: rgba(212, 160, 23, 0.5);
+  background-color: rgba(92, 61, 30, 0.35);
+}
+
+.difficulty-card.selected {
+  border-color: var(--color-gold);
+  background-color: rgba(212, 160, 23, 0.1);
+}
+
+.difficulty-icon {
+  font-size: 1.5rem;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.difficulty-label {
+  font-family: var(--font-ui);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--color-cream);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  display: block;
+}
+
+.difficulty-multiplier {
+  font-family: var(--font-ui);
+  font-size: var(--text-xs);
+  color: var(--color-gold);
+  margin-top: 2px;
+  display: block;
+}
+
+/* Services checklist */
+.services-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+  margin-bottom: var(--sp-4);
+}
+
+.service-check-item {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: 0.6rem 0.75rem;
+  border: 1px solid rgba(212, 160, 23, 0.15);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background-color var(--t-fast), border-color var(--t-fast);
+  user-select: none;
+}
+
+.service-check-item:hover {
+  background-color: rgba(92, 61, 30, 0.3);
+  border-color: rgba(212, 160, 23, 0.35);
+}
+
+.service-check-item input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(212, 160, 23, 0.5);
+  border-radius: 3px;
+  background: transparent;
+  flex-shrink: 0;
+  cursor: pointer;
+  position: relative;
+  transition: border-color var(--t-fast), background-color var(--t-fast);
+}
+
+.service-check-item input[type="checkbox"]:checked {
+  background-color: var(--color-gold);
+  border-color: var(--color-gold);
+}
+
+.service-check-item input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 1px;
+  width: 6px;
+  height: 10px;
+  border: 2px solid var(--color-earth-dark);
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg);
+}
+
+.service-check-item input[type="checkbox"]:checked + .service-check-name {
+  color: var(--color-cream);
+}
+
+.service-check-name {
+  font-family: var(--font-ui);
+  font-size: var(--text-sm);
+  color: rgba(245, 236, 215, 0.75);
+  flex: 1;
+  transition: color var(--t-fast);
+}
+
+.service-check-rate {
+  font-family: var(--font-ui);
+  font-size: var(--text-xs);
+  color: var(--color-gold);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Quote output */
+.quote-output {
+  background-color: rgba(92, 61, 30, 0.25);
+  border: var(--border-gold);
+  border-radius: var(--radius-md);
+  padding: var(--sp-3);
+}
+
+.quote-output.loading {
+  opacity: 0.6;
+}
+
+.quote-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--sp-2);
+  padding: 0.35rem 0;
+  font-family: var(--font-ui);
+  font-size: var(--text-sm);
+}
+
+.quote-line + .quote-line {
+  border-top: 1px solid rgba(212, 160, 23, 0.1);
+}
+
+.quote-line-label {
+  color: rgba(245, 236, 215, 0.7);
+  flex: 1;
+}
+
+.quote-line-value {
+  color: var(--color-cream);
+  font-weight: 600;
+  text-align: right;
+  min-width: 70px;
+}
+
+.quote-divider {
+  border: none;
+  border-top: 1px solid rgba(212, 160, 23, 0.4);
+  margin: var(--sp-2) 0;
+}
+
+.quote-total-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: var(--sp-1);
+}
+
+.quote-total-label {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  color: var(--color-cream);
+  font-weight: 700;
+}
+
+.quote-total-value {
+  font-family: var(--font-ui);
+  font-size: var(--text-2xl);
+  font-weight: 300;
+  color: var(--color-gold);
+  transition: color var(--t-base);
+}
+
+.quote-disclaimer {
+  font-family: var(--font-ui);
+  font-size: var(--text-xs);
+  color: rgba(245, 236, 215, 0.4);
+  margin-top: var(--sp-2);
+  line-height: 1.5;
+}
+
+.quote-empty-state {
+  text-align: center;
+  padding: var(--sp-4);
+  color: rgba(245, 236, 215, 0.4);
+  font-family: var(--font-ui);
+  font-size: var(--text-sm);
+  line-height: 1.7;
+}
+
+.quote-cta {
+  margin-top: var(--sp-3);
+}
+
+/* Error message */
+.calc-error {
+  display: none;
+  background-color: rgba(192, 57, 43, 0.15);
+  border: 1px solid rgba(192, 57, 43, 0.4);
+  border-radius: var(--radius-sm);
+  padding: var(--sp-2);
+  font-family: var(--font-ui);
+  font-size: var(--text-sm);
+  color: #e88;
+  margin-top: var(--sp-2);
+}
+
+.calc-error.visible { display: block; }
+
+@media (max-width: 900px) {
+  .calculator-layout {
+    grid-template-columns: 1fr;
+  }
+
+  #map-container {
+    height: 340px;
+  }
+
+  .difficulty-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .difficulty-cards {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" role="img" aria-label="Edging icon">
+  <!-- Shears handle left -->
+  <line x1="8" y1="8" x2="28" y2="28" stroke="#D4A017" stroke-width="3" stroke-linecap="round"/>
+  <!-- Shears handle right -->
+  <line x1="8" y1="28" x2="28" y2="8" stroke="#D4A017" stroke-width="3" stroke-linecap="round"/>
+  <!-- Pivot point -->
+  <circle cx="18" cy="18" r="3.5" fill="#C0392B" stroke="#D4A017" stroke-width="1.5"/>
+  <!-- Blade left -->
+  <path d="M28 28 Q36 32 40 40 L36 40 Q32 34 26 30 Z" fill="#D4A017"/>
+  <!-- Blade right -->
+  <path d="M28 8 Q36 4 40 8 Q36 16 30 22 Z" fill="#C49012"/>
+  <!-- Grip wrap -->
+  <rect x="5" y="15" width="6" height="6" rx="3" fill="#5C3D1E" stroke="#D4A017" stroke-width="1"/>
+</svg>

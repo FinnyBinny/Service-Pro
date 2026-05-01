@@ -1,0 +1,103 @@
+.services {
+  background-color: var(--color-earth-mid);
+  position: relative;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--sp-4);
+  margin-top: var(--sp-6);
+}
+
+/* Service Card */
+.service-card {
+  background-color: rgba(44, 26, 14, 0.6);
+  border: 1px solid rgba(212, 160, 23, 0.18);
+  border-top: 3px solid var(--color-gold);
+  border-radius: var(--radius-md);
+  padding: var(--sp-4);
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--t-base), box-shadow var(--t-base),
+              border-top-color var(--t-base), background-color var(--t-base);
+}
+
+.service-card::before,
+.service-card::after {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-color: rgba(212, 160, 23, 0.35);
+  border-style: solid;
+  transition: border-color var(--t-base);
+}
+.service-card::before {
+  top: 8px;
+  right: 8px;
+  border-width: 1px 1px 0 0;
+}
+.service-card::after {
+  bottom: 8px;
+  left: 8px;
+  border-width: 0 0 1px 1px;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lifted);
+  border-top-color: var(--color-gold-light);
+  background-color: rgba(44, 26, 14, 0.8);
+}
+
+.service-card:hover::before,
+.service-card:hover::after {
+  border-color: rgba(212, 160, 23, 0.65);
+}
+
+/* Icon */
+.service-icon-wrap {
+  width: 58px;
+  height: 58px;
+  background-color: var(--color-earth-dark);
+  border: 1px solid rgba(212, 160, 23, 0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--sp-3);
+  flex-shrink: 0;
+  transition: border-color var(--t-base), box-shadow var(--t-base);
+}
+
+.service-card:hover .service-icon-wrap {
+  border-color: var(--color-gold);
+  box-shadow: 0 0 16px rgba(212, 160, 23, 0.25);
+}
+
+.service-icon-wrap svg {
+  width: 28px;
+  height: 28px;
+}
+
+.service-card-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-cream);
+  margin-bottom: var(--sp-1);
+}
+
+.service-card-desc {
+  font-family: var(--font-ui);
+  font-size: var(--text-base);
+  color: rgba(245, 236, 215, 0.75);
+  line-height: 1.65;
+}
+
+@media (max-width: 640px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
