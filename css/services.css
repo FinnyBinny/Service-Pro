@@ -1,90 +1,74 @@
 .services {
-  background-color: var(--color-navy);
+  background-color: var(--color-crimson);
   position: relative;
 }
 
-/* Diagonal folk art pattern overlay on services */
+/* Subtle repeating diamond pattern — Espolón label texture */
 .services::before {
   content: '';
   position: absolute;
   inset: 0;
   background-image:
-    repeating-linear-gradient(
-      60deg,
-      rgba(212, 160, 23, 0.04) 0px, rgba(212, 160, 23, 0.04) 1px,
-      transparent 1px, transparent 30px
-    ),
-    repeating-linear-gradient(
-      -60deg,
-      rgba(26, 58, 143, 0.06) 0px, rgba(26, 58, 143, 0.06) 1px,
-      transparent 1px, transparent 30px
-    );
+    linear-gradient(45deg, rgba(200,144,26,0.06) 25%, transparent 25%, transparent 75%, rgba(200,144,26,0.06) 75%),
+    linear-gradient(45deg, rgba(200,144,26,0.06) 25%, transparent 25%, transparent 75%, rgba(200,144,26,0.06) 75%);
+  background-size: 36px 36px;
+  background-position: 0 0, 18px 18px;
   pointer-events: none;
 }
 
-.services .section-preheading { color: var(--color-gold); }
-.services .section-heading     { color: var(--color-cream); }
+.services .section-preheading { color: var(--color-amber); }
+.services .section-heading     { color: var(--color-ivory); }
 
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: var(--sp-4);
+  gap: var(--sp-3);
   margin-top: var(--sp-6);
 }
 
-/* ── Service Card ── */
+/* Service card */
 .service-card {
-  background-color: rgba(13, 30, 82, 0.6);
-  border: 1px solid rgba(212, 160, 23, 0.2);
-  border-top: 3px solid var(--color-gold);
+  background-color: rgba(14, 4, 2, 0.45);
+  border: 1px solid rgba(200, 144, 26, 0.18);
+  border-top: 3px solid var(--color-amber);
   border-radius: var(--radius-md);
   padding: var(--sp-4);
   position: relative;
   overflow: hidden;
   transition: transform var(--t-base), box-shadow var(--t-base),
-              border-top-color var(--t-base), background-color var(--t-base);
+              background-color var(--t-base), border-top-color var(--t-base);
 }
 
-/* Folk art corner accents */
 .service-card::before,
 .service-card::after {
   content: '';
   position: absolute;
-  width: 14px;
-  height: 14px;
-  border-color: rgba(212, 160, 23, 0.3);
+  width: 12px;
+  height: 12px;
+  border-color: rgba(200, 144, 26, 0.25);
   border-style: solid;
   transition: border-color var(--t-base);
 }
-.service-card::before { top: 8px;    right: 8px;  border-width: 1px 1px 0 0; }
-.service-card::after  { bottom: 8px; left: 8px;   border-width: 0 0 1px 1px; }
+
+.service-card::before { top: 7px; right: 7px;   border-width: 1px 1px 0 0; }
+.service-card::after  { bottom: 7px; left: 7px;  border-width: 0 0 1px 1px; }
 
 .service-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6);
-  border-top-color: var(--color-gold-light);
-  background-color: rgba(22, 36, 112, 0.7);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lifted);
+  background-color: rgba(14, 4, 2, 0.65);
+  border-top-color: var(--color-amber-light);
 }
 
 .service-card:hover::before,
-.service-card:hover::after {
-  border-color: rgba(212, 160, 23, 0.7);
-}
-
-/* Left accent stripe — alternating folk art colors */
-.service-card:nth-child(1) { border-left: 3px solid var(--color-red); }
-.service-card:nth-child(2) { border-left: 3px solid var(--color-cobalt-light); }
-.service-card:nth-child(3) { border-left: 3px solid var(--color-folk-magenta); }
-.service-card:nth-child(4) { border-left: 3px solid var(--color-folk-orange); }
-.service-card:nth-child(5) { border-left: 3px solid var(--color-gold); }
-.service-card:nth-child(6) { border-left: 3px solid var(--color-red); }
+.service-card:hover::after { border-color: rgba(200, 144, 26, 0.6); }
 
 /* Icon */
 .service-icon-wrap {
-  width: 56px;
-  height: 56px;
-  background-color: rgba(13, 30, 82, 0.8);
-  border: 1px solid rgba(212, 160, 23, 0.35);
+  width: 54px;
+  height: 54px;
+  background-color: rgba(14, 4, 2, 0.6);
+  border: 1px solid rgba(200, 144, 26, 0.3);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -94,25 +78,25 @@
 }
 
 .service-card:hover .service-icon-wrap {
-  border-color: var(--color-gold);
-  box-shadow: 0 0 18px rgba(212, 160, 23, 0.3);
+  border-color: var(--color-amber);
+  box-shadow: 0 0 16px rgba(200, 144, 26, 0.25);
 }
 
 .service-icon-wrap img,
-.service-icon-wrap svg { width: 28px; height: 28px; }
+.service-icon-wrap svg { width: 26px; height: 26px; }
 
 .service-card-title {
   font-family: var(--font-heading);
   font-size: var(--text-lg);
   font-weight: 700;
-  color: var(--color-cream);
+  color: var(--color-ivory);
   margin-bottom: var(--sp-1);
 }
 
 .service-card-desc {
   font-family: var(--font-ui);
   font-size: var(--text-base);
-  color: rgba(232, 213, 176, 0.75);
+  color: rgba(245, 232, 204, 0.7);
   line-height: 1.65;
 }
 

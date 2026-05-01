@@ -1,45 +1,35 @@
 :root {
-  /* ── Earth Palette ── */
-  --color-earth-dark:    #2C1A0E;
-  --color-earth-mid:     #5C3D1E;
-  --color-earth-light:   #A0724A;
-  --color-cream:         #F5ECD7;
-  --color-parchment:     #E8D5B0;
-  --color-parchment-mid: #D4BC8E;
+  /* ── Espolón-inspired Palette ── */
+  --color-bg:          #160805;   /* near-black warm red — body */
+  --color-crimson:     #5C1008;   /* deep crimson — primary sections */
+  --color-crimson-mid: #7A140E;   /* mid crimson */
+  --color-crimson-light:#A01A12;  /* lighter crimson for accents */
+  --color-amber:       #C8901A;   /* warm amber gold — primary accent */
+  --color-amber-light: #E8AE30;   /* bright amber — hover */
+  --color-amber-dim:   rgba(200, 144, 26, 0.2);
+  --color-cream:       #F5E8CC;   /* warm cream — primary text */
+  --color-ivory:       #FFF8EE;   /* near-white — headings */
+  --color-parchment:   #E8D5A8;   /* slightly darker cream */
+  --color-dark-warm:   #1E0C06;   /* very dark warm — card bg */
 
-  /* ── Folk Art Section Backgrounds ── */
-  --color-navy:          #0d1e52;   /* deep indigo-navy — services */
-  --color-navy-mid:      #162470;   /* slightly lighter navy */
-  --color-burgundy:      #2a0818;   /* deep wine — contact */
-
-  /* ── Accent Palette ── */
-  --color-red:           #C0392B;
-  --color-red-hover:     #A93226;
-  --color-cobalt:        #1A3A8F;
-  --color-cobalt-light:  #2B57D4;
-  --color-gold:          #D4A017;
-  --color-gold-light:    #F0C040;
-  --color-gold-dim:      rgba(212, 160, 23, 0.22);
-  --color-folk-magenta:  #9B1060;   /* folk art hot pink */
-  --color-folk-orange:   #D4520A;   /* folk art burnt orange */
-
-  /* ── Text ── */
-  --color-text-on-dark:  #F5ECD7;
-  --color-text-on-navy:  #E8D5B0;
-  --color-text-on-light: #2C1A0E;
-  --color-text-muted:    rgba(245, 236, 215, 0.6);
+  /* ── Utility ── */
+  --color-text-on-dark:  #F5E8CC;
+  --color-text-on-light: #1E0C06;
+  --color-text-muted:    rgba(245, 232, 204, 0.55);
+  --color-border-amber:  rgba(200, 144, 26, 0.35);
+  --color-border-amber-solid: rgba(200, 144, 26, 0.8);
 
   /* ── Shadows ── */
-  --shadow-card:    0 4px 28px rgba(0, 0, 0, 0.5);
-  --shadow-lifted:  0 12px 44px rgba(0, 0, 0, 0.65);
-  --shadow-gold:    0 0 0 2px var(--color-gold);
-  --shadow-navy:    0 8px 32px rgba(13, 30, 82, 0.6);
+  --shadow-card:   0 4px 32px rgba(0, 0, 0, 0.6);
+  --shadow-lifted: 0 14px 50px rgba(0, 0, 0, 0.75);
+  --shadow-amber:  0 0 0 2px var(--color-amber);
+  --shadow-glow:   0 0 40px rgba(200, 144, 26, 0.15);
 
   /* ── Typography ── */
-  --font-display:  'Cinzel Decorative', serif;
-  --font-heading:  'Playfair Display', serif;
-  --font-body:     'Libre Baskerville', serif;
-  --font-ui:       'Source Sans 3', sans-serif;
+  --font-display: 'Cinzel Decorative', serif;
+  --font-heading: 'Playfair Display', serif;
+  --font-body:    'Libre Baskerville', serif;
+  --font-ui:      'Source Sans 3', sans-serif;
 
   /* ── Type Scale ── */
   --text-xs:   0.75rem;
@@ -50,7 +40,7 @@
   --text-xl:   1.75rem;
   --text-2xl:  2.25rem;
   --text-3xl:  3rem;
-  --text-hero: clamp(2.2rem, 6vw, 5rem);
+  --text-hero: clamp(2.4rem, 6vw, 5.5rem);
 
   /* ── Spacing ── */
   --sp-1:  0.5rem;
@@ -60,20 +50,18 @@
   --sp-6:  3rem;
   --sp-8:  4rem;
   --sp-12: 6rem;
-  --sp-16: 8rem;
 
   /* ── Section padding ── */
   --section-py: clamp(4rem, 8vw, 7rem);
 
   /* ── Layout ── */
-  --container-max:  1180px;
-  --container-px:   clamp(1.25rem, 5vw, 3rem);
+  --container-max: 1180px;
+  --container-px:  clamp(1.25rem, 5vw, 3rem);
 
   /* ── Borders ── */
   --radius-sm: 3px;
   --radius-md: 6px;
-  --border-gold:   1px solid var(--color-gold);
-  --border-gold-2: 2px solid var(--color-gold);
+  --border-amber: 1px solid var(--color-amber);
 
   /* ── Transitions ── */
   --t-fast: 150ms ease;
@@ -81,6 +69,6 @@
   --t-slow: 500ms ease;
 
   /* ── Nav ── */
-  --nav-height:         72px;
-  --nav-height-scrolled: 56px;
+  --nav-height:          68px;
+  --nav-height-scrolled: 52px;
 }

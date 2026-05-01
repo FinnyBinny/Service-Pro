@@ -1,3 +1,7 @@
+body {
+  background-color: var(--color-bg);
+}
+
 .container {
   width: 100%;
   max-width: var(--container-max);
@@ -14,8 +18,8 @@
   color: var(--color-text-on-light);
 }
 
-.section--mid {
-  background-color: var(--color-earth-mid);
+.section--dark {
+  background-color: var(--color-dark-warm);
 }
 
 .two-col {
@@ -32,10 +36,7 @@
   }
 }
 
-.section-header {
-  margin-bottom: var(--sp-8);
-}
-
+.section-header        { margin-bottom: var(--sp-8); }
 .section-header--center {
   text-align: center;
   display: flex;
@@ -43,13 +44,24 @@
   align-items: center;
 }
 
-/* Papel picado section divider */
-.papel-picado-wrap {
-  line-height: 0;
+/* ── Ornate section rule (replaces papel picado) ── */
+.ornate-rule {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sp-2) 0;
   overflow: hidden;
-  background-color: var(--color-earth-dark);
+  background-color: var(--color-bg);
 }
 
+.ornate-rule svg {
+  width: 100%;
+  max-width: 800px;
+  height: 24px;
+  display: block;
+}
+
+/* ── Ornate divider (inline, within sections) ── */
 .ornate-divider {
   display: flex;
   align-items: center;
@@ -59,6 +71,42 @@
 }
 
 .ornate-divider svg {
-  width: min(380px, 90%);
+  width: min(340px, 85%);
   height: auto;
+}
+
+/* ── Trust bar ── */
+.trust-bar {
+  background-color: var(--color-amber);
+  padding: 0.8rem 0;
+}
+
+.trust-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  flex-wrap: wrap;
+}
+
+.trust-bar-item {
+  font-family: var(--font-ui);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-bg);
+  letter-spacing: 0.05em;
+  padding: 0.2rem var(--sp-3);
+  white-space: nowrap;
+}
+
+.trust-bar-sep {
+  color: rgba(22, 8, 5, 0.35);
+  font-size: var(--text-lg);
+  flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+  .trust-bar-item { font-size: var(--text-xs); padding: 0.15rem var(--sp-2); }
+  .trust-bar-sep  { display: none; }
+  .trust-bar-inner { gap: var(--sp-1); }
 }

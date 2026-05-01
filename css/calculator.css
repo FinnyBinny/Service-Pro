@@ -1,9 +1,8 @@
 .calculator {
-  background-color: var(--color-earth-dark);
+  background-color: var(--color-bg);
   position: relative;
 }
 
-/* Subtle folk art pattern */
 .calculator::before {
   content: '';
   position: absolute;
@@ -11,7 +10,7 @@
   background-image:
     repeating-linear-gradient(
       45deg,
-      rgba(212,160,23,0.03) 0px, rgba(212,160,23,0.03) 1px,
+      rgba(200,144,26,0.03) 0px, rgba(200,144,26,0.03) 1px,
       transparent 1px, transparent 24px
     );
   pointer-events: none;
@@ -39,10 +38,10 @@
 #map-container {
   width: 100%;
   height: 440px;
-  border: var(--border-gold);
+  border: var(--border-amber);
   border-radius: var(--radius-md);
   overflow: hidden;
-  background-color: var(--color-earth-mid);
+  background-color: var(--color-dark-warm);
   position: relative;
 }
 
@@ -54,7 +53,7 @@
   align-items: center;
   justify-content: center;
   gap: var(--sp-2);
-  color: rgba(245, 236, 215, 0.35);
+  color: rgba(245, 232, 204, 0.35);
   font-family: var(--font-ui);
   font-size: var(--text-sm);
   text-align: center;
@@ -76,9 +75,9 @@
 /* ── Multi-polygon area list ── */
 .area-list-wrap {
   margin-top: var(--sp-3);
-  border: var(--border-gold);
+  border: var(--border-amber);
   border-radius: var(--radius-md);
-  background-color: rgba(212, 160, 23, 0.04);
+  background-color: rgba(200, 144, 26, 0.04);
   overflow: hidden;
   display: none;
 }
@@ -90,8 +89,8 @@
   justify-content: space-between;
   align-items: center;
   padding: var(--sp-1) var(--sp-2);
-  background-color: rgba(212, 160, 23, 0.08);
-  border-bottom: 1px solid rgba(212, 160, 23, 0.15);
+  background-color: rgba(200, 144, 26, 0.08);
+  border-bottom: 1px solid rgba(200, 144, 26, 0.15);
 }
 
 .area-list-title {
@@ -100,7 +99,7 @@
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--color-gold);
+  color: var(--color-amber);
 }
 
 .area-total {
@@ -111,7 +110,7 @@
 }
 
 .area-total span {
-  color: var(--color-gold);
+  color: var(--color-amber);
   font-size: var(--text-lg);
   font-weight: 300;
 }
@@ -129,7 +128,7 @@
   transition: background-color var(--t-fast);
 }
 
-.area-item:hover { background-color: rgba(212, 160, 23, 0.06); }
+.area-item:hover { background-color: rgba(200, 144, 26, 0.06); }
 
 .area-color-dot {
   width: 10px;
@@ -148,7 +147,7 @@
 .area-acres {
   font-family: var(--font-ui);
   font-size: var(--text-sm);
-  color: var(--color-gold);
+  color: var(--color-amber);
   font-weight: 600;
   min-width: 80px;
   text-align: right;
@@ -172,19 +171,19 @@
 
 .area-delete:hover {
   background-color: rgba(192, 57, 43, 0.15);
-  color: var(--color-red);
-  border-color: var(--color-red);
+  color: #e05a48;
+  border-color: #e05a48;
 }
 
 .calc-instructions {
   font-family: var(--font-ui);
   font-size: var(--text-sm);
-  color: rgba(245, 236, 215, 0.5);
+  color: rgba(245, 232, 204, 0.5);
   margin-top: var(--sp-2);
   line-height: 1.65;
 }
 
-.calc-instructions strong { color: var(--color-gold); font-weight: 600; }
+.calc-instructions strong { color: var(--color-amber); font-weight: 600; }
 
 /* ── Right: Quote Builder ── */
 .calc-section-label {
@@ -193,10 +192,10 @@
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--color-gold);
+  color: var(--color-amber);
   margin-bottom: var(--sp-2);
   padding-bottom: var(--sp-1);
-  border-bottom: 1px solid rgba(212, 160, 23, 0.2);
+  border-bottom: 1px solid rgba(200, 144, 26, 0.2);
 }
 
 /* Difficulty cards */
@@ -209,11 +208,11 @@
 
 .difficulty-card {
   cursor: pointer;
-  border: 2px solid rgba(212, 160, 23, 0.2);
+  border: 2px solid rgba(200, 144, 26, 0.2);
   border-radius: var(--radius-md);
   padding: var(--sp-2) var(--sp-1);
   text-align: center;
-  background-color: rgba(92, 61, 30, 0.2);
+  background-color: rgba(92, 16, 8, 0.2);
   transition: border-color var(--t-base), background-color var(--t-base);
   user-select: none;
 }
@@ -221,20 +220,20 @@
 .difficulty-card input[type="radio"] { display: none; }
 
 .difficulty-card:hover {
-  border-color: rgba(212, 160, 23, 0.5);
-  background-color: rgba(92, 61, 30, 0.35);
+  border-color: rgba(200, 144, 26, 0.5);
+  background-color: rgba(92, 16, 8, 0.35);
 }
 
 .difficulty-card.selected {
-  border-color: var(--color-gold);
-  background-color: rgba(212, 160, 23, 0.1);
+  border-color: var(--color-amber);
+  background-color: rgba(200, 144, 26, 0.1);
 }
 
 .difficulty-icon  { font-size: 1.4rem; display: block; margin-bottom: 0.25rem; }
 .difficulty-label { font-family: var(--font-ui); font-size: var(--text-xs); font-weight: 600; color: var(--color-cream); text-transform: uppercase; letter-spacing: 0.06em; display: block; }
-.difficulty-multiplier { font-family: var(--font-ui); font-size: var(--text-xs); color: var(--color-gold); margin-top: 2px; display: block; }
+.difficulty-multiplier { font-family: var(--font-ui); font-size: var(--text-xs); color: var(--color-amber); margin-top: 2px; display: block; }
 
-/* Services checklist — no prices shown */
+/* Services checklist */
 .services-checklist {
   display: flex;
   flex-direction: column;
@@ -247,7 +246,7 @@
   align-items: center;
   gap: var(--sp-2);
   padding: 0.65rem 0.8rem;
-  border: 1px solid rgba(212, 160, 23, 0.15);
+  border: 1px solid rgba(200, 144, 26, 0.15);
   border-radius: var(--radius-sm);
   cursor: pointer;
   transition: background-color var(--t-fast), border-color var(--t-fast);
@@ -255,15 +254,15 @@
 }
 
 .service-check-item:hover {
-  background-color: rgba(92, 61, 30, 0.3);
-  border-color: rgba(212, 160, 23, 0.35);
+  background-color: rgba(92, 16, 8, 0.3);
+  border-color: rgba(200, 144, 26, 0.35);
 }
 
 .service-check-item input[type="checkbox"] {
   appearance: none;
   -webkit-appearance: none;
   width: 18px; height: 18px;
-  border: 2px solid rgba(212, 160, 23, 0.5);
+  border: 2px solid rgba(200, 144, 26, 0.5);
   border-radius: 3px;
   background: transparent;
   flex-shrink: 0;
@@ -273,8 +272,8 @@
 }
 
 .service-check-item input[type="checkbox"]:checked {
-  background-color: var(--color-gold);
-  border-color: var(--color-gold);
+  background-color: var(--color-amber);
+  border-color: var(--color-amber);
 }
 
 .service-check-item input[type="checkbox"]:checked::after {
@@ -282,7 +281,7 @@
   position: absolute;
   left: 4px; top: 1px;
   width: 6px; height: 10px;
-  border: 2px solid var(--color-earth-dark);
+  border: 2px solid var(--color-bg);
   border-top: none; border-left: none;
   transform: rotate(45deg);
 }
@@ -290,7 +289,7 @@
 .service-check-name {
   font-family: var(--font-ui);
   font-size: var(--text-sm);
-  color: rgba(245, 236, 215, 0.8);
+  color: rgba(245, 232, 204, 0.8);
   flex: 1;
   transition: color var(--t-fast);
 }
@@ -301,8 +300,8 @@
 
 /* Quote output */
 .quote-output {
-  background-color: rgba(92, 61, 30, 0.2);
-  border: var(--border-gold);
+  background-color: rgba(92, 16, 8, 0.2);
+  border: var(--border-amber);
   border-radius: var(--radius-md);
   padding: var(--sp-3);
 }
@@ -315,15 +314,15 @@
   padding: 0.4rem 0;
   font-family: var(--font-ui);
   font-size: var(--text-sm);
-  border-top: 1px solid rgba(212, 160, 23, 0.08);
+  border-top: 1px solid rgba(200, 144, 26, 0.08);
 }
 
 .quote-line:first-child { border-top: none; }
 
-.quote-line-label { color: rgba(245, 236, 215, 0.65); flex: 1; }
+.quote-line-label { color: rgba(245, 232, 204, 0.65); flex: 1; }
 .quote-line-value { color: var(--color-cream); font-weight: 600; text-align: right; min-width: 70px; }
 
-.quote-divider { border: none; border-top: 1px solid rgba(212, 160, 23, 0.35); margin: var(--sp-2) 0; }
+.quote-divider { border: none; border-top: 1px solid rgba(200, 144, 26, 0.35); margin: var(--sp-2) 0; }
 
 .quote-total-line {
   display: flex;
@@ -343,14 +342,14 @@
   font-family: var(--font-ui);
   font-size: var(--text-2xl);
   font-weight: 300;
-  color: var(--color-gold);
+  color: var(--color-amber);
   transition: color var(--t-base);
 }
 
 .quote-disclaimer {
   font-family: var(--font-ui);
   font-size: var(--text-xs);
-  color: rgba(245, 236, 215, 0.35);
+  color: rgba(245, 232, 204, 0.35);
   margin-top: var(--sp-2);
   line-height: 1.5;
 }
@@ -358,11 +357,11 @@
 .quote-empty-state {
   text-align: center;
   padding: var(--sp-4);
-  color: rgba(245, 236, 215, 0.4);
+  color: rgba(245, 232, 204, 0.4);
   font-family: var(--font-ui);
   font-size: var(--text-sm);
   line-height: 1.7;
-  border: 1px dashed rgba(212, 160, 23, 0.2);
+  border: 1px dashed rgba(200, 144, 26, 0.2);
   border-radius: var(--radius-md);
 }
 
@@ -382,13 +381,13 @@
 
 .calc-error.visible { display: block; }
 
-/* Polygon area colors */
-.area-color-1 { background-color: #D4A017; }
-.area-color-2 { background-color: #1A3A8F; }
-.area-color-3 { background-color: #C0392B; }
-.area-color-4 { background-color: #9B1060; }
+/* Polygon area dot colors */
+.area-color-1 { background-color: #C8901A; }
+.area-color-2 { background-color: #A01A12; }
+.area-color-3 { background-color: #E8AE30; }
+.area-color-4 { background-color: #7A140E; }
 .area-color-5 { background-color: #D4520A; }
-.area-color-6 { background-color: #2B57D4; }
+.area-color-6 { background-color: #E8D5A8; }
 
 @media (max-width: 900px) {
   .calculator-layout { grid-template-columns: 1fr; }
