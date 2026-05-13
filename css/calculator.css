@@ -1,8 +1,27 @@
-/* ── Calculator: surface background ── */
+/* ── Calculator: warm cream / paper background with subtle texture ── */
 .calculator {
-  background-color: var(--color-surface);
+  background-color: var(--color-bg);
   position: relative;
+  overflow: hidden;
 }
+
+.calculator::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('../assets/svg/talavera-tile.svg');
+  background-size: 200px 200px;
+  background-repeat: repeat;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.calculator .container { position: relative; z-index: 1; }
+
+.calculator .section-preheading { color: var(--color-cobalt); }
+.calculator .section-preheading::before,
+.calculator .section-preheading::after { background-color: var(--color-cobalt); }
+.calculator .section-heading     { color: var(--color-ink); }
 
 .calculator-layout {
   display: grid;
@@ -26,11 +45,12 @@
 #map-container {
   width: 100%;
   height: 440px;
-  border: 1px solid rgba(237, 232, 219, 0.15);
+  border: 3px solid var(--color-cobalt);
   border-radius: var(--radius-md);
   overflow: hidden;
-  background-color: var(--color-surface2);
+  background-color: var(--color-shell);
   position: relative;
+  box-shadow: 0 6px 0 var(--color-cobalt-dk), var(--shadow-card);
 }
 
 .map-placeholder {
@@ -41,7 +61,7 @@
   align-items: center;
   justify-content: center;
   gap: var(--sp-2);
-  color: rgba(237, 232, 219, 0.3);
+  color: var(--color-ink-soft);
   font-family: var(--font-ui);
   font-size: var(--text-sm);
   text-align: center;
@@ -51,21 +71,22 @@
 }
 
 .map-placeholder.hidden { opacity: 0; }
-.map-placeholder svg { width: 48px; height: 48px; opacity: 0.4; }
+.map-placeholder svg { width: 48px; height: 48px; color: var(--color-terracotta); }
+.map-placeholder svg circle, .map-placeholder svg path { stroke: var(--color-terracotta); }
 
 .calc-map-controls {
   display: flex;
   gap: var(--sp-2);
-  margin-top: var(--sp-2);
+  margin-top: var(--sp-3);
   flex-wrap: wrap;
 }
 
 /* ── Multi-polygon area list ── */
 .area-list-wrap {
   margin-top: var(--sp-3);
-  border: 1px solid rgba(237, 232, 219, 0.15);
+  border: 1.5px solid var(--color-border-strong);
   border-radius: var(--radius-md);
-  background-color: rgba(237, 232, 219, 0.02);
+  background-color: var(--color-shell);
   overflow: hidden;
   display: none;
 }
@@ -77,52 +98,51 @@
   justify-content: space-between;
   align-items: center;
   padding: var(--sp-1) var(--sp-2);
-  background-color: rgba(237, 232, 219, 0.04);
-  border-bottom: 1px solid rgba(237, 232, 219, 0.1);
+  background-color: var(--color-paper);
+  border-bottom: 1.5px solid var(--color-border);
 }
 
 .area-list-title {
   font-family: var(--font-ui);
   font-size: var(--text-xs);
-  font-weight: 600;
-  letter-spacing: 0.14em;
+  font-weight: 800;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--color-red);
+  color: var(--color-cobalt);
 }
 
 .area-total {
   font-family: var(--font-ui);
   font-size: var(--text-sm);
   color: var(--color-ink);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .area-total span {
-  color: var(--color-red);
+  color: var(--color-terracotta);
   font-size: var(--text-lg);
-  font-weight: 300;
+  font-weight: 700;
 }
 
-.area-list {
-  padding: var(--sp-1);
-}
+.area-list { padding: var(--sp-1); }
 
 .area-item {
   display: flex;
   align-items: center;
   gap: var(--sp-1);
-  padding: 0.5rem var(--sp-1);
+  padding: 0.55rem var(--sp-1);
   border-radius: var(--radius-sm);
   transition: background-color var(--t-fast);
 }
 
-.area-item:hover { background-color: rgba(237, 232, 219, 0.04); }
+.area-item:hover { background-color: var(--color-paper); }
 
 .area-color-dot {
-  width: 10px;
-  height: 10px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
   flex-shrink: 0;
+  border: 1.5px solid var(--color-ink);
 }
 
 .area-label {
@@ -130,63 +150,64 @@
   font-family: var(--font-ui);
   font-size: var(--text-sm);
   color: var(--color-ink);
+  font-weight: 600;
 }
 
 .area-acres {
   font-family: var(--font-ui);
   font-size: var(--text-sm);
-  color: var(--color-red);
-  font-weight: 600;
+  color: var(--color-terracotta);
+  font-weight: 700;
   min-width: 80px;
   text-align: right;
 }
 
 .area-delete {
-  width: 22px;
-  height: 22px;
-  border: 1px solid rgba(192, 50, 26, 0.4);
+  width: 24px;
+  height: 24px;
+  border: 1.5px solid var(--color-terracotta);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: var(--text-sm);
-  color: rgba(192, 50, 26, 0.7);
+  color: var(--color-terracotta);
   cursor: pointer;
-  background: none;
-  transition: background-color var(--t-fast), color var(--t-fast), border-color var(--t-fast);
+  background: var(--color-shell);
+  transition: background-color var(--t-fast), color var(--t-fast);
   flex-shrink: 0;
+  font-weight: 800;
 }
 
 .area-delete:hover {
-  background-color: rgba(192, 50, 26, 0.15);
-  color: #e05a48;
-  border-color: #e05a48;
+  background-color: var(--color-terracotta);
+  color: var(--color-ink-light);
 }
 
 .calc-instructions {
   font-family: var(--font-ui);
   font-size: var(--text-sm);
-  color: rgba(237, 232, 219, 0.45);
+  color: var(--color-ink-soft);
   margin-top: var(--sp-2);
   line-height: 1.65;
 }
 
-.calc-instructions strong { color: var(--color-red); font-weight: 600; }
+.calc-instructions strong { color: var(--color-terracotta); font-weight: 700; }
 
 /* ── Right: Quote Builder ── */
 .calc-section-label {
   font-family: var(--font-ui);
   font-size: var(--text-xs);
-  font-weight: 600;
+  font-weight: 800;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--color-red);
+  color: var(--color-cobalt);
   margin-bottom: var(--sp-2);
   padding-bottom: var(--sp-1);
-  border-bottom: 1px solid rgba(192, 50, 26, 0.2);
+  border-bottom: 2px dashed var(--color-cobalt);
 }
 
-/* Difficulty cards */
+/* Difficulty cards — talavera tile style */
 .difficulty-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -196,30 +217,32 @@
 
 .difficulty-card {
   cursor: pointer;
-  border: 2px solid rgba(237, 232, 219, 0.1);
+  border: 2.5px solid var(--color-border-strong);
   border-radius: var(--radius-md);
   padding: var(--sp-2) var(--sp-1);
   text-align: center;
-  background-color: var(--color-surface2);
-  transition: border-color var(--t-base), background-color var(--t-base);
+  background-color: var(--color-shell);
+  transition: border-color var(--t-base), background-color var(--t-base), transform var(--t-fast);
   user-select: none;
+  position: relative;
 }
 
 .difficulty-card input[type="radio"] { display: none; }
 
 .difficulty-card:hover {
-  border-color: rgba(237, 232, 219, 0.25);
-  background-color: rgba(237, 232, 219, 0.04);
+  border-color: var(--color-cobalt);
+  transform: translateY(-2px);
 }
 
 .difficulty-card.selected {
-  border-color: var(--color-red);
-  background-color: var(--color-red-dim);
+  border-color: var(--color-terracotta);
+  background-color: rgba(196, 69, 54, 0.08);
+  box-shadow: 0 4px 0 var(--color-terracotta-dk);
 }
 
-.difficulty-icon  { font-size: 1.4rem; display: block; margin-bottom: 0.25rem; }
-.difficulty-label { font-family: var(--font-ui); font-size: var(--text-xs); font-weight: 600; color: var(--color-ink); text-transform: uppercase; letter-spacing: 0.06em; display: block; }
-.difficulty-multiplier { font-family: var(--font-ui); font-size: var(--text-xs); color: var(--color-red); margin-top: 2px; display: block; }
+.difficulty-icon  { font-size: 1.6rem; display: block; margin-bottom: 0.3rem; }
+.difficulty-label { font-family: var(--font-ui); font-size: var(--text-xs); font-weight: 800; color: var(--color-ink); text-transform: uppercase; letter-spacing: 0.06em; display: block; }
+.difficulty-multiplier { font-family: var(--font-ui); font-size: var(--text-xs); color: var(--color-terracotta); margin-top: 2px; display: block; font-weight: 700; }
 
 /* Services checklist */
 .services-checklist {
@@ -233,26 +256,27 @@
   display: flex;
   align-items: center;
   gap: var(--sp-2);
-  padding: 0.65rem 0.8rem;
-  border: 1px solid rgba(237, 232, 219, 0.1);
+  padding: 0.7rem 0.9rem;
+  border: 1.5px solid var(--color-border-strong);
   border-radius: var(--radius-sm);
+  background-color: var(--color-shell);
   cursor: pointer;
   transition: background-color var(--t-fast), border-color var(--t-fast);
   user-select: none;
 }
 
 .service-check-item:hover {
-  background-color: rgba(237, 232, 219, 0.04);
-  border-color: rgba(237, 232, 219, 0.2);
+  background-color: var(--color-paper);
+  border-color: var(--color-cobalt);
 }
 
 .service-check-item input[type="checkbox"] {
   appearance: none;
   -webkit-appearance: none;
-  width: 18px; height: 18px;
-  border: 2px solid rgba(237, 232, 219, 0.3);
-  border-radius: 3px;
-  background: transparent;
+  width: 20px; height: 20px;
+  border: 2px solid var(--color-border-strong);
+  border-radius: 4px;
+  background: var(--color-shell);
   flex-shrink: 0;
   cursor: pointer;
   position: relative;
@@ -260,16 +284,16 @@
 }
 
 .service-check-item input[type="checkbox"]:checked {
-  background-color: var(--color-red);
-  border-color: var(--color-red);
+  background-color: var(--color-terracotta);
+  border-color: var(--color-terracotta);
 }
 
 .service-check-item input[type="checkbox"]:checked::after {
   content: '';
   position: absolute;
-  left: 4px; top: 1px;
-  width: 6px; height: 10px;
-  border: 2px solid var(--color-bg);
+  left: 5px; top: 1px;
+  width: 6px; height: 11px;
+  border: 2.5px solid var(--color-ink-light);
   border-top: none; border-left: none;
   transform: rotate(45deg);
 }
@@ -277,21 +301,24 @@
 .service-check-name {
   font-family: var(--font-ui);
   font-size: var(--text-sm);
-  color: rgba(237, 232, 219, 0.75);
+  color: var(--color-ink-soft);
   flex: 1;
+  font-weight: 600;
   transition: color var(--t-fast);
 }
 
 .service-check-item input:checked + .service-check-name {
   color: var(--color-ink);
+  font-weight: 700;
 }
 
-/* Quote output */
+/* Quote output — featured talavera card */
 .quote-output {
-  background-color: rgba(237, 232, 219, 0.03);
-  border: 1px solid rgba(237, 232, 219, 0.12);
+  background-color: var(--color-shell);
+  border: 2px solid var(--color-cobalt);
   border-radius: var(--radius-md);
   padding: var(--sp-3);
+  box-shadow: 0 5px 0 var(--color-cobalt-dk), var(--shadow-card);
 }
 
 .quote-line {
@@ -299,18 +326,18 @@
   justify-content: space-between;
   align-items: flex-start;
   gap: var(--sp-2);
-  padding: 0.4rem 0;
+  padding: 0.45rem 0;
   font-family: var(--font-ui);
   font-size: var(--text-sm);
-  border-top: 1px solid rgba(237, 232, 219, 0.07);
+  border-top: 1px dashed var(--color-border-strong);
 }
 
 .quote-line:first-child { border-top: none; }
 
-.quote-line-label { color: rgba(237, 232, 219, 0.55); flex: 1; }
-.quote-line-value { color: var(--color-ink); font-weight: 600; text-align: right; min-width: 70px; }
+.quote-line-label { color: var(--color-ink-soft); flex: 1; }
+.quote-line-value { color: var(--color-ink); font-weight: 700; text-align: right; min-width: 70px; }
 
-.quote-divider { border: none; border-top: 1px solid rgba(237, 232, 219, 0.15); margin: var(--sp-2) 0; }
+.quote-divider { border: none; border-top: 2px solid var(--color-cobalt); margin: var(--sp-2) 0; }
 
 .quote-total-line {
   display: flex;
@@ -323,21 +350,21 @@
   font-family: var(--font-heading);
   font-size: var(--text-lg);
   color: var(--color-ink);
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .quote-total-value {
-  font-family: var(--font-ui);
+  font-family: var(--font-display);
   font-size: var(--text-2xl);
-  font-weight: 300;
-  color: var(--color-red);
+  font-weight: 700;
+  color: var(--color-terracotta);
   transition: color var(--t-base);
 }
 
 .quote-disclaimer {
   font-family: var(--font-ui);
   font-size: var(--text-xs);
-  color: rgba(237, 232, 219, 0.3);
+  color: var(--color-ink-dim);
   margin-top: var(--sp-2);
   line-height: 1.5;
 }
@@ -345,37 +372,39 @@
 .quote-empty-state {
   text-align: center;
   padding: var(--sp-4);
-  color: rgba(237, 232, 219, 0.35);
+  color: var(--color-ink-soft);
   font-family: var(--font-ui);
   font-size: var(--text-sm);
   line-height: 1.7;
-  border: 1px dashed rgba(237, 232, 219, 0.12);
+  border: 2px dashed var(--color-border-strong);
   border-radius: var(--radius-md);
+  background-color: var(--color-paper);
 }
 
 .quote-cta { margin-top: var(--sp-3); }
 
 .calc-error {
   display: none;
-  background-color: rgba(192, 50, 26, 0.1);
-  border: 1px solid rgba(192, 50, 26, 0.3);
+  background-color: rgba(196, 69, 54, 0.10);
+  border: 1.5px solid var(--color-terracotta);
   border-radius: var(--radius-sm);
   padding: var(--sp-2);
   font-family: var(--font-ui);
   font-size: var(--text-sm);
-  color: #e88;
+  color: var(--color-terracotta-dk);
   margin-top: var(--sp-2);
+  font-weight: 600;
 }
 
 .calc-error.visible { display: block; }
 
-/* Polygon area dot colors — unique identifiers, keep as-is */
-.area-color-1 { background-color: #5B8DD9; }
-.area-color-2 { background-color: #52C97A; }
-.area-color-3 { background-color: #E8C84A; }
-.area-color-4 { background-color: #C96BAF; }
-.area-color-5 { background-color: #4FC4CF; }
-.area-color-6 { background-color: #E8955A; }
+/* Polygon area dot colors — keep as-is for unique identifiers, but tune to palette */
+.area-color-1 { background-color: #1F4E89; }
+.area-color-2 { background-color: #4F8F5C; }
+.area-color-3 { background-color: #E9A53B; }
+.area-color-4 { background-color: #C7457E; }
+.area-color-5 { background-color: #58A6CB; }
+.area-color-6 { background-color: #C44536; }
 
 @media (max-width: 900px) {
   .calculator-layout { grid-template-columns: 1fr; }

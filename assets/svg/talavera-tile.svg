@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" aria-hidden="true">
+  <!-- Single talavera tile suitable for tile-pattern background -->
+  <rect width="120" height="120" fill="#FBF4DF"/>
+
+  <!-- Outer cobalt border -->
+  <rect x="3" y="3" width="114" height="114" fill="none" stroke="#1F4E89" stroke-width="2"/>
+
+  <!-- Corner quarter-rounds -->
+  <g fill="#1F4E89">
+    <path d="M3,3 Q22,3 22,22 Q3,22 3,3 Z"/>
+    <path d="M117,3 Q98,3 98,22 Q117,22 117,3 Z"/>
+    <path d="M3,117 Q22,117 22,98 Q3,98 3,117 Z"/>
+    <path d="M117,117 Q98,117 98,98 Q117,98 117,117 Z"/>
+  </g>
+
+  <!-- 8-petal central rosette (terracotta + marigold) -->
+  <g transform="translate(60 60)">
+    <!-- Outer petal ring -->
+    <g fill="#C44536">
+      <ellipse cx="0" cy="-26" rx="9" ry="16"/>
+      <ellipse cx="0" cy="26"  rx="9" ry="16"/>
+      <ellipse cx="-26" cy="0" rx="16" ry="9"/>
+      <ellipse cx="26"  cy="0" rx="16" ry="9"/>
+    </g>
+    <!-- Diagonal petals -->
+    <g fill="#E9A53B">
+      <ellipse cx="-18" cy="-18" rx="12" ry="6" transform="rotate(-45)"/>
+      <ellipse cx="18"  cy="-18" rx="12" ry="6" transform="rotate(45)"/>
+      <ellipse cx="-18" cy="18"  rx="12" ry="6" transform="rotate(45)"/>
+      <ellipse cx="18"  cy="18"  rx="12" ry="6" transform="rotate(-45)"/>
+    </g>
+    <!-- Center -->
+    <circle cx="0" cy="0" r="9" fill="#1F4E89"/>
+    <circle cx="0" cy="0" r="4" fill="#FBF4DF"/>
+  </g>
+
+  <!-- Edge midpoint accents -->
+  <g fill="#4F8F5C">
+    <circle cx="60" cy="11" r="3"/>
+    <circle cx="60" cy="109" r="3"/>
+    <circle cx="11" cy="60" r="3"/>
+    <circle cx="109" cy="60" r="3"/>
+  </g>
+</svg>

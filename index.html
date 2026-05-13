@@ -69,90 +69,88 @@
 <!-- ══════════════════════════════════════════════════════════════ HERO -->
 <section id="hero" class="hero" aria-label="Hero">
 
+  <!-- Papel picado banner -->
+  <div class="papel-picado" aria-hidden="true"></div>
+
+  <!-- Decorative folk flowers in the corners -->
+  <img src="assets/svg/embroidered-flower.svg" alt="" aria-hidden="true" class="hero-flower hero-flower--tl">
+  <img src="assets/svg/embroidered-flower.svg" alt="" aria-hidden="true" class="hero-flower hero-flower--br">
+
   <div class="hero-content">
 
-    <!-- Folk art rooster illustration — Espolón style -->
-    <svg class="hero-illustration" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 300" role="img" aria-label="Guzman Outdoors rooster emblem">
-      <defs>
-        <pattern id="hatch-body" x="0" y="0" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(-45 0 0)">
-          <line x1="0" y1="3.5" x2="7" y2="3.5" stroke="#EDE8DB" stroke-width="0.7" opacity="0.28"/>
-        </pattern>
-        <pattern id="hatch-wing" x="0" y="0" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(-30 0 0)">
-          <line x1="0" y1="2.5" x2="5" y2="2.5" stroke="#EDE8DB" stroke-width="0.6" opacity="0.45"/>
-        </pattern>
-        <clipPath id="clip-body">
-          <path d="M 82,170 C 84,128 108,108 148,106 C 182,104 215,122 228,152 C 238,175 232,202 215,216 C 196,232 170,238 142,234 C 112,230 90,214 83,193 C 80,183 80,175 82,170 Z"/>
-        </clipPath>
-        <clipPath id="clip-wing">
-          <path d="M 152,122 C 188,116 218,136 222,168 C 226,196 208,222 178,228 C 156,232 138,220 136,202 C 132,180 140,160 152,122 Z"/>
-        </clipPath>
-      </defs>
+    <!-- Folk-art rooster emblem (talavera palette) -->
+    <svg class="hero-illustration" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 300" role="img" aria-label="Guzman Outdoors folk-art rooster">
+      <!-- TAIL FEATHERS — alternating talavera-color filled feathers -->
+      <g stroke="#163A66" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M 220,140 C 246,118 272,82 264,44 C 260,24 246,18 236,30 C 228,40 234,64 222,88 C 216,100 216,118 220,138 Z" fill="#C44536"/>
+        <path d="M 226,158 C 260,144 280,112 272,72 C 268,52 254,46 242,58 C 234,68 238,90 226,114 C 220,126 220,142 224,156 Z" fill="#E9A53B"/>
+        <path d="M 228,175 C 268,172 288,150 282,118 C 278,98 262,92 250,104 C 242,114 244,136 232,154 C 228,162 226,170 228,175 Z" fill="#4F8F5C"/>
+        <path d="M 224,196 C 262,206 282,226 272,262 C 266,282 250,286 238,274 C 230,264 232,244 222,222 C 220,212 220,200 224,196 Z" fill="#1F4E89"/>
+        <path d="M 216,210 C 244,238 254,270 238,296 C 232,308 218,310 210,296 C 204,284 210,264 204,242 C 202,230 206,216 216,210 Z" fill="#C7457E"/>
+      </g>
 
-      <!-- TAIL FEATHERS — sweeping arcs to the right, behind body -->
-      <path d="M 220,140 C 246,118 272,82 264,44 C 260,24 246,18 236,30 C 228,40 234,64 222,88 C 216,100 216,118 220,138" fill="none" stroke="#EDE8DB" stroke-width="2.2" stroke-linecap="round"/>
-      <path d="M 236,32 C 244,54 248,76 238,98" fill="none" stroke="#EDE8DB" stroke-width="0.8" opacity="0.4"/>
+      <!-- BODY (cobalt) with cream polka dots -->
+      <path d="M 82,170 C 84,128 108,108 148,106 C 182,104 215,122 228,152 C 238,175 232,202 215,216 C 196,232 170,238 142,234 C 112,230 90,214 83,193 C 80,183 80,175 82,170 Z" fill="#1F4E89" stroke="#163A66" stroke-width="2.5"/>
+      <g fill="#FBF4DF">
+        <circle cx="108" cy="158" r="2.4"/>
+        <circle cx="124" cy="146" r="2.4"/>
+        <circle cx="100" cy="180" r="2.4"/>
+        <circle cx="118" cy="200" r="2.4"/>
+        <circle cx="98"  cy="210" r="2.4"/>
+        <circle cx="135" cy="218" r="2.4"/>
+      </g>
 
-      <path d="M 226,158 C 260,144 280,112 272,72 C 268,52 254,46 242,58 C 234,68 238,90 226,114 C 220,126 220,142 224,156" fill="none" stroke="#EDE8DB" stroke-width="2.2" stroke-linecap="round"/>
-      <path d="M 244,60 C 252,80 254,102 242,122" fill="none" stroke="#EDE8DB" stroke-width="0.8" opacity="0.4"/>
+      <!-- WING (marigold) overlaying body -->
+      <path d="M 152,122 C 188,116 218,136 222,168 C 226,196 208,222 178,228 C 156,232 138,220 136,202 C 132,180 140,160 152,122 Z" fill="#E9A53B" stroke="#163A66" stroke-width="2"/>
+      <!-- Wing scallop strokes -->
+      <g stroke="#163A66" stroke-width="1.4" fill="none" stroke-linecap="round">
+        <path d="M 150,148 C 178,142 210,150 218,166"/>
+        <path d="M 146,170 C 172,164 206,172 215,188"/>
+        <path d="M 148,194 C 168,190 196,200 208,212"/>
+      </g>
+      <!-- Wing accent dots -->
+      <g fill="#C44536">
+        <circle cx="170" cy="158" r="3"/>
+        <circle cx="195" cy="180" r="3"/>
+        <circle cx="178" cy="208" r="3"/>
+      </g>
 
-      <path d="M 228,175 C 268,172 288,150 282,118 C 278,98 262,92 250,104 C 242,114 244,136 232,154 C 228,162 226,170 228,175" fill="none" stroke="#EDE8DB" stroke-width="2.2" stroke-linecap="round"/>
-
-      <path d="M 224,196 C 262,206 282,226 272,262 C 266,282 250,286 238,274 C 230,264 232,244 222,222 C 220,212 220,200 224,196" fill="none" stroke="#EDE8DB" stroke-width="2.2" stroke-linecap="round"/>
-      <path d="M 238,276 C 246,258 246,238 234,218" fill="none" stroke="#EDE8DB" stroke-width="0.8" opacity="0.4"/>
-
-      <path d="M 216,210 C 244,238 254,270 238,296 C 232,308 218,310 210,296 C 204,284 210,264 204,242 C 202,230 206,216 216,210" fill="none" stroke="#EDE8DB" stroke-width="2.2" stroke-linecap="round"/>
-
-      <!-- BODY -->
-      <path d="M 82,170 C 84,128 108,108 148,106 C 182,104 215,122 228,152 C 238,175 232,202 215,216 C 196,232 170,238 142,234 C 112,230 90,214 83,193 C 80,183 80,175 82,170 Z" fill="url(#hatch-body)" stroke="#EDE8DB" stroke-width="2.2"/>
-
-      <!-- WING overlaying body -->
-      <path d="M 152,122 C 188,116 218,136 222,168 C 226,196 208,222 178,228 C 156,232 138,220 136,202 C 132,180 140,160 152,122 Z" fill="url(#hatch-wing)" stroke="#EDE8DB" stroke-width="1.8"/>
-      <!-- Wing feather lines -->
-      <path d="M 150,148 C 178,142 210,150 218,166" fill="none" stroke="#EDE8DB" stroke-width="0.9" opacity="0.55"/>
-      <path d="M 146,165 C 172,160 206,168 215,184" fill="none" stroke="#EDE8DB" stroke-width="0.9" opacity="0.55"/>
-      <path d="M 144,182 C 166,178 198,186 210,202" fill="none" stroke="#EDE8DB" stroke-width="0.9" opacity="0.55"/>
-      <path d="M 146,198 C 162,196 186,204 196,220" fill="none" stroke="#EDE8DB" stroke-width="0.9" opacity="0.55"/>
-
-      <!-- NECK -->
-      <path d="M 100,118 C 96,106 92,95 88,84 C 84,74 78,70 74,74" fill="none" stroke="#EDE8DB" stroke-width="12" stroke-linecap="round"/>
-      <path d="M 100,118 C 96,106 92,95 88,84 C 84,74 78,70 74,74" fill="none" stroke="#0A0A0A" stroke-width="8" stroke-linecap="round"/>
-      <path d="M 100,118 C 96,106 92,95 88,84 C 84,74 78,70 74,74" fill="none" stroke="#EDE8DB" stroke-width="1.8" stroke-linecap="round"/>
-      <!-- Neck feather lines -->
-      <path d="M 98,105 C 92,98 88,90 86,82" fill="none" stroke="#EDE8DB" stroke-width="0.8" opacity="0.45"/>
-      <path d="M 104,110 C 98,103 94,95 92,88" fill="none" stroke="#EDE8DB" stroke-width="0.8" opacity="0.45"/>
+      <!-- NECK — cobalt with darker outline -->
+      <path d="M 100,118 C 96,106 92,95 88,84 C 84,74 78,70 74,74" fill="none" stroke="#1F4E89" stroke-width="14" stroke-linecap="round"/>
+      <path d="M 100,118 C 96,106 92,95 88,84 C 84,74 78,70 74,74" fill="none" stroke="#163A66" stroke-width="2" stroke-linecap="round"/>
 
       <!-- HEAD -->
-      <ellipse cx="72" cy="80" rx="26" ry="22" fill="#0A0A0A" stroke="#EDE8DB" stroke-width="2.2"/>
+      <ellipse cx="72" cy="80" rx="26" ry="22" fill="#1F4E89" stroke="#163A66" stroke-width="2.5"/>
 
-      <!-- COMB — red accent (the single color moment) -->
-      <path d="M 64,64 C 60,48 67,37 74,50 C 72,34 80,24 84,40 C 82,24 92,16 93,34 C 94,44 88,58 82,66 C 78,70 72,72 64,64 Z" fill="#C0321A" stroke="#C0321A" stroke-width="0.8"/>
+      <!-- COMB — magenta -->
+      <path d="M 64,64 C 60,48 67,37 74,50 C 72,34 80,24 84,40 C 82,24 92,16 93,34 C 94,44 88,58 82,66 C 78,70 72,72 64,64 Z" fill="#C7457E" stroke="#9C2F60" stroke-width="1.2"/>
 
-      <!-- WATTLE — red -->
-      <path d="M 54,88 C 48,96 48,108 55,114 C 61,119 68,114 67,106 C 66,98 60,92 54,88 Z" fill="#C0321A" stroke="#C0321A" stroke-width="0.8"/>
+      <!-- WATTLE — terracotta -->
+      <path d="M 54,88 C 48,96 48,108 55,114 C 61,119 68,114 67,106 C 66,98 60,92 54,88 Z" fill="#C44536" stroke="#A33323" stroke-width="1.2"/>
 
       <!-- EYE -->
-      <circle cx="62" cy="76" r="5.5" fill="#EDE8DB"/>
-      <circle cx="62" cy="76" r="3" fill="#0A0A0A"/>
-      <circle cx="60.5" cy="74.5" r="1.2" fill="#EDE8DB" opacity="0.9"/>
+      <circle cx="62" cy="76" r="6"   fill="#FBF4DF"/>
+      <circle cx="62" cy="76" r="3"   fill="#2A1810"/>
+      <circle cx="60.5" cy="74.5" r="1.2" fill="#FBF4DF"/>
 
-      <!-- BEAK -->
-      <path d="M 48,80 L 30,86 L 48,92 Z" fill="#EDE8DB" stroke="#EDE8DB" stroke-width="0.5" stroke-linejoin="round"/>
+      <!-- BEAK — marigold -->
+      <path d="M 48,80 L 28,86 L 48,92 Z" fill="#E9A53B" stroke="#A33323" stroke-width="1.4" stroke-linejoin="round"/>
 
-      <!-- LEGS -->
-      <line x1="128" y1="232" x2="118" y2="278" stroke="#EDE8DB" stroke-width="3.5" stroke-linecap="round"/>
-      <line x1="155" y1="234" x2="145" y2="278" stroke="#EDE8DB" stroke-width="3.5" stroke-linecap="round"/>
+      <!-- LEGS — marigold -->
+      <line x1="128" y1="232" x2="118" y2="278" stroke="#E9A53B" stroke-width="4" stroke-linecap="round"/>
+      <line x1="155" y1="234" x2="145" y2="278" stroke="#E9A53B" stroke-width="4" stroke-linecap="round"/>
 
-      <!-- Spurs -->
-      <path d="M 125,258 L 114,250" stroke="#EDE8DB" stroke-width="2" stroke-linecap="round"/>
-      <path d="M 152,260 L 141,252" stroke="#EDE8DB" stroke-width="2" stroke-linecap="round"/>
+      <!-- Claws -->
+      <g stroke="#E9A53B" stroke-width="2.5" stroke-linecap="round">
+        <path d="M 118,278 L 100,285 M 118,278 L 108,292 M 118,278 L 118,294 M 118,278 L 128,288"/>
+        <path d="M 145,278 L 127,285 M 145,278 L 135,292 M 145,278 L 145,294 M 145,278 L 155,288"/>
+      </g>
 
-      <!-- CLAWS — left foot -->
-      <path d="M 118,278 L 100,285 M 118,278 L 108,292 M 118,278 L 118,294 M 118,278 L 128,288" stroke="#EDE8DB" stroke-width="2" stroke-linecap="round"/>
-      <!-- CLAWS — right foot -->
-      <path d="M 145,278 L 127,285 M 145,278 L 135,292 M 145,278 L 145,294 M 145,278 L 155,288" stroke="#EDE8DB" stroke-width="2" stroke-linecap="round"/>
-
-      <!-- Ground line -->
-      <line x1="80" y1="294" x2="200" y2="294" stroke="#EDE8DB" stroke-width="0.8" opacity="0.25"/>
+      <!-- Tile-style ground flourish -->
+      <g transform="translate(140 296)">
+        <line x1="-50" y1="0" x2="50" y2="0" stroke="#5C4030" stroke-width="1.2" opacity="0.4"/>
+        <polygon points="-6,0 0,-6 6,0 0,6" fill="#C44536"/>
+      </g>
     </svg>
 
     <h1 class="hero-brand-name">
@@ -166,7 +164,7 @@
       <span class="hero-rule-line hero-rule-line--r"></span>
     </div>
 
-    <p class="hero-tagline">Crafted with pride. Rooted in heritage.</p>
+    <p class="hero-tagline">Crafted with <strong>pride</strong>. Rooted in <strong>heritage</strong>.</p>
 
     <a href="tel:+15174498404" class="hero-phone" aria-label="Call (517) 449-8404">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" aria-hidden="true">
@@ -380,7 +378,7 @@
       <p class="quick-book-heading">Don't need an instant quote?</p>
       <p class="quick-book-sub">Just send us a message and we'll reach out within one business day.</p>
     </div>
-    <a href="#contact" class="btn btn--ghost" style="border-color:rgba(237,232,219,0.6);flex-shrink:0">Book Directly</a>
+    <a href="#contact" class="btn btn--ghost" style="flex-shrink:0">Book Directly</a>
   </div>
 </div>
 
@@ -595,7 +593,7 @@
       <div class="about-text-col">
         <div class="reveal">
           <span class="section-preheading">Our Story</span>
-          <h2 class="section-heading" style="color:var(--color-ink-dark)">Rooted in<br>Guatemalan Pride</h2>
+          <h2 class="section-heading">Rooted in<br><em>Guatemalan</em> Pride</h2>
           <div class="ornate-divider" style="justify-content:flex-start" aria-hidden="true">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 20" style="width:200px">
               <line x1="0" y1="10" x2="72" y2="10" stroke="#EDE8DB" stroke-width="0.8" opacity="0.5"/>
