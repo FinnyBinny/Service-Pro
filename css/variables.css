@@ -1,24 +1,53 @@
 :root {
-  /* ── Espolón-inspired Palette: black / white / one red ── */
-  --color-bg:        #0A0A0A;   /* near black — primary dark bg */
-  --color-surface:   #141414;   /* cards, elevated surfaces */
-  --color-surface2:  #1C1C1C;   /* extra level */
-  --color-paper:     #EDE8DB;   /* warm white — light sections (like label paper) */
-  --color-paper-mid: #D5CCBA;   /* slightly darker paper for borders on light */
-  --color-ink:       #EDE8DB;   /* text/art on dark */
-  --color-ink-dim:   rgba(237,232,219,0.55);
-  --color-ink-dark:  #0F0C08;   /* text on light/paper */
-  --color-red:       #C0321A;   /* single bold accent — like the pink on Espolón */
-  --color-red-light: #D94020;   /* hover red */
-  --color-red-dim:   rgba(192,50,26,0.12);
-  --color-border:    rgba(237,232,219,0.1);
-  --color-border-red: rgba(192,50,26,0.35);
+  /* ── Mexican Folk-Art Palette: talavera tiles + embroidered florals ── */
 
-  /* ── Shadows ── */
-  --shadow-card:   0 4px 32px rgba(0, 0, 0, 0.6);
-  --shadow-lifted: 0 14px 50px rgba(0, 0, 0, 0.75);
-  --shadow-red:    0 0 0 2px var(--color-red);
-  --shadow-glow:   0 0 40px rgba(192, 50, 26, 0.15);
+  /* Warm paper foundations (cream / off-white) */
+  --color-bg:        #F4E9D2;   /* primary cream paper background */
+  --color-paper:     #FBF4DF;   /* lighter cream for surfaces / cards */
+  --color-paper-2:   #FFF9E8;   /* nearly off-white for elevated panels */
+  --color-paper-mid: #E8D9B8;   /* darker cream for hairline borders */
+  --color-shell:     #FFFDF7;   /* near-white surface */
+
+  /* Inks (text on cream) */
+  --color-ink:       #2A1810;   /* deep cocoa-ink for body text */
+  --color-ink-soft:  #5C4030;   /* secondary text */
+  --color-ink-dim:   rgba(42,24,16,0.55);
+  --color-ink-light: #FBF4DF;   /* text on dark/colored surfaces */
+
+  /* Talavera color family — the bold accents */
+  --color-terracotta:     #C44536;   /* primary accent (red-orange clay) */
+  --color-terracotta-dk:  #A33323;
+  --color-terracotta-lt:  #E26343;
+  --color-cobalt:         #1F4E89;   /* talavera blue */
+  --color-cobalt-dk:      #163A66;
+  --color-cobalt-lt:      #2E6BB5;
+  --color-marigold:       #E9A53B;   /* cempasúchil yellow */
+  --color-marigold-dk:    #C4861E;
+  --color-sage:           #4F8F5C;   /* cactus / agave green */
+  --color-sage-dk:        #386943;
+  --color-sage-lt:        #6FB37D;
+  --color-magenta:        #C7457E;   /* embroidered floral pink */
+  --color-magenta-dk:     #9C2F60;
+  --color-azure:          #58A6CB;   /* sky tile blue */
+
+  /* Backwards-compatible legacy aliases (so old class names keep working) */
+  --color-red:       var(--color-terracotta);
+  --color-red-light: var(--color-terracotta-lt);
+  --color-red-dim:   rgba(196, 69, 54, 0.10);
+  --color-surface:   var(--color-paper);
+  --color-surface2:  var(--color-paper-2);
+  --color-ink-dark:  var(--color-ink);
+
+  /* Borders */
+  --color-border:        rgba(42, 24, 16, 0.10);
+  --color-border-strong: rgba(42, 24, 16, 0.18);
+  --color-border-red:    rgba(196, 69, 54, 0.30);
+
+  /* ── Shadows (warm, soft) ── */
+  --shadow-card:   0 6px 24px rgba(118, 60, 30, 0.10);
+  --shadow-lifted: 0 18px 44px rgba(118, 60, 30, 0.18);
+  --shadow-tile:   0 2px 0 rgba(42,24,16,0.06), 0 14px 30px rgba(118, 60, 30, 0.12);
+  --shadow-glow:   0 0 32px rgba(233, 165, 59, 0.18);
 
   /* ── Typography ── */
   --font-display: 'Cinzel Decorative', serif;
@@ -42,6 +71,7 @@
   --sp-2:  1rem;
   --sp-3:  1.5rem;
   --sp-4:  2rem;
+  --sp-5:  2.5rem;
   --sp-6:  3rem;
   --sp-8:  4rem;
   --sp-12: 6rem;
@@ -54,9 +84,10 @@
   --container-px:  clamp(1.25rem, 5vw, 3rem);
 
   /* ── Borders ── */
-  --radius-sm: 3px;
-  --radius-md: 6px;
-  --border-ink: 1px solid rgba(237,232,219,0.15);
+  --radius-sm: 4px;
+  --radius-md: 10px;
+  --radius-lg: 18px;
+  --border-ink: 1px solid rgba(42,24,16,0.15);
 
   /* ── Transitions ── */
   --t-fast: 150ms ease;
@@ -64,6 +95,6 @@
   --t-slow: 500ms ease;
 
   /* ── Nav ── */
-  --nav-height:          68px;
-  --nav-height-scrolled: 52px;
+  --nav-height:          72px;
+  --nav-height-scrolled: 56px;
 }

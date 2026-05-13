@@ -1,13 +1,39 @@
-/* ── About: warm paper background, ink-dark text ── */
+/* ── About: terracotta plaster wall vibe with embroidered floral accents ── */
 .about {
   background-color: var(--color-paper);
-  color: var(--color-ink-dark);
+  color: var(--color-ink);
   position: relative;
+  overflow: hidden;
 }
 
-.about .section-preheading { color: var(--color-red); }
+.about::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('../assets/svg/talavera-tile.svg');
+  background-size: 180px 180px;
+  background-repeat: repeat;
+  opacity: 0.05;
+  pointer-events: none;
+}
 
-.about .section-heading { color: var(--color-ink-dark); }
+.about::after {
+  content: '';
+  position: absolute;
+  bottom: -80px;
+  left: -80px;
+  width: 320px;
+  height: 320px;
+  background: url('../assets/svg/embroidered-flower.svg') center/contain no-repeat;
+  opacity: 0.30;
+  transform: rotate(-15deg);
+  pointer-events: none;
+}
+
+.about .container { position: relative; z-index: 1; }
+
+.about .section-preheading { color: var(--color-terracotta); }
+.about .section-heading { color: var(--color-ink); }
 
 .about-photo-col {
   display: flex;
@@ -15,23 +41,25 @@
   justify-content: center;
 }
 
-/* Ornate photo frame */
+/* Talavera-bordered photo frame */
 .photo-frame {
   position: relative;
   width: 100%;
-  max-width: 400px;
+  max-width: 420px;
 }
 
 .photo-frame-inner {
   width: 100%;
   aspect-ratio: 3 / 4;
-  background: linear-gradient(135deg, #141414 0%, #1C1C1C 50%, #141414 100%);
+  background: linear-gradient(160deg, var(--color-cobalt) 0%, var(--color-cobalt-dk) 100%);
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  border: 3px solid var(--color-red);
+  border: 6px solid var(--color-marigold);
+  box-shadow: 0 8px 0 var(--color-marigold-dk),
+              0 18px 40px rgba(118, 60, 30, 0.25);
 }
 
 .photo-frame-inner img {
@@ -43,89 +71,94 @@
 .photo-placeholder-text {
   font-family: var(--font-ui);
   font-size: var(--text-sm);
-  color: rgba(237, 232, 219, 0.45);
+  color: rgba(251, 244, 223, 0.7);
   text-align: center;
   padding: var(--sp-4);
   line-height: 1.7;
 }
 
-/* Decorative frame borders */
-.photo-frame::before,
-.photo-frame::after {
+/* Outer talavera ring */
+.photo-frame::before {
   content: '';
   position: absolute;
-  border: 2px solid var(--color-red);
+  inset: -16px;
+  border: 3px dashed var(--color-terracotta);
   border-radius: var(--radius-md);
+  opacity: 0.7;
+  pointer-events: none;
 }
+.photo-frame::after { content: none; }
 
-.photo-frame::before {
-  inset: -8px;
-  opacity: 0.35;
-}
-
-.photo-frame::after {
-  inset: -14px;
-  opacity: 0.15;
-}
-
-/* Corner ornaments */
+/* Corner ornaments — bigger blooms */
 .frame-corner {
   position: absolute;
-  width: 24px;
-  height: 24px;
-  z-index: 1;
+  width: 48px;
+  height: 48px;
+  z-index: 2;
+  background: url('../assets/svg/embroidered-flower.svg') center/contain no-repeat;
+  filter: drop-shadow(0 2px 4px rgba(118, 60, 30, 0.25));
 }
 
-.frame-corner--tl { top: -18px; left: -18px; }
-.frame-corner--tr { top: -18px; right: -18px; transform: scaleX(-1); }
-.frame-corner--bl { bottom: -18px; left: -18px; transform: scaleY(-1); }
-.frame-corner--br { bottom: -18px; right: -18px; transform: scale(-1, -1); }
+.frame-corner--tl { top: -28px; left: -28px; }
+.frame-corner--tr { top: -28px; right: -28px; transform: scaleX(-1); }
+.frame-corner--bl { bottom: -28px; left: -28px; transform: scaleY(-1); }
+.frame-corner--br { bottom: -28px; right: -28px; transform: scale(-1, -1); }
 
 .about-text-col {}
 
 .about-body {
   font-family: var(--font-body);
   font-size: var(--text-md);
-  color: rgba(15, 12, 8, 0.8);
-  line-height: 1.8;
+  color: var(--color-ink-soft);
+  line-height: 1.85;
   margin-bottom: var(--sp-4);
 }
 
-/* Pull quote */
+/* Pull quote — folk-art style with marigold band */
 .pull-quote {
   position: relative;
   padding: var(--sp-3) var(--sp-4);
-  border-left: 3px solid var(--color-red);
-  background-color: rgba(192, 50, 26, 0.05);
-  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  background-color: var(--color-shell);
+  border: 2px solid var(--color-marigold);
+  border-left: 6px solid var(--color-terracotta);
+  border-radius: var(--radius-md);
   margin-block: var(--sp-4);
+  box-shadow: 0 4px 0 var(--color-marigold-dk);
 }
 
 .pull-quote-text {
   font-family: var(--font-heading);
   font-style: italic;
   font-size: var(--text-lg);
-  color: var(--color-ink-dark);
+  color: var(--color-ink);
   line-height: 1.5;
 }
 
 .pull-quote-attr {
+  display: block;
   font-family: var(--font-ui);
   font-size: var(--text-sm);
-  font-weight: 600;
-  color: var(--color-red);
+  font-weight: 700;
+  color: var(--color-terracotta);
   margin-top: var(--sp-1);
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
+  font-style: normal;
 }
 
-/* Trust stats on light section */
+/* Trust stats */
 .about .trust-stats {
   margin-top: var(--sp-4);
   gap: var(--sp-6);
 }
 
-.about .stat-number { color: var(--color-red); }
-.about .stat-label  { color: rgba(15, 12, 8, 0.55); }
+.about .stat-number {
+  color: var(--color-cobalt);
+  font-weight: 700;
+}
+.about .stat-item:nth-child(2) .stat-number { color: var(--color-terracotta); }
+.about .stat-item:nth-child(3) .stat-number { color: var(--color-marigold-dk); }
+
+.about .stat-label  { color: var(--color-ink-soft); }
 
 @media (max-width: 900px) {
   .about-photo-col {
@@ -133,11 +166,13 @@
   }
 
   .photo-frame {
-    max-width: 300px;
+    max-width: 320px;
     margin: 0 auto;
   }
 
   .about .trust-stats {
     justify-content: center;
   }
+
+  .about::after { display: none; }
 }

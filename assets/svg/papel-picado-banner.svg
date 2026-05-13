@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 140" preserveAspectRatio="xMidYMin slice" aria-hidden="true">
+  <!-- String -->
+  <path d="M0,18 Q360,42 720,28 T1440,18" fill="none" stroke="#5C4030" stroke-width="1.6" opacity="0.55"/>
+
+  <defs>
+    <!-- Single rectangular papel picado pennant template, with folk-art cutouts -->
+    <symbol id="pennant" viewBox="0 0 120 110">
+      <!-- Rectangle body (slight curve at bottom for hanging) -->
+      <path d="M6,0 H114 V96 Q60,108 6,96 Z" fill="currentColor"/>
+      <!-- Cutouts (revealed by mask) -->
+      <g fill="#F4E9D2">
+        <!-- Center floral rosette -->
+        <circle cx="60" cy="38" r="9"/>
+        <circle cx="60" cy="22" r="5"/>
+        <circle cx="60" cy="54" r="5"/>
+        <circle cx="44" cy="38" r="5"/>
+        <circle cx="76" cy="38" r="5"/>
+        <!-- Side leaves -->
+        <ellipse cx="22" cy="38" rx="6" ry="3"/>
+        <ellipse cx="98" cy="38" rx="6" ry="3"/>
+        <!-- Bottom diamond row -->
+        <polygon points="30,72 38,80 30,88 22,80"/>
+        <polygon points="60,74 70,84 60,94 50,84"/>
+        <polygon points="90,72 98,80 90,88 82,80"/>
+        <!-- Top notch -->
+        <rect x="56" y="6" width="8" height="8"/>
+      </g>
+    </symbol>
+  </defs>
+
+  <!-- Hanging strands: alternating colors, slight vertical offset along the string curve -->
+  <g>
+    <use href="#pennant" x="0"    y="18" width="120" height="110" color="#C44536"/>
+    <use href="#pennant" x="120"  y="22" width="120" height="110" color="#1F4E89"/>
+    <use href="#pennant" x="240"  y="26" width="120" height="110" color="#E9A53B"/>
+    <use href="#pennant" x="360"  y="30" width="120" height="110" color="#4F8F5C"/>
+    <use href="#pennant" x="480"  y="32" width="120" height="110" color="#C7457E"/>
+    <use href="#pennant" x="600"  y="32" width="120" height="110" color="#58A6CB"/>
+    <use href="#pennant" x="720"  y="32" width="120" height="110" color="#C44536"/>
+    <use href="#pennant" x="840"  y="30" width="120" height="110" color="#E9A53B"/>
+    <use href="#pennant" x="960"  y="28" width="120" height="110" color="#1F4E89"/>
+    <use href="#pennant" x="1080" y="24" width="120" height="110" color="#4F8F5C"/>
+    <use href="#pennant" x="1200" y="22" width="120" height="110" color="#C7457E"/>
+    <use href="#pennant" x="1320" y="18" width="120" height="110" color="#58A6CB"/>
+  </g>
+</svg>
